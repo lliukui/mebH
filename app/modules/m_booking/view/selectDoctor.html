@@ -1,0 +1,41 @@
+<div ng-controller="selectDoctorCtrl" class="selectDoctor-page">
+	<div class="doctor-tab">
+		<div class="doctor-item" ng-repeat="doctor in doctors" ng-show="selectedDoctor==doctor.doctorId || !selectedDoctor" ng-click="checkDoctor(doctor)">
+			<div class="item-left">
+				<img src="{{doctor.avatarUrl}}">
+			</div>
+			<div class="item-right">
+				<p>
+					<span ng-bind="doctor.doctorName"></span>
+					<span ng-bind="doctor.cTitle"></span>
+				</p>
+				<p ng-bind="doctor.description | limitTo:60"></p>
+			</div>
+		</div>
+	</div>
+	<div class="date-item" ng-show="showTime">
+		<div class="item-left">
+			<p>筛选</p>
+			<div class="" ng-repeat="time in timeList" ng-bind="time">
+				
+			</div>
+		</div>
+		<div class="item-right">
+			<div id="dateNavScroll" class="date-nav">
+				<div class="scroll">
+					<ul id="ulScroll">
+						<li ng-repeat="doctorDuty in doctorDutys">
+							<p ng-bind="doctorDuty.dutyDate"></p>
+							<div ng-class="{'optional': time.optional,'not-optional': !time.optional}" ng-repeat="time in doctorDuty.timeList" ng-bind="time.timeText" ng-click="selectTime(time,doctorDuty.dutyDate)">
+
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="btn-dock" ng-show="showTime">
+		<button class="btn btn-primary" ng-click="reselection()">重新选择</button>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<div ng-controller="searchRecipesCtrl" class="searchRecipes-page">
+	<div class="search-nav">
+		<div class="search-input">
+			<input ng-model="searchValue" type="text" ng-change="valueChange()">
+			<a class="icon_clear" ng-hide="showBack" ng-click="clear()"></a>
+		</div>
+		<div class="search-btn">
+			<p ng-show="showBack" ng-click="back()">取消</p>
+			<p ng-hide="showBack" ng-click="search()">搜索</p>
+		</div>
+	</div>
+	<div class="search-results">
+		<div class="nrInfo-item" ng-repeat="nrInfo in nrInfos" ng-click="goDetail(nrInfo.contentUrl)" ng-class="{'bb-gray': $last==false}">
+			<div class="item-left">
+				<img src="{{nrInfo.imageUrl}}">
+			</div>
+			<div class="item-right">
+				<p ng-bind="nrInfo.title"></p>
+				<p ng-bind="nrInfo.description"></p>
+			</div>
+		</div>
+	</div>
+</div>

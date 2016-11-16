@@ -1,0 +1,30 @@
+<div ng-controller="loginCtrl" class="login-page">
+	<div class="login-tab">
+		<form name="loginForm">
+			<div class="cell-group">
+				<div class="cell">
+					<div class="left-box clearly-width">
+						联系方式
+					</div>
+					<div class="middle-box">
+						<input type="tel" maxlength="11" minlength="11" name="mobile" ng-model="mobile" placeholder="请输入联系方式" required>
+					</div>
+					<div class="right-box">
+						<button class="btn btn-small btn-primary in-cell" ng-disabled="loginForm.mobile.$invalid || lockEnabled" ng-click="smsverifycode()" ng-bind="sendSMSText"></button>
+					</div>
+				</div>
+				<div class="cell">
+					<div class="left-box clearly-width">
+						验证码
+					</div>
+					<div class="middle-box">
+						<input type="tel" maxlength="11" minlength="4" name="verify_code" ng-model="verify_code" placeholder="请输入验证码" required="">
+					</div>
+				</div>
+			</div>
+			<div class="btn-dock">
+				<button class="btn btn-primary" ng-disabled="loginForm.$invalid" ng-click="login()">登录</button>
+			</div>
+		</form>
+	</div>
+</div>

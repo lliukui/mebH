@@ -1,0 +1,25 @@
+<div ng-controller="ccktitlesCtrl" class="ccktitles-page">
+    <div class="fixed-nav">
+        <div class="search-tab" ng-click="goSearchcck()">
+            搜索感兴趣的育儿知识
+        </div>
+        <div id="ccktitlesNavScroll" class="ccktitles-nav">
+            <div class="scroll">
+                <ul>
+                    <li ng-repeat="cckInfo in cck" ng-class="{'selected': selectedAgeGroup==$index || selectedAgeGroup == cckInfo.ageGroup}" ng-bind="cckInfo.ageGroup"
+                        ng-click="clickNav(cckInfo.ageGroup)"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="cck-tab">
+        <div class="cck-item" ng-repeat="cckInfo in cck" ng-show="selectedAgeGroup==$index || selectedAgeGroup== cckInfo.ageGroup">
+            <div class="cck-info" ng-repeat="firstTitles in cckInfo.firstTitles">
+                <p class="fitst-title" ng-bind="firstTitles.firstTitle"></p>
+                <div class="second-tab">
+                    <p ng-bind="secondTitles.secondTitle" ng-repeat="secondTitles in firstTitles.secondTitles" ng-click="gocckinfo(secondTitles.secondId)"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

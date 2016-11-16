@@ -1,0 +1,41 @@
+<div ng-controller="HomeCtrl" class="home-page">
+    <div class="child-info" ng-repeat="child in childs" ng-show="$index==tabSelected">
+        <div class="info-left">
+            <p>
+                <span class="icon-age">年龄</span>
+                <span ng-bind="child.age"></span>
+            </p>
+            <p>
+                <span class="icon-birthday">生日</span>
+                <span ng-bind="child.birthday"></span>
+            </p>
+            <p>
+                <span class="icon-height">身高</span>
+                <span ng-bind="child.height"></span>
+            </p>
+            <p>
+                <span class="icon-weight">体重</span>
+                <span ng-bind="child.weight"></span>
+            </p>
+        </div>
+        <div class="info-right">
+            <p>可爱</p>
+            <p>天使</p>
+            <p>善良</p>
+        </div>
+    </div>
+    <div class="h-channel">
+        <ul>
+            <li>
+                <a class="h-findDoc-a" ng-click="routerGo('layout.booking-selectClinic')">
+                    <span>诊所预约</span>
+                </a>
+            </li>
+            <li>
+                <a class="h-booking-a" ng-click="routerGo('')">
+                    <span>在线咨询</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

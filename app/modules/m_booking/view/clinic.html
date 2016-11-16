@@ -1,0 +1,29 @@
+<div ng-controller="clinicCtrl" class="clinic-page">
+	<div class="clinic-info">
+		<div class="clinic-img">
+			<img src="{{clinic.imageUrl}}">
+		</div>
+		<p class="clinicName" ng-bind="clinic.clinicName"></p>
+		<p class="tel">
+			<span class="icon-phone">健康热线：</span>
+			<span ng-bind="clinic.tel"></span>
+		</p>
+		<p ng-bind="clinic.description"></p>
+	</div>
+	<p class="icon-address" ng-bind="clinic.address"></p>
+	<p>预约项目</p>
+	<div class="service-tab">
+		<div ng-class="{'active':selectId == services.serviceId}" class="service-item" ng-repeat="services in clinic.services"  ng-click="clickService(services)">
+			<img src="{{services.serviceId | clinicServiceIcon}}" />
+			<p ng-bind="services.serviceName"></p>
+		</div>
+	</div>
+	<div class="btn-dock">
+		<div class="left-dock">
+			<button class="btn btn-pt" ng-disabled="selectId == ''" ng-click="goBooking('PT')">普通号</button>
+		</div>
+		<div class="right-dock" ng-show="zhuanjia==1">
+			<button class="btn btn-zj" ng-disabled="selectId == ''" ng-click="goSelectDoctor('ZJ')">专家号</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,51 @@
+<div ng-controller="updateChildCtrl" class="updateChild-page">
+	<div class="child-info">
+		<img src="{{child.imageUrl}}">
+		<p>
+			<span>宝宝姓名：</span>
+			<span ng-bind="child.childName"></span>
+		</p>
+		<p>
+			<span>宝宝性别：</span>
+			<span ng-bind="child.gender"></span>
+		</p>
+		<p>
+			<span>宝宝年龄：</span>
+			<span ng-bind="child.age"></span>
+		</p>
+		<p>
+			<span>宝宝血型：</span>
+			<span ng-bind="child.bloodType"></span>
+		</p>
+		<p>
+			<span>宝宝星座：</span>
+			<span ng-bind="child.horoscope"></span>
+		</p>
+		<p>
+			<span>宝宝生肖：</span>
+			<span ng-bind="child.shengxiao"></span>
+		</p>
+	</div>
+	<p>以下新心可修改</p>
+	<div class="update-info">
+		<div class="flex">
+			<p>宝宝身高</p>
+			<input type="number">
+		</div>
+		<div class="flex">
+			<p>宝宝身高</p>
+			<input type="number">
+		</div>
+		<div class="flex">
+			<p>宝宝身高</p>
+			<input type="number">
+		</div>
+		<div class="flex">
+			<p>宝宝身高</p>
+			<input type="number">
+		</div>
+	</div>
+	<div class="btn-dock">
+		<button class="btn btn-primary">修改</button>
+	</div>
+</div>

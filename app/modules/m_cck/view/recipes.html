@@ -1,0 +1,30 @@
+<div ng-controller="recipesCtrl" class="recipes-page">
+	<div class="fixed-nav">
+		<div class="search-tab" ng-click="goSearchRecipes()">
+			搜索感兴趣的营养食谱
+		</div>
+		<div id="recipesNavScroll" class="recipes-nav">
+			<div class="scroll">
+				<ul>
+					<li ng-repeat="recipes in recipesList" ng-class="{'selected': selectedAgeGroup==$index || selectedAgeGroup==recipes.ageGroup}" ng-bind="recipes.ageGroup" ng-click="clickNav(recipes.ageGroup)"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="recipes-tab">
+		<div class="recipes-item" ng-repeat="recipes in recipesList" ng-show="selectedAgeGroup==$index || selectedAgeGroup==recipes.ageGroup">
+			<div class="recipes-info" ng-repeat="firstTitles in recipes.firstTitles">
+				<p class="first-title" ng-bind="firstTitles.firstTitle"></p>
+				<div class="nrInfo" ng-repeat="nrInfo in firstTitles.nrInfo" ng-click="goDetail(nrInfo.contentUrl)">
+					<div class="nrInfo-img">
+						<img src="{{nrInfo.imageUrl}}">
+					</div>
+					<div class="nrInfo-content">
+						<p class="" ng-bind="nrInfo.infoTitle"></p>
+						<p class="" ng-bind="nrInfo.description"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

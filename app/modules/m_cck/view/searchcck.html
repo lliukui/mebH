@@ -1,0 +1,23 @@
+<div ng-controller="searchcckCtrl" class="searchcck-page">
+	<div class="search-nav">
+		<div class="search-input">
+			<input ng-model="searchValue" type="text" ng-change="valueChange()">
+			<a class="icon_clear" ng-hide="showBack" ng-click="clear()"></a>
+		</div>
+		<div class="search-btn">
+			<p ng-show="showBack" ng-click="goBack()">取消</p>
+			<p ng-hide="showBack" ng-click="searchcck()">搜索</p>
+		</div>
+	</div>
+	<div class="search-results">
+		<div class="cckinfo-item" ng-repeat="cckInfo in cckInfos" ng-click="goDetail(cckInfo.contentUrl)">
+			<div class="item-left">
+				<img src="{{cckInfo.imageUrl}}">
+			</div>
+			<div class="item-right" ng-class="{'bb-gray': $last==false}">
+				<p class="cckinfo-title" ng-bind="cckInfo.title"></p>
+				<p class="cckinfo-description" ng-bind="cckInfo.description | limitTo :40"></p>
+			</div>
+		</div>
+	</div>
+</div>

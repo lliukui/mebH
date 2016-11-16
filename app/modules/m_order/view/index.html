@@ -1,0 +1,60 @@
+<div ng-controller="OrderCtrl" class="orderList-page">
+	<div class="tab-box">
+		<div class="tab-header">
+			<div class="tab-item" ng-class="{'active': selectTab==0}" ng-click="checkTab(0)">
+				全部预约
+			</div>
+			<div class="tab-item" ng-class="{'active': selectTab==1}" ng-click="checkTab(1)">
+				已预约
+			</div>
+		</div>
+		<div class="tab-content">
+			<div class="item-content" ng-show="selectTab==0">
+				<div class="order-tab" ng-repeat="order in allBookings">
+					<p>
+						<span>预约编号：</span>
+						<span ng-bind="order.refNo"></span>
+					</p>
+					<p>
+						<span>预约诊所：</span>
+						<span ng-bind="order.clinicName"></span>
+					</p>
+					<p>
+						<span>预约时间：</span>
+						<span ng-bind="order.bookingDate"></span>
+					</p>
+					<p>
+						<span>预约医生：</span>
+						<span ng-bind="order.doctorName"></span>
+					</p>
+					<p class="text-right" ng-show="order.status==1">
+						<button class="btn-cancel" ng-click="cancelOrder(order.id)">取消订单</button>
+					</p>
+				</div>
+			</div>
+			<div class="item-content" ng-show="selectTab==1">
+				<div class="order-tab" ng-repeat="order in doneBookings">
+					<p>
+						<span>预约编号：</span>
+						<span ng-bind="order.refNo"></span>
+					</p>
+					<p>
+						<span>预约诊所：</span>
+						<span ng-bind="order.clinicName"></span>
+					</p>
+					<p>
+						<span>预约时间：</span>
+						<span ng-bind="order.bookingDate"></span>
+					</p>
+					<p>
+						<span>预约医生：</span>
+						<span ng-bind="order.doctorName"></span>
+					</p>
+					<p class="text-right" ng-show="order.status==1">
+						<button class="btn-cancel">取消订单</button>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

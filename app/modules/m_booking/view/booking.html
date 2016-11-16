@@ -1,0 +1,89 @@
+<div ng-controller="ClinicBookingCtrl" class="clinicBooking-page">
+	<form name="clinicBookingForm">
+		<div class="booking-ZJ" ng-show="type=='ZJ'">
+			<p>
+				<span ng-bind="doctor.doctorName"></span>
+				<span>医生</span>
+			</p>
+			<p ng-bind="doctor.description"></p>
+			<div class="doctor-info">
+				<div class="info-left">
+
+				</div>
+				<div class="info-middle">
+					<img src="{{doctor.avatarUrl}}">
+				</div>
+				<div class="info-right">
+					<p>
+						<span>权威专家</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="booking-PT" ng-show="type=='PT'">
+			<img src="app/images/icon_avatar.png">
+		</div>
+		<div class="cell-group">
+			<div class="cell">
+				<div class="left-box icon-date">
+					预约日期
+				</div>
+				<div class="middle-box" ng-show="type=='PT'">
+					<input type="date" name="booking_date">
+				</div>
+				<div class="middle-box" ng-show="type=='ZJ'" ng-bind="date">
+					
+				</div>
+			</div>
+			<div class="cell">
+				<div class="left-box icon-time">
+					预约时间
+				</div>
+				<div class="middle-box" ng-show="type=='PT'">
+					<select name="time" ng-model="clinicBooking.time" ng-options="time as time for time in timeList">
+					</select>
+				</div>
+				<div class="middle-box" ng-show="type=='ZJ'" ng-bind="time">
+
+				</div>
+			</div>
+			<div class="cell">
+				<div class="left-box icon-type">
+					预约项目
+				</div>
+				<div class="middle-box" ng-bind="serviceName">
+
+				</div>
+			</div>
+			<div class="cell">
+				<div class="left-box icon-name">
+					宝宝姓名
+				</div>
+				<div class="middle-box">
+					<select ng-model="selectedChild" ng-options="child as child.childName for child in childs" required>
+
+					</select>
+				</div>
+			</div>
+			<div class="cell">
+				<div class="left-box icon-age">
+					宝宝年龄
+				</div>
+				<div class="middle-box" ng-bind="selectedChild.age">
+
+				</div>
+			</div>
+			<div class="cell">
+				<div class="left-box icon-phone">
+					联系电话
+				</div>
+				<div class="middle-box">
+					<input type="tel" name="mobile" minlength="11" maxlength="11" placeholder="请输入联系方式" ng-model="clinicBooking.mobile" required>
+				</div>
+			</div>
+		</div>
+		<div class="btn-dock">
+			<button class="btn btn-primary" ng-disabled="clinicBookingForm.$invalid" ng-click="submitForm()">确定预约</button>
+		</div>
+	</form>
+</div>

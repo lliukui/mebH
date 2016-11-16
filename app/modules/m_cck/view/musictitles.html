@@ -1,0 +1,21 @@
+<div ng-controller="musictitlesCtrl" class="musictitles-page">
+	<div class="fixed-nav">
+		<div id="musictitlesNavScroll" class="musictitles-nav">
+			<div class="scroll">
+				<ul>
+					<li ng-repeat="music in musicList" ng-click="checkNav(music.categoryName)" ng-bind="music.categoryName" ng-class="{'selected': selectedCategory==music.categoryName || selectedCategory==$index}"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="music-tab">
+		<div class="music-item" ng-repeat="music in musicList" ng-show="selectedCategory==music.categoryName || selectedCategory==$index">
+			<div class="item-musicCollection" ng-repeat="musicCollection in music.musicCollection">
+				<div class="musicCollection-info" ng-click="goMusic(musicCollection.collectionId)">
+					<img src="{{musicCollection.imageUrl}}">
+					<p ng-bind="musicCollection.collectionName"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

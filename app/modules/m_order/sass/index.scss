@@ -1,0 +1,24 @@
+.orderList-page{
+	.tab-box{
+		.tab-header{
+
+		}
+		.tab-content{
+			.order-tab{
+				background-color: #fff;
+				margin-top: px2rem(10px);
+				padding: px2rem(10px);
+				.text-right{
+					text-align: right;
+				}
+				.btn-cancel{
+					padding: px2rem(5px) px2rem(10px);
+					background-color: #F4D020;
+					    border: none;
+    					color: #fff;
+    					border-radius: 5px;
+				}
+			}
+		}
+	}
+}

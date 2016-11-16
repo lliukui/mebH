@@ -1,0 +1,661 @@
+.cck-page{
+	.tab-list{
+		background-color: #fff;
+		.item-tab{
+			padding: px2rem(10px);
+			border-bottom: px2rem(1px) solid #E6E6E6;
+		}
+	}
+}
+.ccktitles-page{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .fixed-nav{
+        background: #efefef;
+        width: 100%;
+        position: fixed;
+        top: px2rem(44px);
+        border-bottom: px2rem(1px) solid #DEDEDE;
+        .search-tab{
+            background-color: #fff;
+            margin: px2rem(5px) px2rem(10px);
+            border-radius: px2rem(5px);
+            padding: px2rem(10px);
+            border: px2rem(1px) solid #D0D0D0;
+        }
+        #ccktitlesNavScroll{
+            .scroll{
+                width: auto;
+                height: 100%;
+            }
+        }
+        .scroll{
+            position: absolute;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-text-size-adjust: none;
+            -moz-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+            -o-text-size-adjust: none;
+            text-size-adjust: none;
+        }
+        .ccktitles-nav{
+            background: #fff;
+            height: px2rem(40px);
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            ul{
+                width: px2rem(500px);
+            }
+            ul:after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+            li{
+                float: left;
+                list-style-type: none;
+                margin: 0 px2rem(10px);
+                padding: px2rem(10px) px2rem(5px);
+                &.selected{
+                    color: $color-light;
+                    border-bottom: $color-light px2rem(4px) solid;
+                }
+            }
+        }
+    }
+    .cck-tab{
+        padding-top: px2rem(90px);
+        background-color: #fff;
+        margin-bottom: px2rem(20px);
+        .cck-item{
+            .cck-info{
+                clear: both;
+                .fitst-title{
+                    padding: px2rem(10px);
+                }
+                .second-tab{
+                    border-top: px2rem(1px) solid #DEDEDE;
+                    p{
+                        padding: px2rem(10px) 0;
+                        text-align: center;
+                        display: inline-block;
+                        width: 33.3%;
+                        border-right: px2rem(1px) solid #DEDEDE;
+                        border-bottom: px2rem(1px) solid #DEDEDE;
+                        float: left;
+                    }
+                }
+            }
+        }
+    }
+}
+.cckinfo-page{
+    $img-width: 120px;
+    .cckinfo-item{
+        background: #fff;
+        display: flex;
+        .item-left{
+            padding: px2rem(10px);
+            width: px2rem($img-width);
+            img{
+                width: 100%;
+            }
+        }
+        .item-right{
+            padding: px2rem(10px) px2rem(10px) px2rem(10px) 0;
+            flex: 1;
+            &.bb-gray{
+                border-bottom: px2rem(1px) solid #ADA2A2;
+            }
+            .cckinfo-title{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -o-text-overflow: ellipsis;
+                white-space: nowrap;
+                width: px2rem(180px);
+            }
+        }
+    }
+}
+.detail-page{
+    height: 100%;
+    .show-content{
+        width: 100%;
+        height: 99%;
+    }
+}
+.searchcck-page{
+    .search-nav{
+        position: fixed;
+        height: px2rem(44px);
+        background-color: #F4D020;
+        width: 100%;
+        .search-input{
+            width: 80%;
+            float: left;
+            padding: px2rem(6px) 0 px2rem(6px) px2rem(10px);
+            input{
+                padding-left: px2rem(10px);
+                border-radius: px2rem(5px);
+                background-color: #fff;
+            }
+            .icon_clear{
+                position: absolute;
+                background: url('images/icon_clear.png') no-repeat;
+                background-size: px2rem(15px) px2rem(15px);
+                width: px2rem(25px);
+                height: px2rem(25px);
+                padding: 0 px2rem(5px);
+                top: px2rem(8px);
+                right: 20%;
+                background-position: px2rem(5px) px2rem(5px);
+            }
+        }
+        .search-btn{
+            width: 20%;
+            float: right;
+            height: 100%;
+            p{
+                height: 100%;
+                line-height: px2rem(44px);
+                text-align: center;
+                color: #fff;
+            }
+        }
+    }
+    .search-results{
+        padding-top: px2rem(44px);
+        clear: both;
+        $img-width: 120px;
+        .cckinfo-item{
+            background: #fff;
+            display: flex;
+            .item-left{
+                padding: px2rem(10px);
+                width: px2rem($img-width);
+                img{
+                    width: 100%;
+                }
+            }
+            .item-right{
+                padding: px2rem(10px) px2rem(10px) px2rem(10px) 0;
+                flex: 1;
+                &.bb-gray{
+                    border-bottom: px2rem(1px) solid #ADA2A2;
+                }
+                .cckinfo-title{
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    -o-text-overflow: ellipsis;
+                    white-space: nowrap;
+                    width: px2rem(180px);
+                }
+            }
+        }
+    }
+}
+.recipes-page{
+    display: flex;
+    flex-direction: column;
+    .fixed-nav{
+        background: #efefef;
+        width: 100%;
+        position: fixed;
+        top: px2rem(44px);
+        border-bottom: px2rem(1px) solid #DEDEDE;
+        .search-tab{
+            background-color: #fff;
+            margin: px2rem(5px) px2rem(10px);
+            border-radius: px2rem(5px);
+            padding: px2rem(10px);
+            border: px2rem(1px) solid #D0D0D0;
+        }
+        #recipesNavScroll{
+            .scroll{
+                width: auto;
+                height: 100%;
+            }
+        }
+        .scroll{
+            position: absolute;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-text-size-adjust: none;
+            -moz-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+            -o-text-size-adjust: none;
+            text-size-adjust: none;
+        }
+        .recipes-nav{
+            background: #fff;
+            height: px2rem(40px);
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            ul{
+                width: px2rem(500px);
+            }
+            ul:after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+            li{
+                float: left;
+                list-style-type: none;
+                margin: 0 px2rem(10px);
+                padding: px2rem(10px) px2rem(5px);
+                &.selected{
+                    color: $color-light;
+                    border-bottom: $color-light px2rem(4px) solid;
+                }
+            }
+        }
+    }
+    .recipes-tab{
+        padding-top: px2rem(90px);
+        background-color: #fff;
+        margin-bottom: px2rem(20px);
+        .recipes-item{
+            .recipes-info{
+                .first-title{
+                    padding: px2rem(10px);
+                    border-bottom: px2rem(1px) solid #efefef;
+                }
+                .nrInfo{
+                    border-bottom: px2rem(1px) solid #efefef;
+                    display: flex;
+                    .nrInfo-img{
+                        padding: px2rem(10px);
+                        width: px2rem(120px);
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .nrInfo-content{
+                        flex: 1;
+                        padding: px2rem(10px) px2rem(10px) px2rem(10px) 0;
+                    }
+                }
+            }
+        }
+    }
+}
+.searchRecipes-page{
+    .search-nav{
+        position: fixed;
+        height: px2rem(44px);
+        background-color: #F4D020;
+        width: 100%;
+        .search-input{
+            width: 80%;
+            float: left;
+            padding: px2rem(6px) 0 px2rem(6px) px2rem(10px);
+            input{
+                padding-left: px2rem(10px);
+                border-radius: px2rem(5px);
+                background-color: #fff;
+            }
+            .icon_clear{
+                position: absolute;
+                background: url('images/icon_clear.png') no-repeat;
+                background-size: px2rem(15px) px2rem(15px);
+                width: px2rem(25px);
+                height: px2rem(25px);
+                padding: 0 px2rem(5px);
+                top: px2rem(8px);
+                right: 20%;
+                background-position: px2rem(5px) px2rem(5px);
+            }
+        }
+        .search-btn{
+            width: 20%;
+            float: right;
+            height: 100%;
+            p{
+                height: 100%;
+                line-height: px2rem(44px);
+                text-align: center;
+                color: #fff;
+            }
+        }
+    }
+    .search-results{
+        padding-top: px2rem(44px);
+        background: #fff;
+        .nrInfo-item{
+            display: flex;
+            &.bb-gray{
+                border-bottom: px2rem(1px) solid #efefef;
+            }
+            .item-left{
+                width: px2rem(120px);
+                padding: px2rem(10px);
+                img{
+                    width: 100%;
+                }
+            }
+            .item-right{
+                flex: 1;
+                padding: px2rem(10px) px2rem(10px) px2rem(10px) 0;
+            }
+        }
+    }
+}
+.food-page{
+    .search-tab{
+        background-color: #fff;
+        margin: px2rem(5px) px2rem(10px);
+        padding: px2rem(10px);
+        border-radius: px2rem(5px);
+        border: px2rem(1px) solid #D0D0D0;
+    }
+    .food-tab{
+        background-color: #fff;
+        .food-item{
+            display: flex;
+            text-align: center;
+            .item-left{
+                flex: 1;
+                border-right: px2rem(1px) solid #efefef;
+            }
+            .item-middle{
+                flex: 1;
+                border-right: px2rem(1px) solid #efefef;
+            }
+            .item-right{
+                flex: 1;
+            }
+            .bb-gray{
+                border-bottom: px2rem(1px) solid #efefef;
+            }
+            .staple-food{
+                background: url('images/icon_eat.png') no-repeat;
+                background-size: px2rem(300px) px2rem(30px);
+                width: px2rem(30px);
+                height: px2rem(30px);
+                margin: px2rem(20px) auto;
+            }
+            .vegetables{
+                background: url('images/icon_eat.png') no-repeat;
+                background-size: px2rem(300px) px2rem(30px);
+                width: px2rem(30px);
+                height: px2rem(30px);
+                margin: px2rem(20px) auto;
+                background-position-x: px2rem(-33px);
+            }
+            .fruits{
+                background: url('images/icon_eat.png') no-repeat;
+                background-size: px2rem(300px) px2rem(30px);
+                width: px2rem(30px);
+                height: px2rem(30px);
+                margin: px2rem(20px) auto;
+                background-position-x: px2rem(-65px);
+            }
+            .snacks{
+                background: url('images/icon_eat.png') no-repeat;
+                background-size: px2rem(300px) px2rem(30px);
+                width: px2rem(30px);
+                height: px2rem(30px);
+                margin: px2rem(20px) auto;
+                background-position-x: px2rem(-99px);
+            }
+            .meat{
+                background: url('images/icon_eat.png') no-repeat;
+                background-size: px2rem(300px) px2rem(30px);
+                width: px2rem(30px);
+                height: px2rem(30px);
+                margin: px2rem(20px) auto;
+                background-position-x: px2rem(-131px);
+            }
+            .soymilk{
+                background: url('images/icon_eat.png') no-repeat;
+                background-size: px2rem(300px) px2rem(30px);
+                width: px2rem(30px);
+                height: px2rem(30px);
+                margin: px2rem(20px) auto;
+                background-position-x: px2rem(-165px);
+            }
+            .seafood{
+                background: url('images/icon_eat.png') no-repeat;
+                background-size: px2rem(300px) px2rem(30px);
+                width: px2rem(30px);
+                height: px2rem(30px);
+                margin: px2rem(20px) auto;
+                background-position-x: px2rem(-195px);
+            }
+            .flavoring{
+                background: url('images/icon_eat.png') no-repeat;
+                background-size: px2rem(300px) px2rem(30px);
+                width: px2rem(30px);
+                height: px2rem(30px);
+                margin: px2rem(20px) auto;
+                background-position-x: px2rem(-230px);
+            }
+            .herbs{
+                background: url('images/icon_eat.png') no-repeat;
+                background-size: px2rem(300px) px2rem(30px);
+                width: px2rem(30px);
+                height: px2rem(30px);
+                margin: px2rem(20px) auto;
+                background-position-x: px2rem(-263px);
+            }
+            .food-title{
+                padding-bottom: px2rem(10px);
+            }
+        }
+    }
+}
+.foodtitles-page{
+    .food-tab{
+        background-color: #fff;
+        .food-item{
+            display: flex;
+            .item-left{
+                width: px2rem(120px);
+                padding: px2rem(10px);
+                img{
+                    width: 100%;
+                }
+            }
+            .item-right{
+                flex: 1;
+                padding: px2rem(10px) px2rem(10px) px2rem(10px) 0;
+                &.bb-gray{
+                    border-bottom: px2rem(1px) solid #efefef;
+                }
+            }
+        }
+    }
+}
+.searchfood-page{
+    .search-nav{
+        position: fixed;
+        height: px2rem(44px);
+        background-color: #F4D020;
+        width: 100%;
+        .search-input{
+            width: 80%;
+            float: left;
+            padding: px2rem(6px) 0 px2rem(6px) px2rem(10px);
+            input{
+                padding-left: px2rem(10px);
+                border-radius: px2rem(5px);
+                background-color: #fff;
+            }
+            .icon_clear{
+                position: absolute;
+                background: url('images/icon_clear.png') no-repeat;
+                background-size: px2rem(15px) px2rem(15px);
+                width: px2rem(25px);
+                height: px2rem(25px);
+                padding: 0 px2rem(5px);
+                top: px2rem(8px);
+                right: 20%;
+                background-position: px2rem(5px) px2rem(5px);
+            }
+        }
+        .search-btn{
+            width: 20%;
+            float: right;
+            height: 100%;
+            p{
+                height: 100%;
+                line-height: px2rem(44px);
+                text-align: center;
+                color: #fff;
+            }
+        }
+    }
+    .search-results{
+        padding-top: px2rem(44px);
+        background-color: #fff;
+        .food-item{
+            display: flex;
+            .item-left{
+                width: px2rem(120px);
+                padding: px2rem(10px);
+                img{
+                    width: 100%;
+                }
+            }
+            .item-right{
+                flex: 1;
+                padding: px2rem(10px) px2rem(10px) px2rem(10px) 0;
+                &.bb-gray{
+                    border-bottom: px2rem(1px) solid #efefef;
+                }
+            }
+        }
+    }
+}
+.musictitles-page{
+    background: #fff;
+    .fixed-nav{
+        width: 100%;
+        position: fixed;
+        top: px2rem(44px);
+        #musictitlesNavScroll{
+            .scroll{
+                width: auto;
+                height: 100%;
+            }
+        }
+        .scroll{
+            position: absolute;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-text-size-adjust: none;
+            -moz-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+            -o-text-size-adjust: none;
+            text-size-adjust: none;
+        }
+        .musictitles-nav{
+            background: #fff;
+            height: px2rem(40px);
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            ul{
+                width: px2rem(500px);
+            }
+            ul:after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+            li{
+                float: left;
+                list-style-type: none;
+                margin: 0 px2rem(10px);
+                padding: px2rem(10px) px2rem(5px);
+                &.selected{
+                    color: $color-light;
+                    border-bottom: $color-light px2rem(4px) solid;
+                }
+            }
+        }
+    }
+    .music-tab{
+        padding-top: px2rem(40px);
+        .music-item{
+            .item-musicCollection{
+                .musicCollection-info{
+                    padding: px2rem(10px);
+                    width: 50%;
+                    float: left;
+                    text-align: center;
+                    img{
+                        width: 100%;
+                    }
+                    p{
+
+                    }
+                }
+            }
+        }
+    }
+}
+.musicinfo-page{
+    padding-bottom: px2rem(44px);
+    .musicinfo-tab{
+        background-color: #fff;
+        .musicinfo-item{
+            padding: px2rem(10px);
+            &.bb-gray{
+                border-bottom: px2rem(1px) solid #efefef;
+            }
+        }
+    }
+    .fixed-footer{
+        position: fixed;
+        bottom: 0;
+        height: px2rem(44px);
+        width: 100%;
+        background-color: #C3BEBE;
+        .audio-info{
+            display: flex;
+            color: #fff;
+            .info-left{
+                width: 80%;
+                padding: px2rem(10px);
+                line-height: px2rem(44px);
+            }
+            .info-right{
+                width: 20%;
+                p{
+                    line-height: px2rem(44px);
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

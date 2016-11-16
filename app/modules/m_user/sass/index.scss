@@ -1,0 +1,137 @@
+.user-page{
+	.child-info{
+		margin-top: px2rem(10px);
+		background-color: #FAFBDF;
+		color: #F6DC65;
+		.info-img{
+			padding: px2rem(10px);
+			width: px2rem(100px);
+			img{
+				width: 100%;
+			}
+		}
+		.info-content{
+			padding: px2rem(10px) px2rem(10px) px2rem(10px) 0;
+		}
+	}
+	.user-item{
+		margin-top: px2rem(10px);
+		text-align: center;
+		.user-child{
+			background-color: #B2D9AC;
+			color: #56A652;
+		}
+		.user-consultation{
+			background-color: #AEDBF6;
+			color: #62B1D8;
+		}
+		.user-order{
+			background-color: #F5BBC6;
+			color: #E693A2;
+		}
+		img{
+			width: px2rem(50px);
+			height: px2rem(50px);
+			margin: px2rem(10px) 0;
+		}
+		p{
+			padding-bottom: px2rem(10px);
+		}
+	}
+}
+.childlist-page{
+	.child-tab{
+		.child-item{
+			margin-top: px2rem(10px);
+			background-color: #fff;
+			.item-img{
+				padding: px2rem(10px);
+				width: px2rem(100px);
+				height: px2rem(100px);
+				img{
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.item-content{
+				padding: px2rem(10px) 0px;
+			}
+			.item-btn{
+				padding: px2rem(50px) px2rem(10px) 0;
+				.btn{
+					color: #fff;
+					background-color: #76d9db;
+				}
+			}
+
+		}
+	}
+	.btn-dock{
+		margin: px2rem(20px) 0;
+	}
+}
+.createChild-page{
+	.upload-img{
+		background-color: inherit;
+		padding: 0;
+		.add-icon{
+			background-color: #fff;
+			width: 100%;
+			margin-left: 0;
+			margin-bottom: 0;
+			.text{
+				.text-sm{
+					font-size: px2rem(14px);
+				}
+			}
+		}
+		.img-item{
+			width: 100%;
+			margin-left: 0;
+			margin-bottom: 0;
+		}
+	}
+	.child-info{
+		padding: px2rem(10px);
+		.info-img{
+			width: px2rem(100px);
+		}
+		.info-content{
+			.content-left{
+				width: 60%;
+				padding-left: px2rem(10px);
+			}
+			.content-right{
+				width: 40%;
+				padding-left: px2rem(10px);
+			}
+		}
+	}
+	input,select{
+		padding: 0 px2rem(10px);
+		width: 100%;
+		height: px2rem(30px);
+		background-color: #fff;
+		border: none;
+		margin-bottom: px2rem(10px);
+		border-radius: px2rem(5px);
+	}
+	.other-info{
+		padding: 0 px2rem(10px);
+	}
+}
+.updateChild-page{
+	.child-info{
+		padding: px2rem(10px);
+		background-color: #fff;
+		margin: px2rem(10px);
+		img{
+			width: px2rem(100px);
+		}
+	}
+	.update-info{
+		padding: px2rem(10px);
+		background-color: #fff;
+		margin: px2rem(10px);
+	}
+}

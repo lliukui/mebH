@@ -1,0 +1,22 @@
+<div ng-controller="musicinfoCtrl" class="musicinfo-page">
+	<div class="musicinfo-tab">
+		<audio id="audio">
+            <source src="{{selectMusicUrl}}" type="audio/ogg" />
+            <source src="{{selectMusicUrl}}" type="audio/mpeg" />
+        </audio>
+		<div class="musicinfo-item" ng-repeat="musicinfo in musicinfoList" ng-class="{'bb-gray': $last==false}">
+			<div ng-bind="musicinfo.name" ng-click="playMusic(musicinfo)">
+			</div>
+		</div>
+	</div>
+	<div class="fixed-footer">
+		<div class="audio-info">
+			<div class="info-left" ng-bind="selectMusicName">
+			</div>
+			<div class="info-right">
+				<p ng-show="showInfo&&showPlay" ng-click="musicPlay()">开始</p>
+				<p ng-show="showInfo&&(!showPlay)" ng-click="musicSuspend()">暂停</p>
+			</div>
+		</div>
+	</div>
+</div>

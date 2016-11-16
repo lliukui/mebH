@@ -1,0 +1,316 @@
+.clinic-page{
+	padding: px2rem(10px);
+	.clinic-info{
+		.clinicName{
+			font-size: px2rem(16px);
+		}
+		.clinic-img{
+			padding: 0 px2rem(10px) px2rem(5px) 0px;
+			float: left;
+			img{
+				width: px2rem(140px);
+			}
+		}
+		.tel{
+			color: #38B4BA;
+			.icon-phone{
+				background: url('images/icon_iphone.png') no-repeat;
+				background-size: px2rem(15px) px2rem(11px);
+				background-position-y: px2rem(3px);
+				padding-left: px2rem(18px);
+			}
+		}
+	}
+	.icon-address{
+		background: url('images/icon_map.png') no-repeat;
+		background-size: px2rem(12px) px2rem(15px);
+		padding: px2rem(10px) 0 px2rem(10px) px2rem(15px);
+		background-position-y: px2rem(11px);
+		color: #38B4BA;
+	}
+	.service-tab{
+		.service-item{
+			display: inline-block;
+			margin: px2rem(10px) px2rem(10px) 0 0;
+			border: 1px solid #fff;
+			padding: px2rem(10px);
+			border-radius: px2rem(5px);
+			img{
+				width: px2rem(50px);
+			}
+			p{
+				text-align: center;
+			}
+			&.active{
+				border: 1px solid #F4D020;
+			}
+		}
+	}
+	.btn-dock{
+		margin-top: px2rem(20px);
+		.btn-pt{
+			background-color: #7ACACC;
+			color: #fff;
+			&:disabled{
+				background-color: #d6d6d6;
+				color: rgba(0,0,0,0.4);
+			}
+		}
+		.btn-zj{
+			background-color: #F5BBC6;
+			color: #fff;
+			&:disabled{
+				background-color: #d6d6d6;
+				color: rgba(0,0,0,0.4);
+			}
+		}
+	}
+}
+.clinicBooking-page{
+	.booking-PT{
+		text-align: center;
+		padding: px2rem(10px);
+		img{
+			width: px2rem(90px);
+		}
+	}
+	.booking-ZJ{
+		padding: px2rem(10px);
+		.doctor-info{
+			padding-top: px2rem(10px);
+			display: flex;
+			.info-left{
+				flex: 1;
+			}
+			.info-middle{
+				img{
+					width: px2rem(90px);
+					height: px2rem(90px);
+					border-radius: 50%;
+				}
+			}
+			.info-right{
+				flex: 1;
+				p{
+					text-align: right;
+					span{
+						padding: px2rem(5px);
+						background-color: #F4D020;
+						border-radius: px2rem(5px);
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+	.cell-group{
+		select,input{
+			width: 100%;
+			border: none;
+			border-width:0px;
+		    border-top-style: none; 
+		    border-right-style: none; 
+		    border-left-style: none; 
+		    border-bottom-style: none;
+		}
+		.icon-date{
+			background: url('images/icon_date.png') no-repeat;
+			background-size: px2rem(15px) px2rem(15px);
+			padding-left: px2rem(20px);
+			background-position-y: px2rem(16px);
+		}
+		.icon-time{
+			background: url('images/icon_time.png') no-repeat;
+			background-size: px2rem(15px) px2rem(15px);
+			padding-left: px2rem(20px);
+			background-position-y: px2rem(16px);
+		}
+		.icon-type{
+			background: url('images/icon_type.png') no-repeat;
+			background-size: px2rem(15px) px2rem(15px);
+			padding-left: px2rem(20px);
+			background-position-y: px2rem(16px);
+		}
+		.icon-name{
+			background: url('images/icon_name.png') no-repeat;
+			background-size: px2rem(15px) px2rem(15px);
+			padding-left: px2rem(20px);
+			background-position-y: px2rem(16px);
+		}
+		.icon-age{
+			background: url('images/icon_birthday.png') no-repeat;
+			background-size: px2rem(15px) px2rem(15px);
+			padding-left: px2rem(20px);
+			background-position-y: px2rem(16px);
+		}
+		.icon-phone{
+			background: url('images/icon_phone.png') no-repeat;
+			background-size: px2rem(15px) px2rem(15px);
+			padding-left: px2rem(20px);
+			background-position-y: px2rem(16px);
+		}
+	}
+	.btn-dock{
+		padding-bottom: px2rem(20px);
+	}
+}
+.selectClinic-page{
+	.city-tab{
+		position: fixed;
+		top: px2rem(44px);
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.6);
+		.tab-grid{
+			max-height: px2rem(250px);
+			background-color: #fff;
+			display: flex;
+			.grid-left{
+				overflow-x: hidden;
+				overflow-y: auto;
+				width: 30%;
+				border-right: px2rem(1px) solid #efefef;
+				.left-state{
+					padding: px2rem(5px);
+					&.bb-gray{
+						border-bottom: px2rem(1px) solid #efefef;
+					}
+					&.selected{
+						color: red;
+					}
+				}
+			}
+			.grid-right{
+				overflow-x: hidden;
+				overflow-y: auto;
+				width: 70%;
+				.right-city{
+					padding: px2rem(5px);
+					&.bb-gray{
+						border-bottom: px2rem(1px) solid #efefef;
+					}
+					&.selected{
+						color: red;
+					}
+				}
+			}
+		}
+	}
+	.clinic-tab{
+		.clinic-item{
+			padding: px2rem(10px);
+			background-color: #fff;
+			margin-top: px2rem(10px);
+			.item-grid{
+				display: flex;
+				.item-left{
+					width: 40%;
+					img{
+						width: 100%;
+					}
+				}
+				.item-right{
+					padding-left: px2rem(10px);
+					width: 60%;
+				}
+			}
+		}
+	}
+}
+.selectDoctor-page{
+	.doctor-tab{
+		.doctor-item{
+			margin-top: px2rem(10px);
+			background-color: #fff;
+			display: flex;
+			.item-left{
+				width: px2rem(120px);
+				height: px2rem(120px);
+				padding: px2rem(10px);
+				img{
+					border-radius: 50%;
+					width: 100%;
+					height: px2rem(100px)
+				}
+			}
+			.item-right{
+				flex: 1;
+				padding: px2rem(10px) px2rem(10px) px2rem(10px) 0;
+			}
+		}
+	}
+    .date-item{
+    	margin: px2rem(20px) 0;
+    	display: flex;
+    	background-color: #fff;
+    	.item-left{
+    		width: px2rem(50px);
+    		padding: px2rem(10px) 0;
+    		text-align: center;
+    		border-right: px2rem(1px) solid #efefef;
+    	}
+    	.item-right{
+    		flex: 1;
+    		.optional{
+    			margin: 0 px2rem(10px);
+    			background-color: #64e5c6;
+    		}
+    		.not-optional{
+    			margin: 0 px2rem(10px);
+    			background-color: #dfdfdf;
+    		}
+    	}
+    }
+    .btn-dock{
+    	margin-bottom: px2rem(20px);
+    }
+    #dateNavScroll{
+	    .scroll{
+	        width: auto;
+	        height: 100%;
+	    }
+	}
+	.scroll{
+	    position: absolute;
+	    -webkit-transform: translateZ(0);
+	    -moz-transform: translateZ(0);
+	    -ms-transform: translateZ(0);
+	    -o-transform: translateZ(0);
+	    transform: translateZ(0);
+	    -webkit-touch-callout: none;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    -webkit-text-size-adjust: none;
+	    -moz-text-size-adjust: none;
+	    -ms-text-size-adjust: none;
+	    -o-text-size-adjust: none;
+	    text-size-adjust: none;
+	}
+	.date-nav{
+	    background: #fff;
+	    height: px2rem(295px);
+	    position: relative;
+	    width: 100%;
+	    overflow: hidden;
+	    ul{
+	        
+	    }
+	    ul:after{
+	        content: '';
+	        display: block;
+	        clear: both;
+	    }
+	    li{
+	        float: left;
+	        list-style-type: none;
+	        margin: 0 px2rem(10px);
+	        padding: px2rem(10px) px2rem(5px);
+	        &.selected{
+	            color: $color-light;
+	            border-bottom: $color-light px2rem(4px) solid;
+	        }
+	    }
+	}
+}

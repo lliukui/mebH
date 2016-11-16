@@ -1,0 +1,74 @@
+.home-page{
+    .child-info{
+        background-color: #fff;
+        padding: px2rem(10px);
+        display: flex;
+        .info-left{
+            flex: 1;
+            p{
+                padding-top: px2rem(2px);
+                .icon-age{
+                    background: url('images/icon_age.png') no-repeat;
+                    background-size: px2rem(15px) px2rem(15px);
+                    padding-left: px2rem(18px);
+                }
+                .icon-birthday{
+                    background: url('images/icon_birthday.png') no-repeat;
+                    background-size: px2rem(15px) px2rem(15px);
+                    padding-left: px2rem(18px);
+                }
+                .icon-height{
+                    background: url('images/icon_height.png') no-repeat;
+                    background-size: px2rem(15px) px2rem(15px);
+                    padding-left: px2rem(18px);
+                }
+                .icon-weight{
+                    background: url('images/icon_weight.png') no-repeat;
+                    background-size: px2rem(15px) px2rem(15px);
+                    padding-left: px2rem(18px);
+                }
+            }
+        }
+        .info-right{
+            flex: 1;
+            p{
+                background-color: #EEEEEE;
+                margin-bottom: px2rem(5px);
+                padding: px2rem(2px);
+                text-align: center;
+                border-radius: px2rem(5px);
+            }
+        }
+    }
+    .h-channel{
+        padding-bottom: px2rem(10px);
+        ul{
+            display: flex;
+        }
+        ul li{
+            list-style: none;
+            background: #fff;
+            margin: px2rem(10px);
+            font-size: px2rem(map_get($map-font-size, m));
+            text-align: center;
+            flex: 1;
+            a{
+                display: block;
+                padding-top: px2rem(100px);
+                padding-bottom: px2rem(10px);
+                &.h-findDoc-a{
+                    background: #7ACACC url('images/icon_chileBooking.png') no-repeat 50% px2rem(10px);
+                    background-size: px2rem(80px) px2rem(80px);
+                }
+                &.h-booking-a{
+                    background: #F5BBC6 url('images/icon_consultation.png') no-repeat 50% px2rem(10px);
+                    background-size: px2rem(80px) px2rem(80px);
+                }
+            }
+            span{
+                font-size: px2rem(map_get($map-font-size, s));
+                color: #fff;
+            }
+        }
+    }
+}

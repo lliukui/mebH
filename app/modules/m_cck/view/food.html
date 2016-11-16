@@ -1,0 +1,49 @@
+<div ng-controller="foodCtrl" class="food-page">
+	<div class="search-tab" ng-click="searchfood()">
+		输入食物名称搜索
+	</div>
+	<div class="food-tab">
+		<div class="food-item">
+			<div class="item-left bb-gray" ng-click="goFoodtitles('1')">
+				<p class="staple-food"></p>
+				<p class="food-title">主食</p>
+			</div>
+			<div class="item-middle bb-gray" ng-click="goFoodtitles('5')">
+				<p class="vegetables"></p>
+				<p class="food-title">蔬菜菌类</p>
+			</div>
+			<div class="item-right bb-gray" ng-click="goFoodtitles('3')">
+				<p class="fruits"></p>
+				<p class="food-title">水果</p>
+			</div>
+		</div>
+		<div class="food-item">
+			<div class="item-left bb-gray" ng-click="goFoodtitles('9')">
+				<p class="snacks"></p>
+				<p class="food-title">零食饮料</p>
+			</div>
+			<div class="item-middle bb-gray" ng-click="goFoodtitles('4')">
+				<p class="meat"></p>
+				<p class="food-title">肉蛋类</p>
+			</div>
+			<div class="item-right bb-gray" ng-click="goFoodtitles('8')">
+				<p class="soymilk"></p>
+				<p class="food-title">豆乳类</p>
+			</div>
+		</div>
+		<div class="food-item">
+			<div class="item-left" ng-click="goFoodtitles('2')">
+				<p class="seafood"></p>
+				<p class="food-title">水产海鲜</p>
+			</div>
+			<div class="item-middle" ng-click="goFoodtitles('7')">
+				<p class="flavoring"></p>
+				<p class="food-title">调味料</p>
+			</div>
+			<div class="item-right" ng-click="goFoodtitles('6')">
+				<p class="herbs"></p>
+				<p class="food-title">补品草药</p>
+			</div>
+		</div>
+	</div>
+</div>
