@@ -1,0 +1,62 @@
+<div ng-controller="addGrowthCtrl" class="addGrowth-page">
+	<div class="cell-group">
+		<div class="cell">
+			<div class="left-box">
+				身高
+			</div>
+			<div class="middle-box">
+				<input type="number" ng-model="height" placeholder="请输入身高">
+			</div>
+			<div class="right-box">
+				CM
+			</div>
+		</div>
+		<div class="cell">
+			<div class="left-box">
+				体重
+			</div>
+			<div class="middle-box">
+				<input type="number" ng-model="weight" placeholder="请输入体重">
+			</div>
+			<div class="right-box">
+				斤
+			</div>
+		</div>
+		<div class="cell">
+			<div class="left-box">
+				腿长
+			</div>
+			<div class="middle-box">
+				<input type="number" ng-model="leg_length" placeholder="请输入腿长">
+			</div>
+			<div class="right-box">
+				CM
+			</div>
+		</div>
+		<div class="cell">
+			<div class="left-box">
+				三围
+			</div>
+			<div class="middle-box">
+				<input type="number" ng-model="head_circum" placeholder="头围">
+			</div>
+			<div class="middle-box">
+				<input type="number" ng-model="breast_circum" placeholder="胸围">
+			</div>
+			<div class="middle-box">
+				<input type="number" ng-model="waist_circum" placeholder="腹围">
+			</div>
+		</div>
+		<div class="cell">
+			<div class="left-box">
+				测量时间
+			</div>
+			<div class="middle-box">
+				<div calendar-widget></div>
+			</div>
+		</div>
+	</div>
+	<div class="btn-dock">
+		<button ng-click="addGrowth()" class="btn btn-primary">保存</button>
+	</div>
+</div>

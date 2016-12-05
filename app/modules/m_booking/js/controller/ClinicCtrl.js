@@ -1,14 +1,10 @@
 app.controller('clinicCtrl',['$scope','$rootScope','dialog','ClinicService','$state','StorageConfig','$stateParams',function($scope,$rootScope,dialog,ClinicService,$state,StorageConfig,$stateParams){
-	window.headerConfig={
-		enableBack: true,
-		title: '健康诊所',
-		enableRefresh: false
-	};
-
-	$rootScope.$broadcast('setHeaderConfig', window.headerConfig);
 
 	$scope.clinic=StorageConfig.BOOKING_STORAGE.getItem('clinicInfo')?StorageConfig.BOOKING_STORAGE.getItem('clinicInfo'):requestClinic();
 	
+	window.headerConfig.title=$scope.clinic.clinicName;
+	$rootScope.$broadcast('setHeaderConfig', window.headerConfig);
+
 	function requestClinic(){
 		var spinner=dialog.showSpinner();
 		var clinicId=$stateParams.id;
@@ -50,6 +46,13 @@ app.controller('clinicCtrl',['$scope','$rootScope','dialog','ClinicService','$st
 			type: _type,
 			clinicId: $scope.clinic.clinicId,
 			serviceId: $scope.selectId
+		})
+	}
+
+	$scope.showMap=function(clinic){
+		$state.go('layout.booking-map',{
+			lat: clinic.latitude,
+			lng: clinic.longitude
 		})
 	}
 }]);

@@ -1,62 +1,105 @@
 <div ng-controller="createChildCtrl" class="createChild-page">
-	<form>
+	<form name="createChildForm">
+		<div class="gender-tab">
+			<p class="tip">*</p>
+			<div class="flex">
+				<div class="tab-left flex-1">
+					<div class="img-part" ng-class="{'active': gender=='M'}" ng-click="selectGender('M')">
+						<div class="icon_boy"></div>
+					</div>
+					<p>男孩</p>
+				</div>
+				<div class="tab-right flex-1">
+					<div class="img-part" ng-class="{'active': gender=='F'}" ng-click="selectGender('F')">
+						<div class="icon_girl"></div>
+					</div>
+					<p>女孩</p>
+				</div>
+			</div>
+		</div>
+		<div class="cell-group">
+			<div class="cell">
+				<div class="left-box">
+					<span class="tip">*</span>
+					<span>姓名</span>
+				</div>
+				<div class="middle-box">
+					<input type="text" ng-model="name" placeholder="请输入宝宝的姓名" required="">
+				</div>
+			</div>
+			<div class="cell">
+				<div class="left-box">
+					<span class="tip"></span>
+					<span>小名</span>
+				</div>
+				<div class="middle-box">
+					<input type="text" ng-model="nickname" placeholder="请输入宝宝的小名">
+				</div>
+			</div>
+			<div class="cell">
+				<div class="left-box">
+					<span class="tip">*</span>
+					<span>生日</span>
+				</div>
+				<div class="middle-box">
+					<input type="date" ng-model="birth_date" required="">
+				</div>
+			</div>
+		</div>
+		<div class="other-tab flex">
+			<div class="tab-item flex-1">
+				<p class="tip">*</p>
+				<select ng-model="horoscope" required="">
+		            <option value="aries">白羊座</option>
+		            <option value="taurus">金牛座</option>
+		            <option value="gemini">双子座</option>
+		            <option value="cancer">巨蟹座</option>
+		            <option value="leo">狮子座</option>
+		            <option value="virgo">处女座</option>
+		            <option value="libra">天秤座</option>
+		            <option value="scorpio">天蝎座</option>
+		            <option value="sagittarius">射手座</option>
+		            <option value="capricorn">摩羯座</option>
+		            <option value="aquarius">水瓶座</option>
+		            <option value="pisces">双鱼座</option>
+				</select>
+			</div>
+			<div class="tab-item flex-1">
+				<p class="tip"></p>
+				<select ng-model="shengxiao">
+		            <option value="rat">鼠</option>
+		            <option value="ox">牛</option>
+		            <option value="tiger">虎</option>
+		            <option value="hare">兔</option>
+		            <option value="dragon">龙</option>
+		            <option value="snake">蛇</option>
+		            <option value="horse">马</option>
+		            <option value="sheep">羊</option>
+		            <option value="monkey">猴</option>
+		            <option value="cock">鸡</option>
+		            <option value="dog">狗</option>
+		            <option value="boar">猪</option>
+				</select>
+			</div>
+			<div class="tab-item flex-1">
+				<p class="tip"></p>
+				<select ng-model="blood_type">
+                    <option value="A">A型</option>
+                    <option value="B">B型</option>
+                    <option value="O">O型</option>
+                    <option value="AB">AB型</option>
+				</select>
+			</div>
+		</div>
 		<div class="child-info flex">
+			<div class="flex-1"></div>
 			<div class="info-img">
 				<div id="uploadImgBox"></div>
 			</div>
-			<div class="info-content flex-1 flex">
-				<div class="content-left">
-					<input type="text" ng-model="name" placeholder="宝宝姓名">
-					<input type="date" ng-model="birth_date">
-				</div>
-				<div class="content-right">
-					<select ng-model="gender" placeholder="性别">
-						<option value="F">男</option>
-						<option value="M">女</option>
-					</select>
-					<select ng-model="blood_type">
-                        <option value="A">A型</option>
-                        <option value="B">B型</option>
-                        <option value="O">O型</option>
-                        <option value="AB">AB型</option>
-					</select>
-				</div>
-			</div>
-		</div>
-		<div class="other-info">
-			<input type="number" ng-model="height" placeholder="宝宝身高">
-			<input type="number" ng-model="weight" placeholder="宝宝体重">
-			<select ng-model="horoscope">
-	            <option value="aries">白羊座</option>
-	            <option value="taurus">金牛座</option>
-	            <option value="gemini">双子座</option>
-	            <option value="cancer">巨蟹座</option>
-	            <option value="leo">狮子座</option>
-	            <option value="virgo">处女座</option>
-	            <option value="libra">天秤座</option>
-	            <option value="scorpio">天蝎座</option>
-	            <option value="sagittarius">射手座</option>
-	            <option value="capricorn">摩羯座</option>
-	            <option value="aquarius">水瓶座</option>
-	            <option value="pisces">双鱼座</option>
-			</select>
-			<select ng-model="shengxiao">
-	            <option value="rat">鼠</option>
-	            <option value="ox">牛</option>
-	            <option value="tiger">虎</option>
-	            <option value="hare">兔</option>
-	            <option value="dragon">龙</option>
-	            <option value="snake">蛇</option>
-	            <option value="horse">马</option>
-	            <option value="sheep">羊</option>
-	            <option value="monkey">猴</option>
-	            <option value="cock">鸡</option>
-	            <option value="dog">狗</option>
-	            <option value="boar">猪</option>
-			</select>
+			<div class="flex-1"></div>
 		</div>
 		<div class="btn-dock">
-			<button id="create" class="btn btn-primary">确认添加</button>
+			<button id="create" class="btn btn-primary" ng-disabled="createChildForm.$invalid || !gender">确认添加</button>
 		</div>
 	</form>
 </div>

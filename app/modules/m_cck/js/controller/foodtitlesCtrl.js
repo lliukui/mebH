@@ -24,9 +24,11 @@ app.controller('foodtitlesCtrl',['$scope','$rootScope','$state','foodtitlesServi
 		dialog.alert(res.errorMsg);
 	});
 
-	$scope.goDetail=function(_contentUrl){
+	$scope.goDetail=function(food){
 		$state.go('layout.cck-detail',{
-			contentUrl: _contentUrl
+			contentUrl: food.contentUrl,
+			id: food.foodId,
+			type: 'FoodInfo'
 		})
 	}
 }]);

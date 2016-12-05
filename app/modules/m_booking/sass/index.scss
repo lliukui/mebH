@@ -1,6 +1,7 @@
 .clinic-page{
-	padding: px2rem(10px);
 	.clinic-info{
+		padding: px2rem(10px);
+		background-color: #fff;
 		.clinicName{
 			font-size: px2rem(16px);
 		}
@@ -11,28 +12,35 @@
 				width: px2rem(140px);
 			}
 		}
-		.tel{
-			color: #38B4BA;
-			.icon-phone{
-				background: url('images/icon_iphone.png') no-repeat;
-				background-size: px2rem(15px) px2rem(11px);
-				background-position-y: px2rem(3px);
+		.info-full{
+			clear: both;
+			.tel{
+				padding-top: px2rem(10px);
+				color: #38B4BA;
+				.icon-phone{
+					background: url('images/icon_iphone.png') no-repeat;
+					background-size: px2rem(15px) px2rem(11px);
+					background-position-y: px2rem(3px);
+					padding-left: px2rem(18px);
+				}
+			}
+			.icon-address{
+				background: url('images/icon_map.png') no-repeat;
+				background-size: px2rem(12px) px2rem(15px);
 				padding-left: px2rem(18px);
+				background-position-y: px2rem(1px);
+				color: #38B4BA;
 			}
 		}
 	}
-	.icon-address{
-		background: url('images/icon_map.png') no-repeat;
-		background-size: px2rem(12px) px2rem(15px);
-		padding: px2rem(10px) 0 px2rem(10px) px2rem(15px);
-		background-position-y: px2rem(11px);
-		color: #38B4BA;
-	}
 	.service-tab{
+		margin-top: px2rem(10px);
+		padding: px2rem(10px);
+		background-color: #fff;
 		.service-item{
 			display: inline-block;
 			margin: px2rem(10px) px2rem(10px) 0 0;
-			border: 1px solid #fff;
+			border: 1px solid #efefef;
 			padding: px2rem(10px);
 			border-radius: px2rem(5px);
 			img{
@@ -47,7 +55,7 @@
 		}
 	}
 	.btn-dock{
-		margin-top: px2rem(20px);
+		margin: px2rem(20px) 0;
 		.btn-pt{
 			background-color: #7ACACC;
 			color: #fff;
@@ -112,6 +120,10 @@
 		    border-right-style: none; 
 		    border-left-style: none; 
 		    border-bottom-style: none;
+		    appearance:none;
+			-moz-appearance:none;
+			-webkit-appearance:none;
+			background-color: #fff;
 		}
 		.icon-date{
 			background: url('images/icon_date.png') no-repeat;
@@ -148,6 +160,11 @@
 			background-size: px2rem(15px) px2rem(15px);
 			padding-left: px2rem(20px);
 			background-position-y: px2rem(16px);
+		}
+		.tip{
+			text-align: right;
+			color: #fd6060;
+			padding-right: px2rem(10px);
 		}
 	}
 	.btn-dock{
@@ -239,30 +256,60 @@
 			}
 		}
 	}
-    .date-item{
-    	margin: px2rem(20px) 0;
-    	display: flex;
-    	background-color: #fff;
-    	.item-left{
-    		width: px2rem(50px);
-    		padding: px2rem(10px) 0;
-    		text-align: center;
-    		border-right: px2rem(1px) solid #efefef;
-    	}
-    	.item-right{
-    		flex: 1;
-    		.optional{
-    			margin: 0 px2rem(10px);
-    			background-color: #64e5c6;
-    		}
-    		.not-optional{
-    			margin: 0 px2rem(10px);
-    			background-color: #dfdfdf;
-    		}
-    	}
-    }
+	.btn-sample{
+		margin-top: px2rem(10px);
+		padding: px2rem(10px) 0;
+		background-color: #fff;
+		.tip{
+			padding: px2rem(10px);
+			font-size: px2rem(16px);
+		}
+		.optional{
+			padding: 0 px2rem(5px);
+			border: px2rem(1px) solid #999;
+			border-radius: px2rem(5px);
+			margin-right: px2rem(5px);
+		}
+		.select-optional{
+			background-color: #9CCC65;
+			color: #fff;
+			padding: 0 px2rem(5px);
+			border-radius: px2rem(5px);
+			margin-right: px2rem(5px);
+		}
+		.already-optional{
+			background-color: #F0675B;
+			color: #fff;
+			padding: 0 px2rem(5px);
+			border-radius: px2rem(5px);
+		}
+	}
+	.time-row{
+		p{
+			background-color: #fff;
+			margin-top: px2rem(5px);
+			width: 25%;
+			float: left;
+			text-align: center;
+			padding: px2rem(5px) px2rem(10px);
+			span{
+				padding: px2rem(2px) px2rem(10px);
+				border: px2rem(1px) solid #999;
+				border-radius: px2rem(5px);
+				&.select-optional{
+					background-color: #9CCC65;
+					color: #fff;
+				}
+				&.already-optional{
+					background-color: #F0675B;
+					color: #fff;
+					border: none;
+				}
+			}
+		}
+	}
     .btn-dock{
-    	margin-bottom: px2rem(20px);
+    	margin: px2rem(20px) 0;
     }
     #dateNavScroll{
 	    .scroll{
@@ -290,7 +337,7 @@
 	}
 	.date-nav{
 	    background: #fff;
-	    height: px2rem(295px);
+	    height: px2rem(36px);
 	    position: relative;
 	    width: 100%;
 	    overflow: hidden;
@@ -313,4 +360,31 @@
 	        }
 	    }
 	}
+}
+.map-page{
+	.way-tab{
+	    position: fixed;
+    	width: 100%;
+    	height: 100%;
+    	background-color: rgba(0,0,0,0.6);
+		top: px2rem(44px);
+		z-index: 99999;
+		.way-item{
+			background-color: #fff;
+			padding: px2rem(10px) px2rem(10px);
+			border-bottom: 1px solid #efefef;
+		}
+	}
+	#mapContainer{
+		top: px2rem(44px);
+	}
+	#panel {
+        position: fixed;
+        background-color: white;
+        max-height: 80%;
+        overflow-y: auto;
+        top: px2rem(54px);
+        right: px2rem(5px);
+        width: 30%;
+    }
 }

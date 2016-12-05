@@ -33,9 +33,11 @@ app.controller('recipesCtrl',['$scope','$rootScope','recipesService','dialog','$
 		$scope.selectedAgeGroup=ageGroup;
 	}
 
-	$scope.goDetail=function(_contentUrl){
+	$scope.goDetail=function(nrInfo){
 		$state.go('layout.cck-detail',{
-			contentUrl: _contentUrl
+			contentUrl: nrInfo.contentUrl,
+			id: nrInfo.infoId,
+			type: 'NutritionRecipesInfo'
 		});
 	}
 

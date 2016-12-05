@@ -7,7 +7,7 @@ app.controller('selectClinicCtrl',['$scope','$rootScope','ClinicService','dialog
 		title: '选择诊所',
 		enableRefresh: false,
 		otherRightOperate: {
-			enable: true,
+			enable: false,
 			html: '上海',
 			clickCall: function(){
 				$scope.showCity=!$scope.showCity;

@@ -1,9 +1,15 @@
-app.controller('createChildCtrl',['$scope','$rootScope','tokenService','dialog','childService','$state',function($scope,$rootScope,tokenService,dialog,childService,$state){
+app.controller('createChildCtrl',['$scope','$rootScope','tokenService','dialog','childService','$state','StorageConfig',function($scope,$rootScope,tokenService,dialog,childService,$state,StorageConfig){
 	window.headerConfig={
 		enableBack: true,
 		title: '添加监护儿童'
 	}
 	$rootScope.$broadcast('setHeaderConfig',window.headerConfig);
+
+    //选择性别
+    $scope.selectGender=function(_gender){
+        $scope.gender=_gender;
+
+    }
 
     var apiUrl=window.envs.api_url;
     var spinner=dialog.showSpinner();
@@ -14,6 +20,7 @@ app.controller('createChildCtrl',['$scope','$rootScope','tokenService','dialog',
         dialog.closeSpinner(spinner.id);
         dialog.alert(res.errorMsg);
     });
+
     function readyUpload(_token){
         UploadImg.init({
             id: 'uploadImgBox',
@@ -22,6 +29,7 @@ app.controller('createChildCtrl',['$scope','$rootScope','tokenService','dialog',
             // autoUpload: false,
             //required: false, //ctrl you must upload images files or not. if false, the UploadImg.isFinished() init is true.
             // imgListArray: [],
+            fileNum: getFileNum,
             upload: {
                 uploadUrl: 'http://upload.qiniu.com/',
                 token: _token,
@@ -32,35 +40,45 @@ app.controller('createChildCtrl',['$scope','$rootScope','tokenService','dialog',
                 submitBtnId: 'create',
                 beforeCall: beforeCall,
                 afterCall: afterCall,
-                params: {}
+                params: {},
+                btnHtml: '',
             }
         });
 
+        function getFileNum(num){
+            console.log(num);
+        }
+
+        var spinner='';
+
         function beforeCall(doingCall){
+            spinner=dialog.showSpinner();
             doingCall({});
         }
 
         function afterCall(upFileList){
             var requestObj={
-                username: '15212789819',
-                token: '6859CACBA01AAA721E65FD83F0AE19A2',
+                username: StorageConfig.TOKEN_STORAGE.getItem('username'),
+                token: StorageConfig.TOKEN_STORAGE.getItem('token'),
                 name: $scope.name,
+                nickname: $scope.nickname,
                 gender: $scope.gender,
                 birth_date: $scope.birth_date,
                 blood_type: $scope.blood_type,
                 horoscope: $scope.horoscope,
                 shengxiao: $scope.shengxiao,
                 is_default: '1',
-                height: $scope.height,
-                weight: $scope.weight,
                 remote_domain: 'http://og03472zu.bkt.clouddn.com',
                 remote_file_key: upFileList[0].key
             }
             childService.createChild(requestObj).then(function(res){
-                // dialog.closeSpinner();
-                $state.go('layout.user-childlist');
+                dialog.closeSpinner(spinner.id);
+                $state.go('layout.home-addGrowth', {
+                    id: res.results.id,
+                    source: 'createChild'
+                });
             },function(res){
-                // dialog.closeSpinner();
+                dialog.closeSpinner(spinner.id);
                 dialog.alert(res.errorMsg);
             });
         }

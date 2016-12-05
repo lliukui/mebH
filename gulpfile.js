@@ -271,7 +271,7 @@ gulp.task('serve', function () {
     connect.server({
         livereload: true,
         root: './dist',
-        port: 1666,
+        port: 666,
         ip :'192.168.19.95'
     });
     gulp.watch(['./app/**/*.*', './doc/**/*.*', './components/**/*.*', './framework/**/*.*', './config/**/*.*', './gulpfile.js', 'index.html'], ['fileWatch']);

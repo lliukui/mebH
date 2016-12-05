@@ -15,7 +15,7 @@
     var allEnvs = {
         product: {
             env:'product',
-            api_url: 'http://m.mingyizhudao.com'
+            api_url: 'http://mebapi.mingyizd.com'
         },
         release: {
             env:'release',

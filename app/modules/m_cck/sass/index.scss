@@ -1,4 +1,11 @@
 .cck-page{
+    .search-tab{
+        background-color: #fff;
+        margin: px2rem(5px) px2rem(10px);
+        border-radius: px2rem(5px);
+        padding: px2rem(10px);
+        border: px2rem(1px) solid #D0D0D0;
+    }
 	.tab-list{
 		background-color: #fff;
 		.item-tab{
@@ -6,6 +13,92 @@
 			border-bottom: px2rem(1px) solid #E6E6E6;
 		}
 	}
+    .collection-tab{
+        margin-top: px2rem(20px);
+        background-color: #fff;
+        padding: px2rem(10px);
+    }
+}
+.cckSearch-page{
+    .search-nav{
+        position: fixed;
+        height: px2rem(44px);
+        background-color: #F4D020;
+        width: 100%;
+        .search-input{
+            width: 80%;
+            float: left;
+            padding: px2rem(6px) 0 px2rem(6px) px2rem(10px);
+            input{
+                padding-left: px2rem(10px);
+                border-radius: px2rem(5px);
+                background-color: #fff;
+            }
+            .icon_clear{
+                position: absolute;
+                background: url('images/icon_clear.png') no-repeat;
+                background-size: px2rem(15px) px2rem(15px);
+                width: px2rem(25px);
+                height: px2rem(25px);
+                padding: 0 px2rem(5px);
+                top: px2rem(8px);
+                right: 20%;
+                background-position: px2rem(5px) px2rem(5px);
+            }
+        }
+        .search-btn{
+            width: 20%;
+            float: right;
+            height: 100%;
+            p{
+                height: 100%;
+                line-height: px2rem(44px);
+                text-align: center;
+                color: #fff;
+            }
+        }
+    }
+    .search-results{
+        padding-top: px2rem(44px);
+        background-color: #fff;
+        .type-title{
+            padding: px2rem(10px);
+            border-top: 1px solid #dedede;
+            border-bottom: 1px solid #dedede;
+        }
+        .item-left{
+            width: px2rem(120px);
+            padding: px2rem(10px);
+            img{
+                width: 100%;
+            }
+        }
+        .item-right{
+            padding: px2rem(10px) px2rem(10px) px2rem(10px) 0;
+            &.bb-gray{
+                border-bottom: px2rem(1px) solid #ADA2A2;
+            }
+        }
+        .musicCollection-info{
+            padding: .83333rem;
+            width: 50%;
+            float: left;
+            text-align: center;
+            .img-part{
+                height: px2rem(100px);
+                overflow: hidden;
+                img{
+                    width: 100%;
+                }
+            }
+            p{
+                padding-top: px2rem(10px);
+            }
+        }
+        .no-result{
+            padding: px2rem(10px);
+        }
+    }
 }
 .ccktitles-page{
     height: 100%;
@@ -203,6 +296,9 @@
                 }
             }
         }
+        .no-result{
+            padding: px2rem(10px);
+        }
     }
 }
 .recipes-page{
@@ -294,6 +390,13 @@
                     .nrInfo-content{
                         flex: 1;
                         padding: px2rem(10px) px2rem(10px) px2rem(10px) 0;
+                        .title{
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            -o-text-overflow: ellipsis;
+                            white-space: nowrap;
+                            width: px2rem(180px);
+                        }
                     }
                 }
             }
@@ -358,6 +461,9 @@
                 flex: 1;
                 padding: px2rem(10px) px2rem(10px) px2rem(10px) 0;
             }
+        }
+        .no-result{
+            padding: px2rem(10px);
         }
     }
 }
@@ -546,6 +652,9 @@
                 }
             }
         }
+        .no-result{
+            padding: px2rem(10px);
+        }
     }
 }
 .musictitles-page{
@@ -613,11 +722,15 @@
                     width: 50%;
                     float: left;
                     text-align: center;
-                    img{
-                        width: 100%;
+                    .img-part{
+                        height: px2rem(100px);
+                        overflow: hidden;
+                        img{
+                            width: 100%;
+                        }
                     }
                     p{
-
+                        padding-top: px2rem(10px);
                     }
                 }
             }
@@ -646,7 +759,7 @@
             color: #fff;
             .info-left{
                 width: 80%;
-                padding: px2rem(10px);
+                padding: 0 px2rem(10px);
                 line-height: px2rem(44px);
             }
             .info-right{
@@ -655,6 +768,48 @@
                     line-height: px2rem(44px);
                     text-align: center;
                 }
+            }
+        }
+    }
+}
+.cckCollection-page{
+    .tab-list{
+        background-color: #fff;
+        .item-tab{
+            padding: px2rem(10px);
+            border-bottom: px2rem(1px) solid #E6E6E6;
+            .type-number{
+                width: px2rem(20px);
+                margin-right: px2rem(20px);
+                text-align: center;
+            }
+        }
+    }
+}
+.seeCollection-page{
+    .tab-list{
+        background-color: #fff;
+        .tab-item{
+            .item-left{
+                width: px2rem(120px);
+                padding: px2rem(10px);
+                img{
+                    width: 100%;
+                }
+            }
+            .item-right{
+                padding: px2rem(10px) px2rem(10px) px2rem(10px) 0;
+                &.bb-gray{
+                    border-bottom: px2rem(1px) solid #ADA2A2;
+                }
+            }
+            .cancel{
+                background-color: #fd6060;
+                padding: 0 px2rem(5px);
+                color: #fff;
+                -webkit-box-align: center;
+                display: -webkit-box;
+                border-bottom: 1px solid #fff;
             }
         }
     }

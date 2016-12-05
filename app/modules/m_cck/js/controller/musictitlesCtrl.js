@@ -31,7 +31,7 @@ app.controller('musictitlesCtrl',['$scope','$rootScope','$state','dialog','music
 
     $scope.checkNav=function(_categoryName){
     	$scope.selectedCategory=_categoryName;
-    	document.getElementById('layoutContent').scrollTo(0);
+    	document.getElementById('layoutContent').scrollTop=0;
     }
 
     $scope.goMusic=function(_id){

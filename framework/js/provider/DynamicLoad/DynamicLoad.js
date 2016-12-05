@@ -66,7 +66,7 @@
                             }
                         }
                     }
-                    var myInject = angular.injector(['myzd-app']);
+                    var myInject = angular.injector(['meb-app']);
                     var argParam = [];
                     if (injectParam) {
                         for (var j = 0, le = injectParam.length; j < le; j++) {

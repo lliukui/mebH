@@ -9,8 +9,8 @@ app.controller('childlistCtrl',['$scope','$rootScope','dialog','$state','childSe
 
 	var spinner=dialog.showSpinner();
 	var urlOptions={
-		username: '15212789819',
-        token: '6859CACBA01AAA721E65FD83F0AE19A2'
+		username: StorageConfig.TOKEN_STORAGE.getItem('username'),
+        token: StorageConfig.TOKEN_STORAGE.getItem('token'),
 	}
 	childService.getChild(urlOptions).then(function(res){
 		dialog.closeSpinner(spinner.id);
@@ -19,10 +19,6 @@ app.controller('childlistCtrl',['$scope','$rootScope','dialog','$state','childSe
 		dialog.closeSpinner(spinner.id);
 		dialog.alert(res.errorMsg);
 	});
-
-	$scope.create=function(){
-		$state.go('layout.user-createChild');
-	}
 
 	$scope.update=function(child){
 		StorageConfig.CHILD_STORAGE.putItem('child',child);

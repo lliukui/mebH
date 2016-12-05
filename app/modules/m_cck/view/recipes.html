@@ -15,13 +15,13 @@
 		<div class="recipes-item" ng-repeat="recipes in recipesList" ng-show="selectedAgeGroup==$index || selectedAgeGroup==recipes.ageGroup">
 			<div class="recipes-info" ng-repeat="firstTitles in recipes.firstTitles">
 				<p class="first-title" ng-bind="firstTitles.firstTitle"></p>
-				<div class="nrInfo" ng-repeat="nrInfo in firstTitles.nrInfo" ng-click="goDetail(nrInfo.contentUrl)">
+				<div class="nrInfo" ng-repeat="nrInfo in firstTitles.nrInfo" ng-click="goDetail(nrInfo)">
 					<div class="nrInfo-img">
-						<img src="{{nrInfo.imageUrl}}">
+						<img ng-src="{{nrInfo.imageUrl}}">
 					</div>
 					<div class="nrInfo-content">
-						<p class="" ng-bind="nrInfo.infoTitle"></p>
-						<p class="" ng-bind="nrInfo.description"></p>
+						<p class="title" ng-bind="nrInfo.infoTitle"></p>
+						<p ng-bind="nrInfo.description | limitTo: 40"></p>
 					</div>
 				</div>
 			</div>

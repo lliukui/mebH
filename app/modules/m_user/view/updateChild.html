@@ -1,51 +1,50 @@
 <div ng-controller="updateChildCtrl" class="updateChild-page">
 	<div class="child-info">
-		<img src="{{child.imageUrl}}">
-		<p>
-			<span>宝宝姓名：</span>
-			<span ng-bind="child.childName"></span>
-		</p>
-		<p>
-			<span>宝宝性别：</span>
-			<span ng-bind="child.gender"></span>
-		</p>
-		<p>
-			<span>宝宝年龄：</span>
-			<span ng-bind="child.age"></span>
-		</p>
-		<p>
-			<span>宝宝血型：</span>
-			<span ng-bind="child.bloodType"></span>
-		</p>
-		<p>
-			<span>宝宝星座：</span>
-			<span ng-bind="child.horoscope"></span>
-		</p>
-		<p>
-			<span>宝宝生肖：</span>
-			<span ng-bind="child.shengxiao"></span>
-		</p>
-	</div>
-	<p>以下新心可修改</p>
-	<div class="update-info">
-		<div class="flex">
-			<p>宝宝身高</p>
-			<input type="number">
-		</div>
-		<div class="flex">
-			<p>宝宝身高</p>
-			<input type="number">
-		</div>
-		<div class="flex">
-			<p>宝宝身高</p>
-			<input type="number">
-		</div>
-		<div class="flex">
-			<p>宝宝身高</p>
-			<input type="number">
+		<img ng-src="{{child.imageUrl}}">
+		<div class="cell-group">
+			<div class="cell">
+				<p class="left-box">宝宝姓名：</p>
+				<p class="middle-box" ng-bind="child.childName"></p>
+			</div>
+			<div class="cell">
+				<p class="left-box">宝宝小名：</p>
+				<p class="middle-box" ng-bind="child.nickName"></p>
+			</div>
+			<div class="cell">
+				<p class="left-box">宝宝性别：</p>
+				<p class="middle-box" ng-bind="child.gender"></p>
+			</div>
+			<div class="cell">
+				<p class="left-box">宝宝年龄：</p>
+				<p class="middle-box" ng-bind="child.age"></p>
+			</div>
+			<div class="cell">
+				<p class="left-box">宝宝血型：</p>
+				<p class="middle-box" ng-bind="child.bloodType"></p>
+			</div>
+			<div class="cell">
+				<p class="left-box">宝宝星座：</p>
+				<p class="middle-box" ng-bind="child.horoscope"></p>
+			</div>
+			<div class="cell">
+				<p class="left-box">宝宝身高：</p>
+				<p class="middle-box" ng-bind="child.height"></p>
+			</div>
+			<div class="cell">
+				<p class="left-box">宝宝体重：</p>
+				<p class="middle-box" ng-bind="child.weight"></p>
+			</div>
+			<div class="cell">
+				<p class="left-box">宝宝腿长：</p>
+				<p class="middle-box" ng-bind="child.legLength"></p>
+			</div>
+			<div class="cell">
+				<p class="left-box">宝宝头围：</p>
+				<p class="middle-box" ng-bind="child.headCircum"></p>
+			</div>
 		</div>
 	</div>
 	<div class="btn-dock">
-		<button class="btn btn-primary">修改</button>
+		<button class="btn btn-primary" ng-click="addGrowth()">添加成长信息</button>
 	</div>
 </div>

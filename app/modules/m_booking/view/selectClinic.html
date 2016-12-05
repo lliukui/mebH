@@ -15,7 +15,7 @@
 		<div class="clinic-item" ng-repeat="clinic in clinics" ng-click="bookingClinic(clinic.clinicId,clinic)">
 			<div class="item-grid">
 				<div class="item-left">
-					<img src="{{clinic.imageUrl}}">
+					<img ng-src="{{clinic.imageUrl}}">
 				</div>
 				<div class="item-right">
 					<p ng-bind="clinic.clinicName"></p>

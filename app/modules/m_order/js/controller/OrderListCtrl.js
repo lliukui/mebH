@@ -1,4 +1,4 @@
-app.controller('OrderCtrl',['$scope','$rootScope','OrderService','dialog',function($scope,$rootScope,OrderService,dialog){
+app.controller('OrderCtrl',['$scope','$rootScope','OrderService','dialog','StorageConfig','$state',function($scope,$rootScope,OrderService,dialog,StorageConfig,$state){
 	window.headerConfig={
 		title: '订单列表',
 		enableRefresh: false
@@ -8,8 +8,8 @@ app.controller('OrderCtrl',['$scope','$rootScope','OrderService','dialog',functi
 
 	var spinner=dialog.showSpinner();
 	var urlOptions={
-		username: '15212789819',
-		token: '6859CACBA01AAA721E65FD83F0AE19A2'
+		username: StorageConfig.TOKEN_STORAGE.getItem('username'),
+		token: StorageConfig.TOKEN_STORAGE.getItem('token')
 	}
 
 	getOrderData(spinner.id);
@@ -30,11 +30,17 @@ app.controller('OrderCtrl',['$scope','$rootScope','OrderService','dialog',functi
 		$scope.selectTab=_index;
 	}
 
+	//查看详情
+	$scope.detail=function(order){
+		StorageConfig.ORDER_STORAGE.putItem('detail', order);
+		$state.go('layout.order-detail');
+	}
+
 	$scope.cancelOrder=function(id){
 		var spinner2=dialog.showSpinner();
 		var options={
-			username: '15212789819',
-			token: '6859CACBA01AAA721E65FD83F0AE19A2',
+			username: StorageConfig.TOKEN_STORAGE.getItem('username'),
+			token: StorageConfig.TOKEN_STORAGE.getItem('token'),
 			id: id
 		}
 		OrderService.cancelOrderById(options).then(function(res){

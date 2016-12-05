@@ -1,20 +1,22 @@
 <div ng-controller="clinicCtrl" class="clinic-page">
 	<div class="clinic-info">
 		<div class="clinic-img">
-			<img src="{{clinic.imageUrl}}">
+			<img ng-src="{{clinic.imageUrl}}">
 		</div>
-		<p class="clinicName" ng-bind="clinic.clinicName"></p>
-		<p class="tel">
-			<span class="icon-phone">健康热线：</span>
-			<span ng-bind="clinic.tel"></span>
-		</p>
+		<p ng-show="false" class="clinicName" ng-bind="clinic.clinicName"></p>
 		<p ng-bind="clinic.description"></p>
+		<div class="info-full">
+			<p class="tel">
+				<span class="icon-phone">健康热线：</span>
+				<span ng-bind="clinic.tel"></span>
+			</p>
+			<p ng-click="showMap(clinic)" class="icon-address" ng-bind="clinic.address"></p>
+		</div>
 	</div>
-	<p class="icon-address" ng-bind="clinic.address"></p>
-	<p>预约项目</p>
 	<div class="service-tab">
+		<p>预约项目</p>
 		<div ng-class="{'active':selectId == services.serviceId}" class="service-item" ng-repeat="services in clinic.services"  ng-click="clickService(services)">
-			<img src="{{services.serviceId | clinicServiceIcon}}" />
+			<img ng-src="{{services.serviceId | clinicServiceIcon}}" />
 			<p ng-bind="services.serviceName"></p>
 		</div>
 	</div>

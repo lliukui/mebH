@@ -6,10 +6,11 @@ app.controller('searchfoodCtrl',['$scope','$rootScope','searchfoodService','dial
 	$rootScope.$broadcast('setHeaderConfig',window.headerConfig);
 
 	$scope.showBack=true;
-
+	$scope.showNoResults=false;
 	$scope.clear=function(){
 		$scope.showBack=true;
 		$scope.searchValue='';
+		$scope.showNoResults=false;
 	}
 
 	$scope.back=function(){
@@ -22,6 +23,7 @@ app.controller('searchfoodCtrl',['$scope','$rootScope','searchfoodService','dial
 		}else{
 			$scope.showBack=true;
 		}
+		$scope.showNoResults=false;
 	}
 
 	$scope.search=function(){
@@ -31,6 +33,7 @@ app.controller('searchfoodCtrl',['$scope','$rootScope','searchfoodService','dial
 		}
 		searchfoodService.getfoodByValue(urlOptions).then(function(res){
 			dialog.closeSpinner(spinner.id);
+			$scope.showNoResults=true;
 			$scope.foodinfos=res.results.foodinfo;
 		},function(res){
 			dialog.closeSpinner(spinner.id);
@@ -38,9 +41,11 @@ app.controller('searchfoodCtrl',['$scope','$rootScope','searchfoodService','dial
 		});
 	}
 
-	$scope.goDetail=function(_contentUrl){
+	$scope.goDetail=function(foodinfo){
 		$state.go('layout.cck-detail',{
-			contentUrl: _contentUrl
+			contentUrl: foodinfo.contentUrl,
+			id: foodinfo.id,
+			type: 'FoodInfo'
 		})
 	}
 }]);

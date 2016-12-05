@@ -1,0 +1,33 @@
+<div ng-controller="registerCtrl" class="register-page">
+	<form name="registerForm">
+		<div class="cell-group">
+			<div class="cell">
+				<div class="left-box clearly-width">手机号码</div>
+				<div class="middle-box">
+					<input type="tel" name="mobile" ng-model="mobile" minlength="11" maxlength="11" placeholder="请输入手机号码" required="">
+				</div>
+				<div class="right-box">
+					<button ng-click="smsverifycode()" ng-disabled="registerForm.mobile.$invalid || lockEnabled" class="btn btn-primary btn-small in-cell" ng-bind="sendSMSText"></button>
+				</div>
+			</div>
+			<div class="cell">
+				<div class="left-box clearly-width">验证码</div>
+				<div class="middle-box">
+					<input type="tel" ng-model="verifyCode" minlength="4" placeholder="请输入验证码" required="">
+				</div>
+			</div>
+			<div class="cell">
+				<div class="left-box clearly-width">密码</div>
+				<div class="middle-box">
+					<input type="{{pwdInputType}}" ng-model="password" minlength="4" placeholder="请输入至少4位密码" required="">
+				</div>
+				<div class="right-box" ng-click="checkShow()">
+					<span class="icon-eye" ng-class="{'show': showPwd}"></span>
+				</div>
+			</div>
+		</div>
+		<div class="btn-dock">
+			<button class="btn btn-primary" ng-click="register()" ng-disabled="registerForm.$invalid">注册</button>
+		</div>
+	</form>
+</div>

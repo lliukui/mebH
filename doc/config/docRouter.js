@@ -42,4 +42,14 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             url: '/uploadImg',
             templateUrl: 'doc/modules/m_widget/view/uploadImg.html'
         })
+        //时间弹窗
+        .state('doc.calendar', {
+            url: 'calendar',
+            templateUrl: 'doc/modules/m_widget/view/calendar.html'
+        })
+        //折线图
+        .state('doc.line', {
+            url: 'line',
+            templateUrl: 'doc/modules/m_widget/view/line.html'
+        })
 }]);

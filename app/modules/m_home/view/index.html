@@ -1,41 +1,69 @@
 <div ng-controller="HomeCtrl" class="home-page">
     <div class="child-info" ng-repeat="child in childs" ng-show="$index==tabSelected">
-        <div class="info-left">
-            <p>
-                <span class="icon-age">年龄</span>
-                <span ng-bind="child.age"></span>
-            </p>
-            <p>
-                <span class="icon-birthday">生日</span>
-                <span ng-bind="child.birthday"></span>
-            </p>
-            <p>
-                <span class="icon-height">身高</span>
-                <span ng-bind="child.height"></span>
-            </p>
-            <p>
-                <span class="icon-weight">体重</span>
-                <span ng-bind="child.weight"></span>
-            </p>
+        <div class="tab-first flex">
+            <div class="first-left">
+                <p>
+                    <span>今年</span>
+                    <span ng-bind="child.age"></span>
+                    <span>岁</span>
+                </p>
+                <p>
+                    <span>生于</span>
+                    <span ng-bind="child.birthday"></span>
+                </p>
+            </div>
+            <div class="first-right">
+                <p>
+                    <span>身高：</span>
+                    <span ng-bind="child.height"></span>
+                    <span>cm</span>
+                </p>
+                <p>
+                    <span>体重：</span>
+                    <span ng-bind="child.weight"></span>
+                    <span>斤</span>
+                </p>
+            </div>
         </div>
-        <div class="info-right">
-            <p>可爱</p>
-            <p>天使</p>
-            <p>善良</p>
+        <div class="tab-second flex">
+            <div class="second-left">
+                <p>
+                    <span ng-bind="child.horoscope"></span>
+                    <span>宝宝</span>
+                </p>
+            </div>
+            <div class="second-right">
+                <p ng-click="goRouter('layout.user-childlist')">
+                    就诊信息
+                </p>
+            </div>
         </div>
     </div>
     <div class="h-channel">
         <ul>
             <li>
-                <a class="h-findDoc-a" ng-click="routerGo('layout.booking-selectClinic')">
+                <a class="h-findDoc-a" ng-click="goRouter('layout.booking-selectClinic')">
                     <span>诊所预约</span>
                 </a>
             </li>
             <li>
-                <a class="h-booking-a" ng-click="routerGo('')">
+                <a class="h-booking-a" ng-click="showToast()">
                     <span>在线咨询</span>
                 </a>
             </li>
         </ul>
+    </div>
+    <div ng-show="hasData">
+        <div class="order-remind" ng-if="reminds.length>0">
+            <p ng-bind="reminds[0]"></p>
+        </div>
+        <div class="childgrowth">
+            <div class="flex">
+                <div class="flex-1"></div>
+                <div class="btn-growth" ng-click="addGrowth()">添加</div>
+                <div class="btn-growth" ng-click="growthdatas()">修改</div>
+            </div>
+            <line id="main" legend="legend" item="item" data="data"></line>
+        </div>
     </div>
 </div>

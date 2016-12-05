@@ -6,4 +6,11 @@ app.controller('updateChildCtrl',['$scope','$rootScope','$state','dialog','$stat
 	$rootScope.$broadcast('setHeaderConfig',window,headerConfig);
 
 	$scope.child=StorageConfig.CHILD_STORAGE.getItem('child');
+
+	$scope.addGrowth=function(){
+		$state.go('layout.home-addGrowth', {
+			id: $stateParams.id,
+			source: 'updateChild'
+		});
+	}
 }])

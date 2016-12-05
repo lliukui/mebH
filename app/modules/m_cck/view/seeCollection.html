@@ -1,0 +1,18 @@
+<div ng-controller="seeCollectionCtrl" class="seeCollection-page">
+	<div class="tab-list">
+		<div class="tab-item flex" ng-repeat="collect in collectList">
+			<div class="flex-1 flex" ng-click="goDetail(collect)">
+				<div class="item-left">
+					<img ng-src="{{collect.imageUrl}}">
+				</div>
+				<div class="item-right flex-1" ng-class="{'bb-gray': $last==false}">
+					<p ng-bind="collect.title | limitTo :10"></p>
+					<p ng-bind="collect.description | limitTo :40"></p>
+				</div>
+			</div>
+			<div class="cancel" ng-click="cancelCollection(collect)">
+				取消
+			</div>
+		</div>
+	</div>
+</div>

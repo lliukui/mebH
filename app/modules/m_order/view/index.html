@@ -11,22 +11,24 @@
 		<div class="tab-content">
 			<div class="item-content" ng-show="selectTab==0">
 				<div class="order-tab" ng-repeat="order in allBookings">
-					<p>
-						<span>预约编号：</span>
-						<span ng-bind="order.refNo"></span>
-					</p>
-					<p>
-						<span>预约诊所：</span>
-						<span ng-bind="order.clinicName"></span>
-					</p>
-					<p>
-						<span>预约时间：</span>
-						<span ng-bind="order.bookingDate"></span>
-					</p>
-					<p>
-						<span>预约医生：</span>
-						<span ng-bind="order.doctorName"></span>
-					</p>
+					<div ng-click="detail(order)">
+						<p>
+							<span>预约编号：</span>
+							<span ng-bind="order.refNo"></span>
+						</p>
+						<p>
+							<span>预约诊所：</span>
+							<span ng-bind="order.clinicName"></span>
+						</p>
+						<p>
+							<span>预约时间：</span>
+							<span ng-bind="order.bookingDate"></span>
+						</p>
+						<p>
+							<span>预约医生：</span>
+							<span ng-bind="order.doctorName"></span>
+						</p>
+					</div>
 					<p class="text-right" ng-show="order.status==1">
 						<button class="btn-cancel" ng-click="cancelOrder(order.id)">取消订单</button>
 					</p>

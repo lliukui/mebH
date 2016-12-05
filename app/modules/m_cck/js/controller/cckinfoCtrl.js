@@ -18,9 +18,11 @@ app.controller('cckinfoCtrl',['$scope','$rootScope','$stateParams','cckinfoServi
 		dialog.alert(res.errorMsg);
 	});
 
-	$scope.goDetail=function(_contentUrl){
+	$scope.goDetail=function(cckInfo){
 		$state.go('layout.cck-detail',{
-			contentUrl: _contentUrl
+			contentUrl: cckInfo.contentUrl,
+			id: cckInfo.id,
+			type: 'CckInfo'
 		});
 	}
 }]);

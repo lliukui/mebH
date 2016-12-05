@@ -6,18 +6,20 @@ app.controller('searchRecipesCtrl',['$scope','$rootScope','dialog','$state','sea
 	$rootScope.$broadcast('setHeaderConfig',window.headerConfig);
 
 	$scope.showBack=true;
-
+	$scope.showNoResults=false;
 	$scope.valueChange=function(){
 		if($scope.searchValue!=''){
 			$scope.showBack=false;
 		}else{
 			$scope.showBack=true;
 		}
+		$scope.showNoResults=false;
 	}
 
 	$scope.clear=function(){
 		$scope.searchValue='';
 		$scope.showBack=true;
+		$scope.showNoResults=false;
 	}
 
 	$scope.back=function(){
@@ -31,10 +33,19 @@ app.controller('searchRecipesCtrl',['$scope','$rootScope','dialog','$state','sea
 		}
 		searchRecipesService.getRecipesByValue(urlOptions).then(function(res){
 			dialog.closeSpinner(spinner.id);
+		$scope.showNoResults=true;
 			$scope.nrInfos=res.results.nrInfo;
 		},function(res){
 			dialog.closeSpinner(spinner.id);
 			dialog.alert(res.errorMsg);
+		});
+	}
+
+	$scope.goDetail=function(nrInfo){
+		$state.go('layout.cck-detail', {
+			contentUrl: nrInfo.contentUrl,
+			id: nrInfo.id,
+			type: 'NutritionRecipesInfo'
 		});
 	}
 }]);

@@ -1,31 +1,18 @@
 <div ng-controller="userCtrl" class="user-page">
-	<div class="child-info flex">
-		<div class="info-img">
-			<img src="{{child.imageUrl}}">
-		</div>
-		<div class="info-content flex-1">
-			<p ng-bind="child.childName"></p>
-			<p>
-				<span ng-bind="child.age"></span>
-				<span ng-bind="child.horoscope"></span>
-			</p>
-			<p>
-				<span></span>
-			</p>
-		</div>
-	</div>
 	<div class="user-item flex">
 		<div class="user-child flex-1" ng-click="goRouter('layout.user-childlist')">
-			<img src="app/images/icon_grow.png">
+			<img ng-src="app/images/icon_grow.png">
 			<p>我的孩子</p>
 		</div>
-		<div class="user-consultation flex-1">
-			<img src="app/images/icon_zhixun.png">
-			<p>健康咨询</p>
-		</div>
 		<div class="user-order flex-1" ng-click="goRouter('layout.orderlist')">
-			<img src="app/images/icon_booking.png">
+			<img ng-src="app/images/icon_booking.png">
 			<p>我的预约</p>
 		</div>
+	</div>
+	<div class="user-info" ng-click="goRouter('layout.user-info')">
+		信息管理
+	</div>
+	<div class="user-info" ng-click="goRouter('layout.user-feedback')">
+		反馈中心
 	</div>
 </div>

@@ -10,14 +10,15 @@
 		</div>
 	</div>
 	<div class="search-results">
-		<div class="nrInfo-item" ng-repeat="nrInfo in nrInfos" ng-click="goDetail(nrInfo.contentUrl)" ng-class="{'bb-gray': $last==false}">
+		<div ng-if="nrInfos.length>0" class="nrInfo-item" ng-repeat="nrInfo in nrInfos" ng-click="goDetail(nrInfo)" ng-class="{'bb-gray': $last==false}">
 			<div class="item-left">
-				<img src="{{nrInfo.imageUrl}}">
+				<img ng-src="{{nrInfo.imageUrl}}">
 			</div>
 			<div class="item-right">
 				<p ng-bind="nrInfo.title"></p>
-				<p ng-bind="nrInfo.description"></p>
+				<p ng-bind="nrInfo.description | limitTo: 40"></p>
 			</div>
 		</div>
+		<p class="no-result" ng-if="nrInfos.length==0 && showNoResults">未搜索到关于"{{searchValue}}"的信息</p>
 	</div>
 </div>

@@ -8,37 +8,16 @@ app.factory('CMSDataConfig', ['StorageConfig', '$state', function (StorageConfig
             url: '/layout/home'
         },
         {
-            text: '发现',
+            text: '育儿',
             class: 'icon-find',
-            route: 'layout.find',
-            url: '/layout/find'
-        },
-        {
-            text: '创建',
-            class: 'icon-hospital',
-            route: 'layout.hospital',
-            url: '/layout/hospital'
-        },
-        {
-            text: '订单',
-            class: 'icon-order',
-            route: 'layout.order',
-            url: '/layout/order'
+            route: 'layout.cck',
+            url: '/layout/cck'
         },
         {
             text: '我的',
-            class: 'icon-me',
-            route: 'layout.me',
-            url: '/layout/me',
-            beforeCall: function () {
-                // if (!StorageConfig.TOKEN_STORAGE.getItem('authorization')) {
-                //     $state.go('layout.login',{
-                //         redirectRoute: encodeURIComponent('layout.me')
-                //     });
-                //     return false;
-                // }
-                return true;
-            }
+            class: 'icon-hospital',
+            route: 'layout.user',
+            url: '/layout/user'
         }
     ];
     return data;

@@ -1,1 +1,1 @@
-var app = angular.module('myzd-app', ['ui.router','ngDialog']);
+var app = angular.module('meb-app', ['ui.router','ngDialog']);

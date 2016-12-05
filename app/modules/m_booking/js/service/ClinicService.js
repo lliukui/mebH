@@ -6,15 +6,18 @@ app.service('ClinicService',['BaseHttpRequest',function(BaseHttpRequest){
 
 	var service={
 		getClinicByCity:function(urlOptions){
-			if(urlOptions['city_id']!=undefined){
-				var requestObj={
-					url: apiUrl+'/mebapi/searchclinic?city_id='+urlOptions.city_id
-				};
-			}else if(urlOptions['city_name']!=undefined){
-				var requestObj={
-					url: apiUrl+'/mebapi/searchclinic?city_name='+urlOptions.city_name
-				};
-			}
+			// if(urlOptions['city_id']!=undefined){
+			// 	var requestObj={
+			// 		url: apiUrl+'/mebapi/searchclinic?city_id='+urlOptions.city_id
+			// 	};
+			// }else if(urlOptions['city_name']!=undefined){
+			// 	var requestObj={
+			// 		url: apiUrl+'/mebapi/searchclinic?city_name='+urlOptions.city_name
+			// 	};
+			// }
+			var requestObj={
+				url: apiUrl+'/mebapi/searchclinic'
+			};
 			return BaseHttpRequest.get(requestObj,getClinicByCityDto);
 		}
 	};

@@ -33,6 +33,7 @@
         autoUpload: false,
         required: true,
         imgListArray: [],
+        fileNum: '',
         upload: {
             uploadUrl: 'http://upload.qiniu.com/',
             token: '',
@@ -43,7 +44,8 @@
             submitBtnId: '',
             beforeCall: '',
             afterCall: '',
-            params: {}
+            params: {},
+            btnHtml: '<div class="text"><p class="text-lg">+</p><p class="text-sm">点击添加图片</p></div>',
         }
     };
 
@@ -56,7 +58,7 @@
                 <div class="img-show" id="uploadImgShow_' + options.id + '">\
                 </div>\
                 <div class="form-box">\
-                    <label for="uploadInputFile_' + options.id + '" id="forUploadAdd_' + options.id + '" class="add-icon"><div class="text"><p class="text-lg">+</p><p class="text-sm">点击添加图片</p></div></label>\
+                    <label for="uploadInputFile_' + options.id + '" id="forUploadAdd_' + options.id + '" class="add-icon">'+options.upload.btnHtml+'</label>\
                     <input type="file" class="fn-hide" ' + (options.multiple ? 'multiple' : '') + ' id="uploadInputFile_' + options.id + '">\
                 </div>\
                 <div class="btn-dock"><button class="btn btn-info" id="uploadButton_' + options.id + '">上传图片</button></div>\
@@ -170,6 +172,10 @@
                                             });
                                             document.body.appendChild(detailBox);
                                         }
+                                        //return file-num
+                                        if (options.fileNum && typeof(options.fileNum) === 'function') {
+                                            options.fileNum(upFileList.length);
+                                        }
                                     });
                                     //end add eventListener.....................
                                     uploadImgShow.appendChild(ele);
@@ -179,6 +185,10 @@
                                     });
                                     isFinished[options.id] = upFileList.length ? false : !options.required;
                                     document.getElementById('forUploadAdd_' + options.id).style.display = (options.maxCount && upFileList.length >= options.maxCount) ? 'none' : 'block';
+                                    //return file-num
+                                    if (options.fileNum && typeof(options.fileNum) === 'function') {
+                                        options.fileNum(upFileList.length);
+                                    }
                                 } else {
                                     isFinished[options.id] = upFileList.length ? false : !options.required;
                                     _toast(thisObj.fileObj.name + ',该文件内容重复，已自动过滤', 2);

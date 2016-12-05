@@ -1,68 +1,61 @@
 .home-page{
     .child-info{
-        background-color: #fff;
         padding: px2rem(10px);
-        display: flex;
-        .info-left{
-            flex: 1;
-            p{
-                padding-top: px2rem(2px);
-                .icon-age{
-                    background: url('images/icon_age.png') no-repeat;
-                    background-size: px2rem(15px) px2rem(15px);
-                    padding-left: px2rem(18px);
-                }
-                .icon-birthday{
-                    background: url('images/icon_birthday.png') no-repeat;
-                    background-size: px2rem(15px) px2rem(15px);
-                    padding-left: px2rem(18px);
-                }
-                .icon-height{
-                    background: url('images/icon_height.png') no-repeat;
-                    background-size: px2rem(15px) px2rem(15px);
-                    padding-left: px2rem(18px);
-                }
-                .icon-weight{
-                    background: url('images/icon_weight.png') no-repeat;
-                    background-size: px2rem(15px) px2rem(15px);
-                    padding-left: px2rem(18px);
-                }
+        .tab-first{
+            .first-left{
+                padding: px2rem(10px) px2rem(5px);
+                background-color: #FA9BCA;
+                width: 45%;
+            }
+            .first-right{
+                padding: px2rem(10px) px2rem(5px);
+                background-color: #FA9BCA;
+                margin-left: px2rem(10px);
+                width: 55%;
             }
         }
-        .info-right{
-            flex: 1;
-            p{
-                background-color: #EEEEEE;
-                margin-bottom: px2rem(5px);
-                padding: px2rem(2px);
-                text-align: center;
-                border-radius: px2rem(5px);
+        .tab-second{
+            font-size: px2rem(16px);
+            margin-top: px2rem(10px);
+            text-align: center;
+            .second-left{
+                padding: px2rem(10px) 0;
+                background-color: #FA9BCA;
+                width: 40%;
+            }
+            .second-right{
+                padding: px2rem(10px) 0;
+                background-color: #FA9BCA;
+                margin-left: px2rem(10px);
+                width: 60%;
             }
         }
     }
     .h-channel{
-        padding-bottom: px2rem(10px);
+        padding: 0 px2rem(10px);
         ul{
             display: flex;
         }
         ul li{
             list-style: none;
-            background: #fff;
-            margin: px2rem(10px);
+            margin: px2rem(10px) 0;
             font-size: px2rem(map_get($map-font-size, m));
             text-align: center;
             flex: 1;
             a{
+                border-radius: px2rem(5px);
                 display: block;
                 padding-top: px2rem(100px);
                 padding-bottom: px2rem(10px);
                 &.h-findDoc-a{
                     background: #7ACACC url('images/icon_chileBooking.png') no-repeat 50% px2rem(10px);
                     background-size: px2rem(80px) px2rem(80px);
+                    margin-right: px2rem(5px);
                 }
                 &.h-booking-a{
                     background: #F5BBC6 url('images/icon_consultation.png') no-repeat 50% px2rem(10px);
                     background-size: px2rem(80px) px2rem(80px);
+                    margin-left: px2rem(5px);
                 }
             }
             span{
@@ -70,5 +63,58 @@
                 color: #fff;
             }
         }
+    }
+    .order-remind{
+        padding: px2rem(10px);
+        background-color: #fff;
+        margin-bottom: px2rem(10px);
+        p{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 100%;
+        }
+    }
+    .childgrowth{
+        background-color: #fff;
+        .btn-growth{
+            padding: px2rem(5px) px2rem(10px);
+            border: 1px solid #efefef;
+            border-radius: px2rem(5px);
+            margin: px2rem(5px) px2rem(5px) 0;
+        }
+    }
+}
+.growthdatas-page{
+    .data-tab{
+        background: #fff;
+        .data-item{
+            padding: 0 px2rem(10px);
+            border-width: 0 0 1px 0;
+            border-style: solid;
+            border-color: #efefef;
+            div{
+                padding: px2rem(10px) 0;
+            }
+            .btn-select{
+                width: 10px;
+                height: 10px;
+                border: 1px solid #888;
+                border-radius: 50%;
+                display: inline-block;
+                &.active{
+                    background: #333;
+                }
+            }
+        }
+    }
+    .btn-dock{
+        margin: px2rem(20px) 0;
+    }
+}
+.updateGrowth{
+    .btn-dock{
+        margin-bottom: px2rem(20px);
     }
 }

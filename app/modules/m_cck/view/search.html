@@ -1,0 +1,60 @@
+<div ng-controller="cckSearchCtrl" class="cckSearch-page">
+	<div class="search-nav">
+		<div class="search-input">
+			<input ng-model="searchValue" type="text" ng-change="valueChange()">
+			<a class="icon_clear" ng-hide="showBack" ng-click="clear()"></a>
+		</div>
+		<div class="search-btn">
+			<p ng-show="showBack" ng-click="goBack()">取消</p>
+			<p ng-hide="showBack" ng-click="search()">搜索</p>
+		</div>
+	</div>
+	<div class="search-results">
+		<div ng-show="results.CckInfo.length>0">
+			<p class="type-title">育儿知识</p>
+			<div class="flex" ng-repeat="cckinfo in results.CckInfo" ng-click="goDetail(cckinfo, 'CckInfo')">
+				<div class="item-left">
+					<img ng-src="{{cckinfo.imageUrl}}">
+				</div>
+				<div class="item-right flex-1" ng-class="{'bb-gray': $last==false}">
+					<p class="title" ng-bind="cckinfo.title | limitTo :12"></p>
+					<p ng-bind="cckinfo.description | limitTo :40"></p>
+				</div>
+			</div>
+		</div>
+		<div ng-show="results.NutritionRecipesInfo.length>0">
+			<p class="type-title">营养食谱</p>
+			<div class="flex" ng-repeat="nutritionRecipesInfo in results.NutritionRecipesInfo" ng-click="goDetail(nutritionRecipesInfo, 'NutritionRecipesInfo')">
+				<div class="item-left">
+					<img ng-src="{{nutritionRecipesInfo.imageUrl}}">
+				</div>
+				<div class="item-right flex-1" ng-class="{'bb-gray': $last==false}">
+					<p ng-bind="nutritionRecipesInfo.title | limitTo :12"></p>
+					<p ng-bind="nutritionRecipesInfo.description | limitTo :40"></p>
+				</div>
+			</div>
+		</div>
+		<div ng-show="results.FoodInfo.length>0">
+			<p class="type-title">能不能吃</p>
+			<div class="flex" ng-repeat="foodInfo in results.FoodInfo" ng-click="goDetail(foodInfo, 'FoodInfo')">
+				<div class="item-left">
+					<img ng-src="{{foodInfo.imageUrl}}">
+				</div>
+				<div class="item-right flex-1" ng-class="{'bb-gray': $last==false}">
+					<p ng-bind="foodInfo.title | limitTo :12"></p>
+					<p ng-bind="foodInfo.description | limitTo :40"></p>
+				</div>
+			</div>
+		</div>
+		<div ng-show="results.MusicCollection.length>0">
+			<p class="type-title">宝宝听听</p>
+			<div class="musicCollection-info" ng-repeat="musicCollection in results.MusicCollection" ng-click="goMusicinfo(musicCollection.id)">
+				<div class="img-part">
+					<img ng-src="{{musicCollection.imageUrl}}">
+				</div>
+				<p ng-bind="musicCollection.title" class="ng-binding">家庭礼貌称呼歌</p>
+			</div>
+		</div>
+		<p class="no-result" ng-if="results.CckInfo.length==0 && results.NutritionRecipesInfo.length==0 && results.FoodInfo.length==0 && results.MusicCollection.length==0 && showNoResults">未搜索到关于"{{searchValue}}"的信息</p>
+	</div>
+</div>

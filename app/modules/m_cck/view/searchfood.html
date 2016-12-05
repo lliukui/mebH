@@ -10,15 +10,16 @@
 		</div>
 	</div>
 	<div class="search-results">
-		<div class="food-item" ng-repeat="foodinfo in foodinfos" ng-click="goDetail(foodinfo.contentUrl)">
+		<div ng-if="foodinfos.length>0" class="food-item" ng-repeat="foodinfo in foodinfos" ng-click="goDetail(foodinfo)">
 			<div class="item-left">
-				<img src="{{foodinfo.imageUrl}}">
+				<img ng-src="{{foodinfo.imageUrl}}">
 			</div>
 			<div class="item-right" ng-class="{'bb-gray': $last==false}">
 				<p ng-bind="foodinfo.name"></p>
 				<p ng-bind="foodinfo.prompt"></p>
-				<p ng-bind="foodinfo.description"></p>
+				<p ng-bind="foodinfo.description | limitTo: 40"></p>
 			</div>
 		</div>
+		<p class="no-result" ng-if="foodinfos.length==0 && showNoResults">未搜索到关于"{{searchValue}}"的信息</p>
 	</div>
 </div>
