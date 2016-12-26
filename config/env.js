@@ -27,7 +27,7 @@
         },
         localhost: {
             env:'localhost',
-            api_url: 'http://192.168.10.79/meb'
+            api_url: 'http://192.168.10.107/meb'
         }
     };
     var envs = allEnvs.localhost;//默认连接dev开发环境

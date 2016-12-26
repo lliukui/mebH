@@ -1,4 +1,6 @@
 app.controller('cckCtrl',['$scope','$rootScope','$state','dialog','StorageConfig','$stateParams',function($scope,$rootScope,$state,dialog,StorageConfig,$stateParams){
+	$scope.header = true;
+	$scope.footer = false;
 	window.headerConfig={
 		enableBack: false,
 		title: '育儿宝库',

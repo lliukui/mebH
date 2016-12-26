@@ -1,4 +1,10 @@
 .cck-page{
+    .fixed{
+        position: absolute;
+        top: 50px;
+        left: 20px;
+        z-index: 999;
+    }
     .search-tab{
         background-color: #fff;
         margin: px2rem(5px) px2rem(10px);

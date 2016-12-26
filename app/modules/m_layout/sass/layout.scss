@@ -1,4 +1,10 @@
 .layout-base{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
     background: $color-main-bg;
     display: -webkit-box;
     display: flex;
@@ -11,22 +17,29 @@
         width: 100%;
         height:px2rem($header-height);
         overflow: hidden;
+        z-index: 10;
     }
     .layout-content{
         -webkit-box-flex: 1;
         -webkit-flex: 1;
         flex: 1;
         width: 100%;
-        overflow-x: hidden;
-        overflow-y: auto;
-        height: 100%;
+        height: auto;
         .content-view{
             height: 100%;
+            .content-page{
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: auto;
+                overflow: auto;
+            }
         }
     }
     .layout-footer{
         width: 100%;
         height: px2rem($footer-height);
         overflow: hidden;
+        z-index: 999;
     }
 }
