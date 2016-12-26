@@ -37,7 +37,7 @@ app.directive('headerWidget', [function () {
                 ],
                 trackKey: 'name'
             },
-            title: '蜜儿宝'
+            title: '嘉宝育儿'
         };
         $scope.defaults = angular.extend(angular.copy(defaults), window.headerConfig);
         document.title = $scope.defaults.title;

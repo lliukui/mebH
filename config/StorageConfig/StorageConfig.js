@@ -8,7 +8,7 @@ app.factory('StorageConfig', ['ngStorage', function (ngStorage) {
     //编辑宝宝信息
     var child_storage = ngStorage.sessionStorage('meb_child');
     //默认token的sessionStorage，用来存放当前的token。用户关闭浏览器后即删除
-    var session_token = ngStorage.sessionStorage('meb_session_token');
+    var session_token = ngStorage.localStorage('meb_session_token');
     //用于存储登录拦截的参数
     var intercept_storage = ngStorage.sessionStorage('meb_intercept');
     //用于存储是否显示footer
