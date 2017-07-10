@@ -1,11 +1,13 @@
 <div ng-controller="musicinfoCtrl" class="musicinfo-page">
-	<div class="musicinfo-tab">
-		<audio id="audio">
-            <source ng-src="{{selectMusicUrl}}" type="audio/ogg" />
-            <source ng-src="{{selectMusicUrl}}" type="audio/mpeg" />
-        </audio>
-		<div class="musicinfo-item" ng-repeat="musicinfo in musicinfoList" ng-class="{'bb-gray': $last==false}">
-			<div ng-bind="musicinfo.name" ng-click="playMusic(musicinfo)">
+	<div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
+		<div class="musicinfo-tab">
+			<audio id="audio">
+	            <source ng-src="{{selectMusicUrl}}" type="audio/ogg" />
+	            <source ng-src="{{selectMusicUrl}}" type="audio/mpeg" />
+	        </audio>
+			<div class="musicinfo-item" ng-repeat="musicinfo in musicinfoList" ng-class="{'bb-gray': $last==false}">
+				<div ng-bind="musicinfo.name" ng-click="playMusic(musicinfo)">
+				</div>
 			</div>
 		</div>
 	</div>

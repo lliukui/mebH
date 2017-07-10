@@ -9,16 +9,18 @@
 			<p ng-hide="showBack" ng-click="search()">搜索</p>
 		</div>
 	</div>
-	<div class="search-results">
-		<div ng-if="nrInfos.length>0" class="nrInfo-item" ng-repeat="nrInfo in nrInfos" ng-click="goDetail(nrInfo)" ng-class="{'bb-gray': $last==false}">
-			<div class="item-left">
-				<img ng-src="{{nrInfo.imageUrl}}">
+	<div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
+		<div class="search-results">
+			<div ng-if="nrInfos.length>0" class="nrInfo-item" ng-repeat="nrInfo in nrInfos" ng-click="goDetail(nrInfo)" ng-class="{'bb-gray': $last==false}">
+				<div class="item-left">
+					<img ng-src="{{nrInfo.imageUrl}}">
+				</div>
+				<div class="item-right">
+					<p ng-bind="nrInfo.title"></p>
+					<p ng-bind="nrInfo.description | limitTo: 40"></p>
+				</div>
 			</div>
-			<div class="item-right">
-				<p ng-bind="nrInfo.title"></p>
-				<p ng-bind="nrInfo.description | limitTo: 40"></p>
-			</div>
+			<p class="no-result" ng-if="nrInfos.length==0 && showNoResults">未搜索到关于"{{searchValue}}"的信息</p>
 		</div>
-		<p class="no-result" ng-if="nrInfos.length==0 && showNoResults">未搜索到关于"{{searchValue}}"的信息</p>
 	</div>
 </div>
