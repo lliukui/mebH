@@ -17,6 +17,8 @@ app.factory('StorageConfig', ['ngStorage', function (ngStorage) {
     var order_storage = ngStorage.sessionStorage('meb_order');
     //用于存储需要修改的成长数据
     var growth_storage = ngStorage.sessionStorage('meb_growth');
+    //用于存储育儿宝库中的数据
+    var cck_storage = ngStorage.sessionStorage('meb_cck');
     return {
         COMMON_STORAGE: common_storage,
         BOOKING_STORAGE: booking_storage,
@@ -27,5 +29,6 @@ app.factory('StorageConfig', ['ngStorage', function (ngStorage) {
         FOOTER_STORAGE: footer_storage,
         ORDER_STORAGE: order_storage,
         GROWTH_STORAGE: growth_storage,
+        CCK_STORAGE: cck_storage,
     };
 }]);

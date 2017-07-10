@@ -16,7 +16,6 @@
     .layout-header{
         width: 100%;
         height:px2rem($header-height);
-        overflow: hidden;
         z-index: 10;
     }
     .layout-content{
@@ -29,8 +28,10 @@
             height: 100%;
             .content-page{
                 position: absolute;
+                top: 0;
                 left: 0;
                 right: 0;
+                bottom: 0;
                 height: auto;
                 overflow: auto;
             }
