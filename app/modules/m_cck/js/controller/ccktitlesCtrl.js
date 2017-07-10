@@ -1,4 +1,6 @@
 app.controller('ccktitlesCtrl',['$scope','$rootScope','ccktitlesService','dialog','$state',function($scope,$rootScope,ccktitlesService,dialog,$state){
+	$scope.header = true;
+	$scope.footer = false;
 	window.headerConfig={
 		enableBack: true,
 		title: '育儿知识',

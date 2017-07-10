@@ -1,4 +1,6 @@
-app.controller('musicinfoCtrl',['$scope','$rootScope','dialog','$stateParams','musicinfoService','$sce','cckDetailService','StorageConfig','$state',function($scope,$rootScope,dialog,$stateParams,musicinfoService,$sce,cckDetailService,StorageConfig,$state){
+app.controller('musicinfoCtrl', ['$scope', '$rootScope', 'dialog', '$stateParams', 'musicinfoService', '$sce', 'cckDetailService', 'StorageConfig', '$state', function($scope, $rootScope, dialog, $stateParams, musicinfoService, $sce, cckDetailService, StorageConfig, $state){
+	$scope.header = true;
+	$scope.footer = true;
 	var params={
 		username: StorageConfig.TOKEN_STORAGE.getItem('username'),
 		token: StorageConfig.TOKEN_STORAGE.getItem('token'),
@@ -19,7 +21,7 @@ app.controller('musicinfoCtrl',['$scope','$rootScope','dialog','$stateParams','m
 
 	window.headerConfig={
 		enableBack: true,
-		title: '宝宝听听',
+		title: StorageConfig.CCK_STORAGE.getItem('musictitle'),
 		enableRefresh: false
 	};
 

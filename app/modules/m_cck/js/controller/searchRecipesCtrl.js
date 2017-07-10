@@ -1,4 +1,6 @@
 app.controller('searchRecipesCtrl',['$scope','$rootScope','dialog','$state','searchRecipesService',function($scope,$rootScope,dialog,$state,searchRecipesService){
+	$scope.header = true;
+	$scope.footer = false;
 	window.headerConfig={
 		enableHeader: false
 	};

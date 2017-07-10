@@ -1,36 +1,37 @@
 <div ng-controller="cckCollectionCtrl" class="cckCollection-page">
-	
-	<div class="tab-list">
-		<div class="item-tab flex" ng-click="seeCollection('CckInfo')">
-			<div class="flex-1">
-				育儿知识
+	<div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
+		<div class="tab-list">
+			<div class="item-tab flex" ng-click="seeCollection('CckInfo')">
+				<div class="flex-1">
+					育儿知识
+				</div>
+				<div class="type-number" ng-bind="count.cckNum">
+					
+				</div>
 			</div>
-			<div class="type-number" ng-bind="count.cckNum">
-				
+			<div class="item-tab flex" ng-click="seeCollection('NutritionRecipesInfo')">
+				<div class="flex-1">
+					营养食谱
+				</div>
+				<div class="type-number" ng-bind="count.nrNum">
+					
+				</div>
 			</div>
-		</div>
-		<div class="item-tab flex" ng-click="seeCollection('NutritionRecipesInfo')">
-			<div class="flex-1">
-				营养食谱
+			<div class="item-tab flex" ng-click="seeCollection('FoodInfo')">
+				<div class="flex-1">
+					能不能吃
+				</div>
+				<div class="type-number" ng-bind="count.foodNum">
+					
+				</div>
 			</div>
-			<div class="type-number" ng-bind="count.nrNum">
-				
-			</div>
-		</div>
-		<div class="item-tab flex" ng-click="seeCollection('FoodInfo')">
-			<div class="flex-1">
-				能不能吃
-			</div>
-			<div class="type-number" ng-bind="count.foodNum">
-				
-			</div>
-		</div>
-		<div class="item-tab flex" ng-click="seeCollection('MusicCollection')">
-			<div class="flex-1">
-				宝宝听听
-			</div>
-			<div class="type-number" ng-bind="count.musicNum">
-				
+			<div class="item-tab flex" ng-click="seeCollection('MusicCollection')">
+				<div class="flex-1">
+					宝宝听听
+				</div>
+				<div class="type-number" ng-bind="count.musicNum">
+					
+				</div>
 			</div>
 		</div>
 	</div>

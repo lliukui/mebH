@@ -1,11 +1,13 @@
-app.controller('musictitlesCtrl',['$scope','$rootScope','$state','dialog','musictitlesService',function($scope,$rootScope,$state,dialog,musictitlesService){
+app.controller('musictitlesCtrl', ['$scope', '$rootScope', '$state', 'dialog', 'musictitlesService', 'StorageConfig', function($scope, $rootScope, $state, dialog, musictitlesService, StorageConfig){
+    $scope.header = true;
+    $scope.footer = false;
 	window.headerConfig={
 		enableBack: true,
 		title: '宝宝听听',
 		enableRefresh: false
 	}
 
-	$rootScope.$broadcast('setHeaderConfig',window.headerConfig);
+	$rootScope.$broadcast('setHeaderConfig', window.headerConfig);
 
 	var spinner=dialog.showSpinner();
 	musictitlesService.getMusictitles().then(function(res){
@@ -27,16 +29,23 @@ app.controller('musictitlesCtrl',['$scope','$rootScope','$state','dialog','music
         musictitlesNavScroll.refresh();
     },1000);
 
-    $scope.selectedCategory=0;
-
-    $scope.checkNav=function(_categoryName){
-    	$scope.selectedCategory=_categoryName;
-    	document.getElementById('layoutContent').scrollTop=0;
+    $scope.selectedCategory = 0;
+    //返回时，默认展示先前选中
+    var musicNav = StorageConfig.CCK_STORAGE.getItem('musicNav');
+    if(musicNav && musicNav != ''){
+        $scope.selectedCategory = musicNav;
     }
 
-    $scope.goMusic=function(_id){
+    $scope.checkNav=function(_categoryName){
+    	$scope.selectedCategory = _categoryName;
+        StorageConfig.CCK_STORAGE.putItem('musicNav', _categoryName);
+    	document.getElementById('layoutContent').scrollTop = 0;
+    }
+
+    $scope.goMusic=function(_data){
+        StorageConfig.CCK_STORAGE.putItem('musictitle', _data.collectionName);
     	$state.go('layout.cck-musicinfo',{
-    		id: _id
+    		id: _data.collectionId
     	});
     }
 }]);

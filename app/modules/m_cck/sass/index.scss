@@ -27,9 +27,9 @@
 }
 .cckSearch-page{
     .search-nav{
-        position: fixed;
+        position: absolute;
         height: px2rem(44px);
-        background-color: #F4D020;
+        background-color: $color-primary;
         width: 100%;
         .search-input{
             width: 80%;
@@ -65,7 +65,6 @@
         }
     }
     .search-results{
-        padding-top: px2rem(44px);
         background-color: #fff;
         .type-title{
             padding: px2rem(10px);
@@ -113,9 +112,10 @@
     .fixed-nav{
         background: #efefef;
         width: 100%;
-        position: fixed;
+        position: absolute;
         top: px2rem(44px);
         border-bottom: px2rem(1px) solid #DEDEDE;
+        z-index: 999;
         .search-tab{
             background-color: #fff;
             margin: px2rem(5px) px2rem(10px);
@@ -193,6 +193,7 @@
                         border-right: px2rem(1px) solid #DEDEDE;
                         border-bottom: px2rem(1px) solid #DEDEDE;
                         float: left;
+                        background-color: #fff;
                     }
                 }
             }
@@ -236,9 +237,9 @@
 }
 .searchcck-page{
     .search-nav{
-        position: fixed;
+        position: absolute;
         height: px2rem(44px);
-        background-color: #F4D020;
+        background-color: $color-primary;
         width: 100%;
         .search-input{
             width: 80%;
@@ -274,7 +275,6 @@
         }
     }
     .search-results{
-        padding-top: px2rem(44px);
         clear: both;
         $img-width: 120px;
         .cckinfo-item{
@@ -313,8 +313,9 @@
     .fixed-nav{
         background: #efefef;
         width: 100%;
-        position: fixed;
+        position: absolute;
         top: px2rem(44px);
+        z-index: 999;
         border-bottom: px2rem(1px) solid #DEDEDE;
         .search-tab{
             background-color: #fff;
@@ -411,9 +412,9 @@
 }
 .searchRecipes-page{
     .search-nav{
-        position: fixed;
+        position: absolute;
         height: px2rem(44px);
-        background-color: #F4D020;
+        background-color: $color-primary;
         width: 100%;
         .search-input{
             width: 80%;
@@ -449,7 +450,6 @@
         }
     }
     .search-results{
-        padding-top: px2rem(44px);
         background: #fff;
         .nrInfo-item{
             display: flex;
@@ -601,9 +601,9 @@
 }
 .searchfood-page{
     .search-nav{
-        position: fixed;
+        position: absolute;
         height: px2rem(44px);
-        background-color: #F4D020;
+        background-color: $color-primary;
         width: 100%;
         .search-input{
             width: 80%;
@@ -639,7 +639,6 @@
         }
     }
     .search-results{
-        padding-top: px2rem(44px);
         background-color: #fff;
         .food-item{
             display: flex;
@@ -667,8 +666,9 @@
     background: #fff;
     .fixed-nav{
         width: 100%;
-        position: fixed;
+        position: absolute;
         top: px2rem(44px);
+        z-index: 999;
         #musictitlesNavScroll{
             .scroll{
                 width: auto;
@@ -755,7 +755,7 @@
         }
     }
     .fixed-footer{
-        position: fixed;
+        position: absolute;
         bottom: 0;
         height: px2rem(44px);
         width: 100%;

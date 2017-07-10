@@ -1,4 +1,6 @@
 app.controller('cckinfoCtrl',['$scope','$rootScope','$stateParams','cckinfoService','dialog','$state',function($scope,$rootScope,$stateParams,cckinfoService,dialog,$state){
+	$scope.header = true;
+	$scope.footer = false;
 	window.headerConfig={
 		enableBack: true,
 		enableRefresh: false

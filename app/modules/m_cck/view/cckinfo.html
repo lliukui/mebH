@@ -1,11 +1,13 @@
 <div ng-controller="cckinfoCtrl" class="cckinfo-page">
-	<div class="cckinfo-item" ng-repeat="cckInfo in cckInfos" ng-click="goDetail(cckInfo)">
-		<div class="item-left">
-			<img ng-src="{{cckInfo.imageUrl}}">
-		</div>
-		<div class="item-right" ng-class="{'bb-gray': $last==false}">
-			<p class="cckinfo-title" ng-bind="cckInfo.title"></p>
-			<p class="cckinfo-description" ng-bind="cckInfo.description | limitTo :40"></p>
+	<div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
+		<div class="cckinfo-item" ng-repeat="cckInfo in cckInfos" ng-click="goDetail(cckInfo)">
+			<div class="item-left">
+				<img ng-src="{{cckInfo.imageUrl}}">
+			</div>
+			<div class="item-right" ng-class="{'bb-gray': $last==false}">
+				<p class="cckinfo-title" ng-bind="cckInfo.title"></p>
+				<p class="cckinfo-description" ng-bind="cckInfo.description | limitTo :40"></p>
+			</div>
 		</div>
 	</div>
 </div>

@@ -1,4 +1,6 @@
 app.controller('foodtitlesCtrl',['$scope','$rootScope','$state','foodtitlesService','dialog','$stateParams',function($scope,$rootScope,$state,foodtitlesService,dialog,$stateParams){
+	$scope.header = true;
+	$scope.footer = false;
 	window.headerConfig={
 		enableBack: true,
 		title: '',

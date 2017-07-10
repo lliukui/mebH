@@ -1,4 +1,6 @@
 app.controller('searchcckCtrl',['$scope','$rootScope','searchcckService','dialog','$state',function($scope,$rootScope,searchcckService,dialog,$state){
+	$scope.header = true;
+	$scope.footer = false;
 	window.headerConfig={
 		enableHeader: false
 	};

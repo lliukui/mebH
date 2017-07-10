@@ -1,4 +1,6 @@
 app.controller('foodCtrl',['$scope','$rootScope','$state',function($scope,$rootScope,$state){
+	$scope.header = true;
+	$scope.footer = false;
 	window.headerConfig={
 		enableBack: true,
 		title: '能不能吃',

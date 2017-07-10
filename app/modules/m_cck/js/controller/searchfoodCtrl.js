@@ -1,4 +1,6 @@
 app.controller('searchfoodCtrl',['$scope','$rootScope','searchfoodService','dialog','$state',function($scope,$rootScope,searchfoodService,dialog,$state){
+	$scope.header = true;
+	$scope.footer = false;
 	window.headerConfig={
 		enableHeader: false
 	};

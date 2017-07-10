@@ -12,12 +12,14 @@
             </div>
         </div>
     </div>
-    <div class="cck-tab">
-        <div class="cck-item" ng-repeat="cckInfo in cck" ng-show="selectedAgeGroup==$index || selectedAgeGroup== cckInfo.ageGroup">
-            <div class="cck-info" ng-repeat="firstTitles in cckInfo.firstTitles">
-                <p class="fitst-title" ng-bind="firstTitles.firstTitle"></p>
-                <div class="second-tab">
-                    <p ng-bind="secondTitles.secondTitle" ng-repeat="secondTitles in firstTitles.secondTitles" ng-click="gocckinfo(secondTitles.secondId)"></p>
+    <div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
+        <div class="cck-tab">
+            <div class="cck-item" ng-repeat="cckInfo in cck" ng-show="selectedAgeGroup==$index || selectedAgeGroup== cckInfo.ageGroup">
+                <div class="cck-info" ng-repeat="firstTitles in cckInfo.firstTitles">
+                    <p class="fitst-title" ng-bind="firstTitles.firstTitle"></p>
+                    <div class="second-tab">
+                        <p ng-bind="secondTitles.secondTitle" ng-repeat="secondTitles in firstTitles.secondTitles" ng-click="gocckinfo(secondTitles.secondId)"></p>
+                    </div>
                 </div>
             </div>
         </div>

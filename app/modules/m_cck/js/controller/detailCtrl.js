@@ -1,4 +1,6 @@
 app.controller('detailCtrl',['$scope','$rootScope','$stateParams','cckDetailService','$sce','dialog','StorageConfig','$state',function($scope,$rootScope,$stateParams,cckDetailService,$sce,dialog,StorageConfig,$state){
+	$scope.header = true;
+	$scope.footer = false;
 	var params={
 		username: StorageConfig.TOKEN_STORAGE.getItem('username'),
 		token: StorageConfig.TOKEN_STORAGE.getItem('token'),

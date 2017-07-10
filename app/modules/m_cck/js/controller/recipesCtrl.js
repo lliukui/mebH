@@ -1,4 +1,6 @@
 app.controller('recipesCtrl',['$scope','$rootScope','recipesService','dialog','$state',function($scope,$rootScope,recipesService,dialog,$state){
+	$scope.header = true;
+	$scope.footer = false;
 	window.headerConfig={
 		enableBack: true,
 		title: '营养食谱',

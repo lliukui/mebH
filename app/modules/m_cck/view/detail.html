@@ -1,3 +1,5 @@
 <div ng-controller="detailCtrl" class="detail-page">
-	<iframe ng-src="{{contentUrl}}" class="show-content"></iframe>
+	<div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
+		<iframe ng-src="{{contentUrl}}" class="show-content"></iframe>
+	</div>
 </div>

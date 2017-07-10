@@ -1,13 +1,15 @@
 <div ng-controller="foodtitlesCtrl" class="foodtitles-page">
-	<div class="food-tab">
-		<div class="food-item" ng-repeat="food in foods" ng-click="goDetail(food)">
-			<div class="item-left">
-				<img ng-src="{{food.imageUrl}}">
-			</div>
-			<div class="item-right" ng-class="{'bb-gray': $last==false}">
-				<p ng-bind="food.name"></p>
-				<p ng-bind="food.prompt"></p>
-				<p ng-bind="food.description | limitTo: 40"></p>
+	<div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
+		<div class="food-tab">
+			<div class="food-item" ng-repeat="food in foods" ng-click="goDetail(food)">
+				<div class="item-left">
+					<img ng-src="{{food.imageUrl}}">
+				</div>
+				<div class="item-right" ng-class="{'bb-gray': $last==false}">
+					<p ng-bind="food.name"></p>
+					<p ng-bind="food.prompt"></p>
+					<p ng-bind="food.description | limitTo: 40"></p>
+				</div>
 			</div>
 		</div>
 	</div>
