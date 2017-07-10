@@ -1,4 +1,6 @@
 app.controller('cckCollectionCtrl',['$scope','$rootScope','cckCollectionService','dialog','$state','StorageConfig',function($scope,$rootScope,cckCollectionService,dialog,$state,StorageConfig){
+	$scope.header = true;
+	$scope.footer = false;
 	window.headerConfig={
 		title: '收藏'
 	}
