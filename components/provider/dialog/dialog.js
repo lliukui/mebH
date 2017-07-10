@@ -76,9 +76,20 @@ app.factory('dialog', ['ngDialog', function (ngDialog) {
                 //         <span class="circle-close"></span>\
                 //     </div>\
                 // </div>'
+                // 
+                // <div class="logo-box">\
+                //     <img src="app/images/icon_loading.gif">\
+                // </div>\
                 contentHtml: '<div class="spinner-body">\
-                    <div class="logo-box">\
-                        <img src="app/images/icon_loading.gif">\
+                    <div class="loading">\
+                        <div class="object one"></div>\
+                        <div class="object two"></div>\
+                        <div class="object three"></div>\
+                        <div class="object four"></div>\
+                        <div class="object five"></div>\
+                        <div class="object six"></div>\
+                        <div class="object seven"></div>\
+                        <div class="object eight"></div>\
                     </div>\
                     <div class="spinner-tip">' + spinnerTip + '</div>\
                     <div class="spinner-close" ng-click="closeByCancelButton(\'REPLACEDIALOGID\')">\
