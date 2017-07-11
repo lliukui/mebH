@@ -1,12 +1,6 @@
-.top0{
-    top: 0;
-}
 .topHeader{
-    top: px2rem($header-height);
-}
-.bottom0{
-    bottom: 0;
+    top: px2rem($header-height)!important;
 }
 .bottomFooter{
-    bottom: px2rem($footer-height);
+    bottom: px2rem($footer-height)!important;
 }

@@ -1,0 +1,20 @@
+.doctorList-page{
+	.content-page{
+		top: px2rem(50px)!important;
+		.doctor-tab{
+			background-color: #fff;
+			.doctor-item{
+				border-bottom: 1px solid #efefef;
+				padding: px2rem(10px);
+			}
+		}
+		.dept-tab{
+			padding: px2rem(10px);
+			.dept-item{
+				background-color: #fff;
+				margin-bottom: px2rem(10px);
+				padding: px2rem(20px);
+			}
+		}
+	}
+}

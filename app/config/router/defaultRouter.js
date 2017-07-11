@@ -150,5 +150,24 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                     url: '/user/feedback',
                     templateUrl: 'app/modules/m_user/view/feedback.html'
                 })
-
+                .state('layout.doctor', {
+                    url: '/doctor',
+                    templateUrl: 'app/modules/m_doctor/view/list.html'
+                })
+                .state('layout.doctor-dutydate', {
+                    url: '/doctor/dutydate?id',
+                    templateUrl: 'app/modules/m_doctor/view/dutydate.html'
+                })
+                .state('layout.booking-info', {
+                    url: '/booking/info',
+                    templateUrl: 'app/modules/m_booking/view/info.html'
+                })
+                .state('layout.booking-order', {
+                    url: '/booking/order',
+                    templateUrl: 'app/modules/m_booking/view/order.html'
+                })
+                .state('layout.booking-update', {
+                    url: '/booking/update?id',
+                    templateUrl: 'app/modules/m_booking/view/update.html'
+                })
     }]);

@@ -8,6 +8,9 @@ app.directive('calendarWidget', function(){
 	    	date: new Date(),
 			start_date: '',
 			end_date: '',
+			passedDayList: '',//已过期时间
+			unConfiguredList: '',//未开放日期
+			unavailableDays: '',//不可用日期
 			selectedCallback: ''
 		},
 		_this=this,
@@ -18,9 +21,9 @@ app.directive('calendarWidget', function(){
 		$rootScope.$on('setCalendarConfig', function (event, data) {
             var temp = angular.copy(defaults);
             $scope.defaults = angular.extend(temp, data);
+            _this.refresh(currentDate);
         });
 
-		$scope.daySelected=$scope.defaults.title;
 		$scope.showCalendar=false;
 		$scope.calendar=function(){
 			$scope.showCalendar=true;
@@ -65,7 +68,8 @@ app.directive('calendarWidget', function(){
 							'show': true,
 							'day': dayNum,
 							'date': date.getFullYear()+'-'+(date.getMonth()+1<10? '0'+(date.getMonth()+1): (date.getMonth()+1))+'-'+(dayNum<10? '0'+dayNum: dayNum),
-							'optional': true
+							'optional': true,
+							'info': '',//日期描述
 						};
 						if($scope.defaults.start_date!=''){
 							if(sameDay<$scope.defaults.start_date){
@@ -75,6 +79,27 @@ app.directive('calendarWidget', function(){
 						if($scope.defaults.end_date!=''){
 							if(sameDay>$scope.defaults.end_date){
 								dayObj.optional=false;
+							}
+						}
+						//已过期日期
+						for(var k = 0; k < $scope.defaults.passedDayList.length; k++){
+							if($scope.defaults.passedDayList[k] == dayObj.date){
+								dayObj.optional=false;
+								dayObj.info = '已过期';
+							}
+						}
+						//不可用日期
+						for(var k = 0; k < $scope.defaults.unavailableDays.length; k++){
+							if($scope.defaults.unavailableDays[k] == dayObj.date){
+								dayObj.optional=false;
+								dayObj.info = '不可用';
+							}
+						}
+						//未开放日期
+						for(var k = 0; k < $scope.defaults.unConfiguredList.length; k++){
+							if($scope.defaults.unConfiguredList[k] == dayObj.date){
+								dayObj.optional=false;
+								dayObj.info = '未开放';
 							}
 						}
 						dayRow.push(dayObj);
@@ -137,6 +162,20 @@ app.directive('calendarWidget', function(){
 		})
 
 		/**
+		 * 点击空白区域，关闭选项框
+		 */
+		$scope.closeCalendar = function(){
+			$scope.showCalendar=false;
+		}
+
+		/**
+		 * 日期选项框，阻止关闭选项框事件
+		 */
+		$scope.stopClose = function($event){
+			$event.stopPropagation();
+		}
+
+		/**
 		 * 更新日历
 		 */
 		this.refresh=function(date){
@@ -148,8 +187,11 @@ app.directive('calendarWidget', function(){
 		_init();
 	}];
 	return {
-		restrict: 'A',
+		restrict: 'EA',
 		replace: true,
+		scope: {
+			daySelected: '=daySelected'
+		},
 		controller: ctrl,
 		templateUrl: "template/calendar.html"
 	}
@@ -158,8 +200,8 @@ app.run(['$templateCache', function($templateCache){
 	$templateCache.put('template/calendar.html',
 		'<div>\
 			<p ng-bind="daySelected" ng-click="calendar()"></p>\
-			<div class="calendar-mask" ng-show="showCalendar">\
-				<div class="calendar-body">\
+			<div class="calendar-mask" ng-show="showCalendar" ng-click="closeCalendar()">\
+				<div class="calendar-body" ng-click="stopClose($event)">\
 					<div class="calendar-header flex">\
 						<div class="header-year flex-1 flex">\
 							<div class="year-left flex-1 text-center" ng-click="changeCalendar(\'upper-year\')">\
@@ -189,7 +231,7 @@ app.run(['$templateCache', function($templateCache){
 					<div class="calendar-day">\
 						<table>\
 							<tr ng-repeat="dayRow in dayArray">\
-								<td ng-class="{\'show\': !(dayObj.show && !dayObj.optional), \'not-show\': dayObj.show && !dayObj.optional}" ng-repeat="dayObj in dayRow" ng-bind="dayObj.day" ng-click="clickOnSelect(dayObj)"></td>\
+								<td ng-class="{\'show\': !(dayObj.show && !dayObj.optional), \'not-show\': dayObj.show && !dayObj.optional}" ng-repeat="dayObj in dayRow" ng-click="clickOnSelect(dayObj)"><div class="num">{{dayObj.day}}</div><div class="info">{{dayObj.info}}</div></td>\
 							</tr>\
 						</table>\
 					</div>\

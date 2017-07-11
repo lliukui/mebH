@@ -388,3 +388,58 @@
         width: 30%;
     }
 }
+.bookingInfo-page{
+	.content-page{
+		top: px2rem(50px)!important;
+	}
+}
+.bookingOrder-page{
+	.order-tab{
+		padding: px2rem(10px);
+		.item{
+			border-radius: px2rem(4px);
+			background-color: #fff;
+			margin-bottom: px2rem(10px);
+			.shopName{
+				padding: px2rem(10px);
+				border-bottom: 1px solid #efefef;
+				.info{
+					color: $color-primary;
+				}
+			}
+			.middle{
+				padding: px2rem(10px);
+				.time{
+					.dept{
+						font-size: px2rem(12px);
+					}
+				}
+			}
+			.edit{
+				border-top: 1px solid #efefef;
+				.cancel{
+					padding: px2rem(10px);
+					border-right: 1px solid #efefef;
+				}
+				.visit{
+					padding: px2rem(10px);
+					border-right: 1px solid #efefef;
+				}
+				.update{
+					padding: px2rem(10px);
+					color: $color-primary;
+				}
+			}
+			&.last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+.bookingUpdate-page{
+	.content-page{
+		.tab-info{
+			padding: px2rem(10px);
+		}
+	}
+}

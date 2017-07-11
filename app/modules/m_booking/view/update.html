@@ -1,0 +1,77 @@
+<div ng-controller="bookingUpdateCtrl" class="bookingUpdate-page">
+	<div class="content-page" ng-class="{'topHeader': header}">
+		<div class="tab-info">基本信息</div>
+		<div class="cell-group">
+			<div class="cell">
+				<div class="left-box clearly-width icon-phone">
+					诊所
+				</div>
+				<div class="middle-box">
+					{{order.shopName}}
+				</div>
+			</div>
+			<div class="cell">
+				<div class="left-box clearly-width icon-phone">
+					姓名
+				</div>
+				<div class="middle-box">
+					{{order.name}}
+				</div>
+			</div>
+			<div class="cell">
+				<div class="left-box clearly-width icon-phone">
+					手机号码
+				</div>
+				<div class="middle-box">
+					{{order.mobile}}
+				</div>
+			</div>
+		</div>
+		<div class="tab-info">可修改的信息</div>
+		<div class="cell-group">
+			<div class="cell">
+				<div class="left-box clearly-width icon-date">
+					预约科室
+				</div>
+				<div class="middle-box">
+					<optionswidget options-key="1" options-data="optionsDept.data" options-back="optionsDept.backData" options-text="optionsDept.text" options-title="optionsDept.title" options-callback="optionsDept.callback"></optionswidget>
+				</div>
+			</div>
+			<div class="cell">
+				<div class="left-box clearly-width icon-date">
+					预约医生
+				</div>
+				<div class="middle-box">
+					<optionswidget options-key="2" options-data="optionsDoctor.data" options-back="optionsDoctor.backData" options-text="optionsDoctor.text" options-title="optionsDoctor.title"></optionswidget>
+				</div>
+			</div>
+			<div class="cell">
+				<div class="left-box clearly-width icon-phone">
+					预约类型
+				</div>
+				<div class="middle-box">
+					<optionswidget options-key="3" options-data="optionsType.data" options-back="optionsType.backData" options-text="optionsType.text" options-title="optionsType.title"></optionswidget>
+				</div>
+			</div>
+			<div class="cell">
+				<div class="left-box clearly-width icon-time">
+					预约日期
+				</div>
+				<div class="middle-box">
+					<calendar-widget day-selected="dept_date"></calendar-widget>
+				</div>
+			</div>
+			<div class="cell">
+				<div class="left-box clearly-width icon-time">
+					预约时间
+				</div>
+				<div class="middle-box">
+					<optionswidget options-key="3" options-data="optionsTime.data" options-back="optionsTime.backData" options-text="optionsTime.text" options-title="optionsTime.title"></optionswidget>
+				</div>
+			</div>
+		</div>
+		<div class="btn-dock">
+			<button class="btn btn-primary" ng-click="submitDocForm()">修改</button>
+		</div>
+	</div>
+</div>

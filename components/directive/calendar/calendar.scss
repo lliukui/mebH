@@ -54,6 +54,13 @@
 	    				text-align: center;
 	    				line-height: px2rem(30px);
 	    				background-color: #F5F5F5;
+	    				.num{
+	    					line-height: 1.4rem;
+	    				}
+	    				.info{
+	    					line-height: 1rem;
+	    					font-size: px2rem(10px);
+	    				}
 	    				&.show{
 
 	    				}

@@ -1,0 +1,29 @@
+<div ng-controller="bookingOrderCtrl" class="bookingOrder-page">
+	<div class="content-page" ng-class="{'topHeader': header}">
+		<div class="order-tab">
+			<div class="item" ng-repeat="order in bookinglist">
+				<div class="flex shopName">
+					<div class="flex-1" ng-bind="order.shopName"></div>
+					<div class="info" ng-bind="order.cancelReason == null ? '已预约' : '已取消'"></div>
+				</div>
+				<div class="middle">
+					<div class="flex time">
+						<div class="flex-1" ng-bind="order.reservationTime"></div>
+						<div class="dept" ng-bind="order.department"></div>
+					</div>
+					<div ng-bind="order.name"></div>
+					<div class="doctor">
+						<span>预约医生：</span>
+						<span ng-bind="order.doctorName"></span>
+					</div>
+					<div></div>
+				</div>
+				<div class="flex edit text-center" ng-show="order.cancelReason == null">
+					<div class="flex-1 cancel" ng-click="cancel(order)">取消预约</div>
+					<!-- <div class="flex-1 visit">复诊</div> -->
+					<div class="flex-1 update" ng-click="update(order)">修改预约</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
