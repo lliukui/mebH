@@ -1,4 +1,7 @@
-app.controller('forgetpwdCtrl',['$scope','$rootScope','dialog','CommonService',function($scope,$rootScope,dialog,CommonService){
+app.controller('forgetpwdCtrl', ['$scope', '$rootScope', 'dialog', 'CommonService', 'StorageConfig', function($scope, $rootScope, dialog, CommonService, StorageConfig){
+	$scope.header = true;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
 	window.headerConfig={
 		title: '忘记密码'
 	}

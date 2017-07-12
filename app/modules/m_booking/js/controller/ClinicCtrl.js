@@ -1,5 +1,7 @@
 app.controller('clinicCtrl',['$scope','$rootScope','dialog','ClinicService','$state','StorageConfig','$stateParams',function($scope,$rootScope,dialog,ClinicService,$state,StorageConfig,$stateParams){
-
+	$scope.header = true;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
 	$scope.clinic=StorageConfig.BOOKING_STORAGE.getItem('clinicInfo')?StorageConfig.BOOKING_STORAGE.getItem('clinicInfo'):requestClinic();
 	
 	window.headerConfig.title=$scope.clinic.clinicName;
@@ -25,20 +27,14 @@ app.controller('clinicCtrl',['$scope','$rootScope','dialog','ClinicService','$st
 		});
 	}
 
-	$scope.selectId='';
-	$scope.zhuanjia=1;
-	$scope.clickService=function(obj){
-		$scope.serviceName=obj.serviceName;
-		$scope.selectId=obj.serviceId;
-		$scope.zhuanjia=obj.zhuanjia;
-	}
 	$scope.goBooking=function(_type){
-		StorageConfig.SERVICE_STORAGE.putItem('serviceName',$scope.serviceName);
-		$state.go('layout.booking-booking',{
-			type: _type,
-			clinicId: $scope.clinic.clinicId,
-			serviceId: $scope.selectId
-		});
+		$state.go('layout.booking-info');
+		// StorageConfig.SERVICE_STORAGE.putItem('serviceName',$scope.serviceName);
+		// $state.go('layout.booking-booking',{
+		// 	type: _type,
+		// 	clinicId: $scope.clinic.clinicId,
+		// 	serviceId: $scope.selectId
+		// });
 	}
 	$scope.goSelectDoctor=function(_type){
 		StorageConfig.SERVICE_STORAGE.putItem('serviceName',$scope.serviceName);

@@ -1,10 +1,10 @@
 app.controller('bookingUpdateCtrl', ['$scope', '$rootScope', 'doctorService', '$stateParams', 'StorageConfig', 'dialog', 'bookingService', '$state', function($scope, $rootScope, doctorService, $stateParams, StorageConfig, dialog, bookingService, $state){
 	$scope.header = true;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
 	window.headerConfig = {
 		title: '修改订单'
 	}
-
-	// dialog.alert('123');
 
 	$rootScope.$broadcast('setHeaderConfig', window.headerConfig);
 
@@ -13,14 +13,19 @@ app.controller('bookingUpdateCtrl', ['$scope', '$rootScope', 'doctorService', '$
 	$scope.dept_date = date;
 
 	//预约医生
-	//预约类型
+	//预约类型，第一次不执行
+	var typeNum = true;
 	$scope.optionsType = {
 		text: '选择预约类型',
 		title: '类型列表',
 		data: [],
 		backData: '',
-		callback: function(){
-			getBookingDate();
+		callback: function(_data){
+			if(typeNum){
+				typeNum = false;
+			}else{
+				getBookingDate();
+			}
 		}
 	};
 
@@ -52,24 +57,24 @@ app.controller('bookingUpdateCtrl', ['$scope', '$rootScope', 'doctorService', '$
 		data: [],
 		backData: '',
 		callback: function(_data){
-			var doctors = _data.doctor;
-			if(doctors && doctors.length > 0){
-				$scope.optionsDoctor.data = [];
-				for(var i = 0; i < doctors.length; i++){
-					var option = {};
-					option.key = doctors[i].id;
-					option.value = doctors[i].name;
-					$scope.optionsDoctor.data.push(option);
-					if(deptNum){
-						if($scope.order.doctorName == doctors[i].name){
-							deptNum = false;
-							$scope.optionsDoctor.backData = option;
-							getBookingDate();
-						}
-					}else{
-						if(i == 0){
-							$scope.optionsDoctor.backData = option;
-							getBookingDate();
+			if(_data){
+				var doctors = _data.doctor;
+				if(doctors && doctors.length > 0){
+					$scope.optionsDoctor.data = [];
+					for(var i = 0; i < doctors.length; i++){
+						var option = {};
+						option.key = doctors[i].id;
+						option.value = doctors[i].name;
+						$scope.optionsDoctor.data.push(option);
+						if(deptNum){
+							if($scope.order.doctorName == doctors[i].name){
+								deptNum = false;
+								$scope.optionsDoctor.backData = option;
+							}
+						}else{
+							if(i == 0){
+								$scope.optionsDoctor.backData = option;
+							}
 						}
 					}
 				}
@@ -103,8 +108,11 @@ app.controller('bookingUpdateCtrl', ['$scope', '$rootScope', 'doctorService', '$
 		title: '医生列表',
 		data: [],
 		backData: '',
-		callback: function(){
-			getBookingDate();
+		callback: function(_data){
+			if(_data){
+				console.log(444);
+				getBookingDate();
+			}
 		}
 	};
 
@@ -114,7 +122,7 @@ app.controller('bookingUpdateCtrl', ['$scope', '$rootScope', 'doctorService', '$
 	function getBookingDate(){
 		var param = {
 			date: new Date().getFullYear() + '' + ((new Date().getMonth() + 1) > 10 ? (new Date().getMonth() + 1) : '0' + (new Date().getMonth() + 1)) + (new Date().getDate() > 10 ? new Date().getDate() : '0' + new Date().getDate()),
-			department: $scope.optionsDept.backData.key.toString(),
+			department: $scope.optionsDept.backData.key,
 			reservationType: $scope.optionsType.backData.key,
 			doctorId: $scope.optionsDoctor.backData.key,
 			reservationId: '',

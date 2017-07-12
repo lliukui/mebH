@@ -1,5 +1,7 @@
-app.controller('mapCtrl',['$scope','$rootScope','$stateParams',function($scope,$rootScope,$stateParams){
+app.controller('mapCtrl', ['$scope', '$rootScope', '$stateParams', 'StorageConfig', function($scope, $rootScope, $stateParams, StorageConfig){
 	$scope.showWap=false;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
 	window.headerConfig={
 		title: '',
 		otherRightOperate: {

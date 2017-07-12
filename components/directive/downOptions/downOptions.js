@@ -18,7 +18,6 @@ app.directive('optionswidget', function(){
 		});
 
 		var content = document.getElementsByClassName('content-page');
-		console.log(content[0].style);
 		//控制弹窗，显示，隐藏
 		$scope.options = function(_key){
 			$scope.showOptions = _key;

@@ -1,5 +1,5 @@
 <div ng-controller="bookingInfoCtrl" class="bookingInfo-page">
-	<div class="content-page" ng-class="{'topHeader': header}">
+    <div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
 		<div class="cell-group">
 			<div class="cell">
 				<div class="left-box clearly-width icon-phone">
@@ -30,7 +30,7 @@
 					预约医生
 				</div>
 				<div class="middle-box">
-					<optionswidget options-key="2" options-data="optionsDoctor.data" options-back="optionsDoctor.backData" options-text="optionsDoctor.text" options-title="optionsDoctor.title"></optionswidget>
+					<optionswidget options-key="2" options-data="optionsDoctor.data" options-back="optionsDoctor.backData" options-text="optionsDoctor.text" options-title="optionsDoctor.title" options-callback="optionsDoctor.callback"></optionswidget>
 				</div>
 			</div>
 			<div class="cell">
@@ -38,7 +38,7 @@
 					预约类型
 				</div>
 				<div class="middle-box">
-					<optionswidget options-key="3" options-data="optionsType.data" options-back="optionsType.backData" options-text="optionsType.text" options-title="optionsType.title"></optionswidget>
+					<optionswidget options-key="3" options-data="optionsType.data" options-back="optionsType.backData" options-text="optionsType.text" options-title="optionsType.title" options-callback="optionsType.callback"></optionswidget>
 				</div>
 			</div>
 			<div class="cell">

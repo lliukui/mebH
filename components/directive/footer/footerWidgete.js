@@ -1,7 +1,7 @@
 app.directive('footerWidget', function () {
     var ctrl = ['$scope', '$rootScope', 'StorageConfig', '$state', 'helper', 'CMSDataConfig', function ($scope, $rootScope, StorageConfig, $state, helper, CMSDataConfig) {
         var defaults = {
-            enableFooter: false
+            enableFooter: StorageConfig.FOOTER_STORAGE.getItem('showFooter')
         };
         if(StorageConfig.FOOTER_STORAGE.getItem('show')){
             defaults.enableFooter=true;

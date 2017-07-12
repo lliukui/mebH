@@ -1,4 +1,7 @@
 app.controller('growthdatasCtrl',['$scope','$rootScope','dialog','StorageConfig','$stateParams','HomeService','$state',function($scope,$rootScope,dialog,StorageConfig,$stateParams,HomeService,$state){
+	$scope.header = true;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
 	window.headerConfig={
 		title: '成长数据'
 	}

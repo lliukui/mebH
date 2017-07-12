@@ -1,31 +1,25 @@
 <div ng-controller="clinicCtrl" class="clinic-page">
-	<div class="clinic-info">
-		<div class="clinic-img">
-			<img ng-src="{{clinic.imageUrl}}">
+    <div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
+		<div class="clinic-info">
+			<div class="info-img">
+				<img ng-src="{{clinic.imageUrl}}">
+			</div>
+			<div class="info-full">
+				<div ng-click="showMap(clinic)" class="icon-address" ng-bind="clinic.address"></div>
+				<div class="tel">
+					<a href="tel://{{clinic.tel}}">
+						<span class="icon-phone">健康热线：</span>
+						<span ng-bind="clinic.tel"></span>
+					</a>
+				</div>
+			</div>
 		</div>
-		<p ng-show="false" class="clinicName" ng-bind="clinic.clinicName"></p>
-		<p ng-bind="clinic.description"></p>
-		<div class="info-full">
-			<p class="tel">
-				<span class="icon-phone">健康热线：</span>
-				<span ng-bind="clinic.tel"></span>
-			</p>
-			<p ng-click="showMap(clinic)" class="icon-address" ng-bind="clinic.address"></p>
+		<div class="description">
+			<div class="title">诊所介绍</div>
+			<div class="info" ng-bind="clinic.description"></div>
 		</div>
-	</div>
-	<div class="service-tab">
-		<p>预约项目</p>
-		<div ng-class="{'active':selectId == services.serviceId}" class="service-item" ng-repeat="services in clinic.services"  ng-click="clickService(services)">
-			<img ng-src="{{services.serviceId | clinicServiceIcon}}" />
-			<p ng-bind="services.serviceName"></p>
-		</div>
-	</div>
-	<div class="btn-dock">
-		<div class="left-dock">
-			<button class="btn btn-pt" ng-disabled="selectId == ''" ng-click="goBooking('PT')">普通号</button>
-		</div>
-		<div class="right-dock" ng-show="zhuanjia==1">
-			<button class="btn btn-zj" ng-disabled="selectId == ''" ng-click="goSelectDoctor('ZJ')">专家号</button>
+		<div class="btn-dock">
+			<button class="btn btn-zj" ng-click="goBooking()">预约</button>
 		</div>
 	</div>
 </div>

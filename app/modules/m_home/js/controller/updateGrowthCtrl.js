@@ -1,4 +1,7 @@
 app.controller('updateGrowthCtrl',['$scope','$rootScope','dialog','$state','StorageConfig','HomeService','$stateParams',function($scope,$rootScope,dialog,$state,StorageConfig,HomeService,$stateParams){
+	$scope.header = true;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
 	window.headerConfig={
 		title: '修改数据'
 	}

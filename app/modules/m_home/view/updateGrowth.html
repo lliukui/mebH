@@ -1,31 +1,33 @@
 <div ng-controller="updateGrowthCtrl" class="updateGrowth-page">
-	<form>
-		<div class="cell-group">
-			<div class="cell">
-				<div class="left-box">
-					身高
+    <div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
+		<form>
+			<div class="cell-group">
+				<div class="cell">
+					<div class="left-box">
+						身高
+					</div>
+					<div class="middle-box">
+						<input type="number" ng-model="growth.height" placeholder="请输入身高">
+					</div>
 				</div>
-				<div class="middle-box">
-					<input type="number" ng-model="growth.height" placeholder="请输入身高">
+				<div class="cell">
+					<div class="left-box">
+						体重
+					</div>
+					<div class="middle-box">
+						<input type="number" value="{{growthStorage.weight}}" ng-model="growth.weight" placeholder="请输入体重">
+					</div>
+				</div>
+				<div class="cell">
+					<div class="left-box">
+						日期
+					</div>
+					<div class="middle-box" ng-bind="growth.time | limitTo: 10"></div>
 				</div>
 			</div>
-			<div class="cell">
-				<div class="left-box">
-					体重
-				</div>
-				<div class="middle-box">
-					<input type="number" value="{{growthStorage.weight}}" ng-model="growth.weight" placeholder="请输入体重">
-				</div>
+			<div class="btn-dock">
+				<button class="btn btn-primary" ng-click="updateGrowth()">保存</button>
 			</div>
-			<div class="cell">
-				<div class="left-box">
-					日期
-				</div>
-				<div class="middle-box" ng-bind="growth.time | limitTo: 10"></div>
-			</div>
-		</div>
-		<div class="btn-dock">
-			<button class="btn btn-primary" ng-click="updateGrowth()">保存</button>
-		</div>
-	</form>
+		</form>
+	</div>
 </div>

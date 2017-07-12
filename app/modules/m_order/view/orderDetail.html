@@ -1,50 +1,52 @@
 <div ng-controller="orderDetailCtrl" class="orderDetail-page">
-	<p class="tip">
-		<span>离面诊时间还有</span>
-		<span ng-bind="order.timeDiff"></span>
-	</p>
-	<div class="cell-group">
-		<div class="cell">
-			<div class="left-box">
-				预约编号
+    <div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
+		<p class="tip">
+			<span>离面诊时间还有</span>
+			<span ng-bind="order.timeDiff"></span>
+		</p>
+		<div class="cell-group">
+			<div class="cell">
+				<div class="left-box">
+					预约编号
+				</div>
+				<div class="middle-box" ng-bind="order.refNo"></div>
 			</div>
-			<div class="middle-box" ng-bind="order.refNo"></div>
-		</div>
-		<div class="cell">
-			<div class="left-box">
-				预约诊所
+			<div class="cell">
+				<div class="left-box">
+					预约诊所
+				</div>
+				<div class="middle-box" ng-bind="order.clinicName"></div>
 			</div>
-			<div class="middle-box" ng-bind="order.clinicName"></div>
-		</div>
-		<div class="cell">
-			<div class="left-box">
-				预约项目
+			<div class="cell">
+				<div class="left-box">
+					预约项目
+				</div>
+				<div class="middle-box" ng-bind="order.serviceName"></div>
 			</div>
-			<div class="middle-box" ng-bind="order.serviceName"></div>
-		</div>
-		<div class="cell">
-			<div class="left-box">
-				预约宝宝
+			<div class="cell">
+				<div class="left-box">
+					预约宝宝
+				</div>
+				<div class="middle-box" ng-bind="order.childName"></div>
 			</div>
-			<div class="middle-box" ng-bind="order.childName"></div>
-		</div>
-		<div class="cell">
-			<div class="left-box">
-				预留电话
+			<div class="cell">
+				<div class="left-box">
+					预留电话
+				</div>
+				<div class="middle-box" ng-bind="order.mobile"></div>
 			</div>
-			<div class="middle-box" ng-bind="order.mobile"></div>
-		</div>
-		<div class="cell">
-			<div class="left-box">
-				预约时间
+			<div class="cell">
+				<div class="left-box">
+					预约时间
+				</div>
+				<div class="middle-box" ng-bind="order.bookingDate"></div>
 			</div>
-			<div class="middle-box" ng-bind="order.bookingDate"></div>
-		</div>
-		<div class="cell">
-			<div class="left-box">
-				预约医生
+			<div class="cell">
+				<div class="left-box">
+					预约医生
+				</div>
+				<div class="middle-box" ng-bind="order.doctorName"></div>
 			</div>
-			<div class="middle-box" ng-bind="order.doctorName"></div>
 		</div>
 	</div>
 </div>

@@ -1,100 +1,102 @@
 <div ng-controller="ClinicBookingCtrl" class="clinicBooking-page">
-	<form name="clinicBookingForm">
-		<div class="booking-ZJ" ng-show="type=='ZJ'">
-			<p>
-				<span ng-bind="doctor.doctorName"></span>
-				<span>医生</span>
-			</p>
-			<p ng-bind="doctor.description"></p>
-			<div class="doctor-info">
-				<div class="info-left">
+    <div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
+		<form name="clinicBookingForm">
+			<div class="booking-ZJ" ng-show="type=='ZJ'">
+				<p>
+					<span ng-bind="doctor.doctorName"></span>
+					<span>医生</span>
+				</p>
+				<p ng-bind="doctor.description"></p>
+				<div class="doctor-info">
+					<div class="info-left">
 
-				</div>
-				<div class="info-middle">
-					<img ng-src="{{doctor.avatarUrl}}">
-				</div>
-				<div class="info-right">
-					<p>
-						<span>权威专家</span>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="booking-PT" ng-show="type=='PT'">
-			<img ng-src="app/images/icon_avatar.png">
-		</div>
-		<div class="cell-group">
-			<div class="cell">
-				<div class="left-box icon-date">
-					预约日期
-				</div>
-				<div class="middle-box" ng-show="type=='PT'">
-					<div calendar-widget></div>
-				</div>
-				<div class="middle-box" ng-show="type=='ZJ'" ng-bind="date">
-					
+					</div>
+					<div class="info-middle">
+						<img ng-src="{{doctor.avatarUrl}}">
+					</div>
+					<div class="info-right">
+						<p>
+							<span>权威专家</span>
+						</p>
+					</div>
 				</div>
 			</div>
-			<div class="cell">
-				<div class="left-box icon-time">
-					预约时间
+			<div class="booking-PT" ng-show="type=='PT'">
+				<img ng-src="app/images/icon_avatar.png">
+			</div>
+			<div class="cell-group">
+				<div class="cell">
+					<div class="left-box icon-date">
+						预约日期
+					</div>
+					<div class="middle-box" ng-show="type=='PT'">
+						<div calendar-widget></div>
+					</div>
+					<div class="middle-box" ng-show="type=='ZJ'" ng-bind="date">
+						
+					</div>
 				</div>
-				<div class="middle-box" ng-show="type=='PT'">
-					<select name="time" ng-model="clinicBooking.time" ng-options="time as time for time in timeList" ng-required="type=='PT'">
-					</select>
-				</div>
-				<div class="middle-box" ng-show="type=='ZJ'" ng-bind="time">
+				<div class="cell">
+					<div class="left-box icon-time">
+						预约时间
+					</div>
+					<div class="middle-box" ng-show="type=='PT'">
+						<select name="time" ng-model="clinicBooking.time" ng-options="time as time for time in timeList" ng-required="type=='PT'">
+						</select>
+					</div>
+					<div class="middle-box" ng-show="type=='ZJ'" ng-bind="time">
 
+					</div>
 				</div>
-			</div>
-			<div class="cell">
-				<div class="left-box icon-type">
-					预约项目
-				</div>
-				<div class="middle-box" ng-bind="serviceName">
+				<div class="cell">
+					<div class="left-box icon-type">
+						预约项目
+					</div>
+					<div class="middle-box" ng-bind="serviceName">
 
+					</div>
 				</div>
-			</div>
-			<div class="cell">
-				<div class="left-box icon-name">
-					宝宝姓名
-				</div>
-				<div class="middle-box">
-					<select ng-model="selectedChild" ng-options="child as child.childName for child in childs" required>
+				<div class="cell">
+					<div class="left-box icon-name">
+						宝宝姓名
+					</div>
+					<div class="middle-box">
+						<select ng-model="selectedChild" ng-options="child as child.childName for child in childs" required>
 
-					</select>
+						</select>
+					</div>
 				</div>
+				<div class="cell">
+					<div class="left-box icon-age">
+						宝宝年龄
+					</div>
+					<div class="middle-box" ng-bind="selectedChild.age"></div>
+					<div class="right-box">岁</div>
+				</div>
+				<div class="cell">
+					<div class="left-box icon-phone">
+						联系电话
+					</div>
+					<div class="middle-box">
+						<input type="tel" name="mobile" minlength="11" maxlength="11" placeholder="请输入联系方式" ng-model="mobile" ng-change="replaceMobile()" required>
+					</div>
+				</div>
+				<div class="cell" ng-show="showSms">
+					<div class="left-box icon-phone">
+						短信验证
+					</div>
+					<div class="middle-box">
+						<input type="tel" maxlength="11" minlength="4" name="verify_code" ng-model="verifyCode" placeholder="请输入验证码" ng-required="showSms">
+					</div>
+					<div class="right-box">
+						<button class="btn btn-primary btn-small in-cell" ng-disabled="clinicBookingForm.mobile.$invalid || lockEnabled" ng-click="smsverifycode()" ng-bind="sendSMSText">发送验证码</button>
+					</div>
+				</div>
+				<p class="tip">更换联系电话，需验证</p>
 			</div>
-			<div class="cell">
-				<div class="left-box icon-age">
-					宝宝年龄
-				</div>
-				<div class="middle-box" ng-bind="selectedChild.age"></div>
-				<div class="right-box">岁</div>
+			<div class="btn-dock">
+				<button class="btn btn-primary" ng-disabled="clinicBookingForm.$invalid || !dateSelected" ng-click="submitForm()">确定预约</button>
 			</div>
-			<div class="cell">
-				<div class="left-box icon-phone">
-					联系电话
-				</div>
-				<div class="middle-box">
-					<input type="tel" name="mobile" minlength="11" maxlength="11" placeholder="请输入联系方式" ng-model="mobile" ng-change="replaceMobile()" required>
-				</div>
-			</div>
-			<div class="cell" ng-show="showSms">
-				<div class="left-box icon-phone">
-					短信验证
-				</div>
-				<div class="middle-box">
-					<input type="tel" maxlength="11" minlength="4" name="verify_code" ng-model="verifyCode" placeholder="请输入验证码" ng-required="showSms">
-				</div>
-				<div class="right-box">
-					<button class="btn btn-primary btn-small in-cell" ng-disabled="clinicBookingForm.mobile.$invalid || lockEnabled" ng-click="smsverifycode()" ng-bind="sendSMSText">发送验证码</button>
-				</div>
-			</div>
-			<p class="tip">更换联系电话，需验证</p>
-		</div>
-		<div class="btn-dock">
-			<button class="btn btn-primary" ng-disabled="clinicBookingForm.$invalid || !dateSelected" ng-click="submitForm()">确定预约</button>
-		</div>
-	</form>
+		</form>
+	</div>
 </div>

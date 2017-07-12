@@ -1,6 +1,7 @@
 app.controller('seeCollectionCtrl',['$scope','$rootScope','$state','dialog','StorageConfig','$stateParams','cckCollectionService',function($scope,$rootScope,$state,dialog,StorageConfig,$stateParams,cckCollectionService){
 	$scope.header = true;
-	$scope.footer = false;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
 	window.headerConfig={
 		title: '收藏'
 	}

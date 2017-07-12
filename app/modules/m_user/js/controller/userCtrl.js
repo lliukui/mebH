@@ -1,4 +1,7 @@
-app.controller('userCtrl',['$scope','$rootScope','$state','childService','dialog',function($scope,$rootScope,$state,childService,dialog){
+app.controller('userCtrl', ['$scope', '$rootScope', '$state', 'childService', 'dialog', 'StorageConfig', function($scope, $rootScope, $state, childService, dialog, StorageConfig){
+	$scope.header = true;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
 	window.headerConfig={
 		enableBack: false,
 		title: '个人中心',

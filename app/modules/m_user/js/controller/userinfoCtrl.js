@@ -1,4 +1,7 @@
 app.controller('userinfoCtrl',['$scope','$rootScope','StorageConfig','userinfoService','dialog','$state',function($scope,$rootScope,StorageConfig,userinfoService,dialog,$state){
+	$scope.header = true;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
 	window.headerConfig={
 		title: '用户信息'
 	}

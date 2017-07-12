@@ -1,21 +1,23 @@
 <div ng-controller="growthdatasCtrl" class="growthdatas-page">
-	<div class="data-tab">
-		<div class="data-item flex">
-			<div class="w35">日期</div>
-			<div class="w25">身高(CM)</div>
-			<div class="w25">体重(斤)</div>
-			<div class="w15 text-center">选择</div>
-		</div>
-		<div class="data-item flex" ng-repeat="growthdata in growthdatas">
-			<div class="w35" ng-bind="growthdata.time | limitTo: 10"></div>
-			<div class="w25" ng-bind="growthdata.height"></div>
-			<div class="w25" ng-bind="growthdata.weight"></div>
-			<div class="w15 text-center">
-				<span class="btn-select" ng-class="{'active': selectedData==$index}" ng-click="selected($index, growthdata)"></span>
+    <div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
+		<div class="data-tab">
+			<div class="data-item flex">
+				<div class="w35">日期</div>
+				<div class="w25">身高(CM)</div>
+				<div class="w25">体重(斤)</div>
+				<div class="w15 text-center">选择</div>
+			</div>
+			<div class="data-item flex" ng-repeat="growthdata in growthdatas">
+				<div class="w35" ng-bind="growthdata.time | limitTo: 10"></div>
+				<div class="w25" ng-bind="growthdata.height"></div>
+				<div class="w25" ng-bind="growthdata.weight"></div>
+				<div class="w15 text-center">
+					<span class="btn-select" ng-class="{'active': selectedData==$index}" ng-click="selected($index, growthdata)"></span>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="btn-dock">
-		<button class="btn btn-primary" ng-disabled="selectedData==-1" ng-click="update()">修改</button>
+		<div class="btn-dock">
+			<button class="btn btn-primary" ng-disabled="selectedData==-1" ng-click="update()">修改</button>
+		</div>
 	</div>
 </div>

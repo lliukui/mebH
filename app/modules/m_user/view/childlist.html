@@ -1,15 +1,17 @@
 <div ng-controller="childlistCtrl" class="childlist-page">
-	<div class="child-tab">
-		<div class="child-item flex" ng-repeat="child in childs">
-			<div class="item-img">
-				<img ng-src="{{child.imageUrl}}">
-			</div>
-			<div class="item-content flex-1">
-				<p ng-bind="child.childName"></p>
-				<p ng-bind="child.age"></p>
-			</div>
-			<div class="item-btn">
-				<button ng-click="update(child)" class="btn btn-small">编辑</button>
+    <div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
+		<div class="child-tab">
+			<div class="child-item flex" ng-repeat="child in childs">
+				<div class="item-img">
+					<img ng-src="{{child.imageUrl}}">
+				</div>
+				<div class="item-content flex-1">
+					<p ng-bind="child.childName"></p>
+					<p ng-bind="child.age"></p>
+				</div>
+				<div class="item-btn">
+					<button ng-click="update(child)" class="btn btn-small">编辑</button>
+				</div>
 			</div>
 		</div>
 	</div>

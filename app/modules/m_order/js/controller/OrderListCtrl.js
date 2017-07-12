@@ -1,4 +1,7 @@
 app.controller('OrderCtrl',['$scope','$rootScope','OrderService','dialog','StorageConfig','$state',function($scope,$rootScope,OrderService,dialog,StorageConfig,$state){
+	$scope.header = true;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
 	window.headerConfig={
 		title: '订单列表',
 		enableRefresh: false

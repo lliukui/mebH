@@ -1,6 +1,7 @@
-app.controller('searchcckCtrl',['$scope','$rootScope','searchcckService','dialog','$state',function($scope,$rootScope,searchcckService,dialog,$state){
+app.controller('searchcckCtrl', ['$scope', '$rootScope', 'searchcckService', 'dialog', '$state', 'StorageConfig', function($scope, $rootScope, searchcckService, dialog, $state, StorageConfig){
 	$scope.header = true;
-	$scope.footer = false;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
 	window.headerConfig={
 		enableHeader: false
 	};

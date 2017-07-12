@@ -1,6 +1,7 @@
 app.controller('musictitlesCtrl', ['$scope', '$rootScope', '$state', 'dialog', 'musictitlesService', 'StorageConfig', function($scope, $rootScope, $state, dialog, musictitlesService, StorageConfig){
     $scope.header = true;
-    $scope.footer = false;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
 	window.headerConfig={
 		enableBack: true,
 		title: '宝宝听听',

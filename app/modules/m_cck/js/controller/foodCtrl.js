@@ -1,6 +1,7 @@
-app.controller('foodCtrl',['$scope','$rootScope','$state',function($scope,$rootScope,$state){
+app.controller('foodCtrl', ['$scope', '$rootScope', '$state', 'StorageConfig', function($scope, $rootScope, $state, StorageConfig){
 	$scope.header = true;
-	$scope.footer = false;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
 	window.headerConfig={
 		enableBack: true,
 		title: '能不能吃',

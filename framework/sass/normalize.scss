@@ -40,6 +40,27 @@ body {
     overflow-scrolling: touch;
 }
 
+a{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;cursor: pointer;
+    color: #333;
+    text-decoration: none;
+    &:link{
+        text-decoration:none;
+    }
+    &:visited{
+        text-decoration:none;
+    }
+    &:hover{
+        text-decoration:none;
+    }
+    &:active{
+        text-decoration:none;
+    }
+}
+
 //some save text class
 .fn-clear {
     clear: both;

@@ -1,4 +1,7 @@
-app.controller('registerCtrl',['$scope','$rootScope','$state','CommonService','dialog',function($scope,$rootScope,$state,CommonService,dialog){
+app.controller('registerCtrl', ['$scope', '$rootScope', '$state', 'CommonService', 'dialog', 'StorageConfig', function($scope, $rootScope, $state, CommonService, dialog, StorageConfig){
+	$scope.header = true;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
 	window.headerConfig={
 		title: '注册'
 	}

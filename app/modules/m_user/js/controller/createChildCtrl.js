@@ -1,5 +1,8 @@
 app.controller('createChildCtrl',['$scope','$rootScope','tokenService','dialog','childService','$state','StorageConfig',function($scope,$rootScope,tokenService,dialog,childService,$state,StorageConfig){
-	window.headerConfig={
+	$scope.header = true;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
+    window.headerConfig={
 		enableBack: true,
 		title: '添加监护儿童'
 	}

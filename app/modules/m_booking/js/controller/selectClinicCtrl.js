@@ -1,4 +1,7 @@
-app.controller('selectClinicCtrl',['$scope','$rootScope','ClinicService','dialog','cityService','$state','StorageConfig',function($scope,$rootScope,ClinicService,dialog,cityService,$state,StorageConfig){
+app.controller('selectClinicCtrl', ['$scope', '$rootScope', 'ClinicService', 'dialog', 'cityService', '$state', 'StorageConfig', function($scope, $rootScope, ClinicService, dialog, cityService, $state, StorageConfig){
+	$scope.header = true;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+
 	$scope.selectedState=0;
 	$scope.showCity=false;
 

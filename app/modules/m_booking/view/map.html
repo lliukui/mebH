@@ -1,9 +1,11 @@
 <div ng-controller="mapCtrl" class="map-page">
-	<div class="way-tab" ng-show="showWap">
-		<div class="way-item" ng-repeat="way in ways" ng-bind="way.text" ng-click="checkWay(way)">
+    <div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
+		<div class="way-tab" ng-show="showWap">
+			<div class="way-item" ng-repeat="way in ways" ng-bind="way.text" ng-click="checkWay(way)">
 
+			</div>
 		</div>
+		<div id="mapContainer"></div>
+	    <div id="panel"></div>
 	</div>
-	<div id="mapContainer"></div>
-    <div id="panel"></div>
 </div>

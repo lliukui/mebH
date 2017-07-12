@@ -1,4 +1,12 @@
-app.controller('HomeCtrl', ['$scope', '$rootScope', '$state', 'dialog', 'HomeService','StorageConfig',function ($scope, $rootScope, $state, dialog,HomeService,StorageConfig) {
+app.controller('HomeCtrl', ['$scope', '$rootScope', '$state', 'dialog', 'HomeService', 'StorageConfig', '$stateParams', function ($scope, $rootScope, $state, dialog, HomeService, StorageConfig, $stateParams) {
+    //保存footer信息
+    if($stateParams.footer){
+        StorageConfig.FOOTER_STORAGE.putItem('showFooter', true);
+    }
+
+    $scope.header = true;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
     window.headerConfig = {
         enableTitle: false,
         enableBack: false,

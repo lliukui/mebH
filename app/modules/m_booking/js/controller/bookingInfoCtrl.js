@@ -1,7 +1,8 @@
 app.controller('bookingInfoCtrl', ['$scope', '$rootScope', 'doctorService', 'StorageConfig', 'bookingService', 'dialog', '$state', '$stateParams', function($scope, $rootScope, doctorService, StorageConfig, bookingService, dialog, $state, $stateParams){
 	$scope.header = true;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
 	window.headerConfig = {
-		enableBack: false,
 		title: '预约医生'
 	}
 
@@ -15,17 +16,18 @@ app.controller('bookingInfoCtrl', ['$scope', '$rootScope', 'doctorService', 'Sto
 		data: [],
 		backData: '',
 		callback: function(_data){
-			var doctors = _data.doctor;
-			if(doctors && doctors.length > 0){
-				$scope.optionsDoctor.data = [];
-				for(var i = 0; i < doctors.length; i++){
-					var option = {};
-					option.key = doctors[i].id;
-					option.value = doctors[i].name;
-					$scope.optionsDoctor.data.push(option);
-					if(i == 0){
-						$scope.optionsDoctor.backData = option;
-						getBookingDate();
+			if(_data){
+				var doctors = _data.doctor;
+				if(doctors && doctors.length > 0){
+					$scope.optionsDoctor.data = [];
+					for(var i = 0; i < doctors.length; i++){
+						var option = {};
+						option.key = doctors[i].id;
+						option.value = doctors[i].name;
+						$scope.optionsDoctor.data.push(option);
+						if(i == 0){
+							$scope.optionsDoctor.backData = option;
+						}
 					}
 				}
 			}
@@ -54,14 +56,21 @@ app.controller('bookingInfoCtrl', ['$scope', '$rootScope', 'doctorService', 'Sto
 		dialog.alert(res.errorMsg);
 	});
 
-	//医生数据
+	//医生数据，第一次不需执行回调函数
+	var doctorNum = true;
 	$scope.optionsDoctor = {
 		text: '选择预约医生',
 		title: '医生列表',
 		data: [],
 		backData: '',
-		callback: function(){
-			getBookingDate();
+		callback: function(_data){
+			if(doctorNum){
+				doctorNum = false;
+			}else{
+				if(_data){
+					getBookingDate();
+				}
+			}
 		}
 	};
 
@@ -72,7 +81,7 @@ app.controller('bookingInfoCtrl', ['$scope', '$rootScope', 'doctorService', 'Sto
 	function getBookingDate(){
 		var param = {
 			date: new Date().getFullYear() + '' + ((new Date().getMonth() + 1) > 10 ? (new Date().getMonth() + 1) : '0' + (new Date().getMonth() + 1)) + (new Date().getDate() > 10 ? new Date().getDate() : '0' + new Date().getDate()),
-			department: $scope.optionsDept.backData.key.toString(),
+			department: $scope.optionsDept.backData.key,
 			reservationType: $scope.optionsType.backData.key,
 			doctorId: $scope.optionsDoctor.backData.key,
 			reservationId: '',
@@ -116,11 +125,12 @@ app.controller('bookingInfoCtrl', ['$scope', '$rootScope', 'doctorService', 'Sto
 
 			$rootScope.$broadcast('setCalendarConfig', window.calendarConfig);
 		}, function(res){
-			dailog.alert(res.errorMsg);
+			dialog.alert(res.errorMsg);
 		});
 	}
 
-	//预约类型
+	//预约类型，第一次不执行
+	var typeNum = true;
 	$scope.optionsType = {
 		text: '选择预约类型',
 		title: '类型列表',
@@ -130,8 +140,12 @@ app.controller('bookingInfoCtrl', ['$scope', '$rootScope', 'doctorService', 'Sto
 			{key: 4, value: '成人体检'},
 		],
 		backData: {key: 1, value: '初诊'},
-		callback: function(){
-			getBookingDate();
+		callback: function(_data){
+			if(typeNum){
+				typeNum = false;
+			}else{
+				getBookingDate();
+			}
 		}
 	};
 

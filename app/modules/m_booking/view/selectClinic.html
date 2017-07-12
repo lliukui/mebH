@@ -1,31 +1,37 @@
 <div ng-controller="selectClinicCtrl" class="selectClinic-page">
-	<div class="city-tab" ng-show="showCity">
-		<div class="tab-grid">
-			<div class="grid-left">
-				<div class="left-state" ng-repeat="city in cityList" ng-bind="city.state" ng-click="checkCity(city.state)" ng-class="{'bb-gray': $last==false,'selected': selectedState==city.state || selectedState==$index}"></div>
-			</div>
-			<div class="grid-right">
-				<div class="" ng-repeat="city in cityList" ng-show="selectedState==city.state || selectedState==$index">
-					<div class="right-city" ng-repeat="subCity in city.subCity" ng-bind="subCity.city" ng-click="checkClinic(subCity)" ng-class="{'bb-gray': $last==false,'selected': selectedCity==subCity.id}"></div>
+    <div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
+		<div class="city-tab" ng-show="showCity">
+			<div class="tab-grid">
+				<div class="grid-left">
+					<div class="left-state" ng-repeat="city in cityList" ng-bind="city.state" ng-click="checkCity(city.state)" ng-class="{'bb-gray': $last==false,'selected': selectedState==city.state || selectedState==$index}"></div>
+				</div>
+				<div class="grid-right">
+					<div class="" ng-repeat="city in cityList" ng-show="selectedState==city.state || selectedState==$index">
+						<div class="right-city" ng-repeat="subCity in city.subCity" ng-bind="subCity.city" ng-click="checkClinic(subCity)" ng-class="{'bb-gray': $last==false,'selected': selectedCity==subCity.id}"></div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="clinic-tab">
-		<div class="clinic-item" ng-repeat="clinic in clinics" ng-click="bookingClinic(clinic.clinicId,clinic)">
-			<div class="item-grid">
-				<div class="item-left">
-					<img ng-src="{{clinic.imageUrl}}">
+		<div class="clinic-tab">
+			<div class="clinic-item" ng-repeat="clinic in clinics" ng-click="bookingClinic(clinic.clinicId,clinic)">
+				<div class="item-grid">
+					<div class="item-left">
+						<img ng-src="{{clinic.imageUrl}}">
+					</div>
+					<div class="item-right">
+						<p ng-bind="clinic.clinicName"></p>
+						<p>
+							<span>健康热线:</span>
+							<span ng-bind="clinic.tel"></span>
+						</p>
+					</div>
 				</div>
-				<div class="item-right">
-					<p ng-bind="clinic.clinicName"></p>
-					<p>
-						<span>健康热线:</span>
-						<span ng-bind="clinic.tel"></span>
-					</p>
-				</div>
+				<p ng-bind="clinic.address"></p>
 			</div>
-			<p ng-bind="clinic.address"></p>
+			<div class="text-center nodata" ng-show="clinics.length == 0">
+				<img src="app/images/icon_nodata.png">
+				<div class="info">暂无诊所</div>
+			</div>
 		</div>
 	</div>
 </div>

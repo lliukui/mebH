@@ -1,49 +1,51 @@
 <div ng-controller="selectDoctorCtrl" class="selectDoctor-page">
-	<div class="doctor-tab">
-		<div class="doctor-item" ng-repeat="doctor in doctors" ng-show="selectedDoctor==doctor.doctorId || !selectedDoctor" ng-click="checkDoctor(doctor)">
-			<div class="item-left">
-				<img ng-src="{{doctor.avatarUrl}}">
-			</div>
-			<div class="item-right">
-				<p>
-					<span ng-bind="doctor.doctorName"></span>
-					<span ng-bind="doctor.cTitle"></span>
-				</p>
-				<p ng-bind="doctor.description | limitTo:60"></p>
-			</div>
-		</div>
-	</div>
-	<div ng-show="showTime">
-		<p class="btn-sample">
-			<span class="tip">
-				选择预约时间:
-			</span>
-			<span class="optional">
-				可预约
-			</span>
-			<span class="select-optional">
-				已选择
-			</span>
-			<span class="already-optional">
-				已被预约
-			</span>
-		</p>
-		<div id="dateNavScroll" class="date-nav">
-			<div class="scroll">
-				<ul id="ulScroll">
-					<li ng-click="checkDate(doctorDuty)" ng-bind="doctorDuty.dutyDate" ng-repeat="doctorDuty in doctorDutys" ng-class="{'selected': selectedDate==doctorDuty.dutyDate || selectedDate==$index}">
-						
-					</li>
-				</ul>
+    <div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
+		<div class="doctor-tab">
+			<div class="doctor-item" ng-repeat="doctor in doctors" ng-show="selectedDoctor==doctor.doctorId || !selectedDoctor" ng-click="checkDoctor(doctor)">
+				<div class="item-left">
+					<img ng-src="{{doctor.avatarUrl}}">
+				</div>
+				<div class="item-right">
+					<p>
+						<span ng-bind="doctor.doctorName"></span>
+						<span ng-bind="doctor.cTitle"></span>
+					</p>
+					<p ng-bind="doctor.description | limitTo:60"></p>
+				</div>
 			</div>
 		</div>
-		<div class="time-row" ng-repeat="doctorDuty in doctorDutys" ng-show="selectedDate==doctorDuty.dutyDate || selectedDate==$index">
-			<p ng-repeat="time in doctorDuty.timeList">
-				<span ng-class="{'optional': time.optional, 'already-optional': !time.optional}" ng-bind="time.timeText" ng-click="selectTime(time,doctorDuty.dutyDate)"></span>
+		<div ng-show="showTime">
+			<p class="btn-sample">
+				<span class="tip">
+					选择预约时间:
+				</span>
+				<span class="optional">
+					可预约
+				</span>
+				<span class="select-optional">
+					已选择
+				</span>
+				<span class="already-optional">
+					已被预约
+				</span>
 			</p>
+			<div id="dateNavScroll" class="date-nav">
+				<div class="scroll">
+					<ul id="ulScroll">
+						<li ng-click="checkDate(doctorDuty)" ng-bind="doctorDuty.dutyDate" ng-repeat="doctorDuty in doctorDutys" ng-class="{'selected': selectedDate==doctorDuty.dutyDate || selectedDate==$index}">
+							
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="time-row" ng-repeat="doctorDuty in doctorDutys" ng-show="selectedDate==doctorDuty.dutyDate || selectedDate==$index">
+				<p ng-repeat="time in doctorDuty.timeList">
+					<span ng-class="{'optional': time.optional, 'already-optional': !time.optional}" ng-bind="time.timeText" ng-click="selectTime(time,doctorDuty.dutyDate)"></span>
+				</p>
+			</div>
 		</div>
-	</div>
-	<div class="btn-dock" ng-show="showTime">
-		<button class="btn btn-primary" ng-click="reselection()">重新选择</button>
+		<div class="btn-dock" ng-show="showTime">
+			<button class="btn btn-primary" ng-click="reselection()">重新选择</button>
+		</div>
 	</div>
 </div>

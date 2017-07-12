@@ -11,7 +11,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                     templateUrl: 'app/modules/m_layout/view/index.html'
                 })
                 .state('layout.home', {
-                    url: '/home',
+                    url: '/home?footer',
                     templateUrl: 'app/modules/m_home/view/index.html'
                 })
                 .state('layout.home-addGrowth', {

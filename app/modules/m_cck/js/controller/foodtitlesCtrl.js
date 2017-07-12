@@ -1,6 +1,7 @@
-app.controller('foodtitlesCtrl',['$scope','$rootScope','$state','foodtitlesService','dialog','$stateParams',function($scope,$rootScope,$state,foodtitlesService,dialog,$stateParams){
+app.controller('foodtitlesCtrl', ['$scope', '$rootScope', '$state', 'foodtitlesService', 'dialog', '$stateParams', 'StorageConfig', function($scope, $rootScope, $state, foodtitlesService, dialog, $stateParams, StorageConfig){
 	$scope.header = true;
-	$scope.footer = false;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
 	window.headerConfig={
 		enableBack: true,
 		title: '',

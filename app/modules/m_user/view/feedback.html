@@ -1,23 +1,25 @@
 <div ng-controller="feedbackCtrl" class="feedback-page">
-	<form name="feedbackForm">
-		<div class="content">
-			<textarea rows="4" name="message" ng-model="message" placeholder="请在此描述您的问题或意见" required></textarea>
-		</div>
-		<div class="cell-group">
-			<div class="cell">
-				<div class="left-box">
-					联系电话
-				</div>
-				<div class="middle-box">
-					<input type="tel" name="mobile" ng-model="mobile" minlength="11" maxlength="11" placeholder="便于我们联系您" required>
+    <div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
+		<form name="feedbackForm">
+			<div class="content">
+				<textarea rows="4" name="message" ng-model="message" placeholder="请在此描述您的问题或意见" required></textarea>
+			</div>
+			<div class="cell-group">
+				<div class="cell">
+					<div class="left-box">
+						联系电话
+					</div>
+					<div class="middle-box">
+						<input type="tel" name="mobile" ng-model="mobile" minlength="11" maxlength="11" placeholder="便于我们联系您" required>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="btn-dock">
-			<button class="btn btn-primary" ng-disabled="feedbackForm.$invalid" ng-click="submit()">提交</button>
-		</div>
-		<p class="tip">
-			我们会仔细阅读您的反馈，并尽早给您回复。
-		</p>
-	</form>
+			<div class="btn-dock">
+				<button class="btn btn-primary" ng-disabled="feedbackForm.$invalid" ng-click="submit()">提交</button>
+			</div>
+			<p class="tip">
+				我们会仔细阅读您的反馈，并尽早给您回复。
+			</p>
+		</form>
+	</div>
 </div>

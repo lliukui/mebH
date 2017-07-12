@@ -1,6 +1,7 @@
-app.controller('ccktitlesCtrl',['$scope','$rootScope','ccktitlesService','dialog','$state',function($scope,$rootScope,ccktitlesService,dialog,$state){
+app.controller('ccktitlesCtrl', ['$scope', '$rootScope', 'ccktitlesService', 'dialog', '$state', 'StorageConfig', function($scope, $rootScope, ccktitlesService, dialog, $state, StorageConfig){
 	$scope.header = true;
-	$scope.footer = false;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
 	window.headerConfig={
 		enableBack: true,
 		title: '育儿知识',

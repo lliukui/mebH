@@ -1,6 +1,7 @@
 app.controller('cckCtrl',['$scope','$rootScope','$state','dialog','StorageConfig','$stateParams',function($scope,$rootScope,$state,dialog,StorageConfig,$stateParams){
 	$scope.header = true;
-	$scope.footer = false;
+    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    
 	window.headerConfig={
 		enableBack: false,
 		title: '育儿宝库',

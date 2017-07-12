@@ -1,22 +1,18 @@
 .clinic-page{
 	.clinic-info{
-		padding: px2rem(10px);
 		background-color: #fff;
-		.clinicName{
-			font-size: px2rem(16px);
-		}
-		.clinic-img{
-			padding: 0 px2rem(10px) px2rem(5px) 0px;
-			float: left;
+		.info-img{
+			padding: px2rem(10px);
 			img{
-				width: px2rem(140px);
+				width: 100%;
 			}
 		}
 		.info-full{
 			clear: both;
+			padding-left: px2rem(10px);
 			.tel{
-				padding-top: px2rem(10px);
-				color: #38B4BA;
+				border-top: 1px solid $color-border-default;
+				padding: px2rem(10px) 0;
 				.icon-phone{
 					background: url('images/icon_iphone.png') no-repeat;
 					background-size: px2rem(15px) px2rem(11px);
@@ -25,33 +21,25 @@
 				}
 			}
 			.icon-address{
+				border-top: 1px solid $color-border-default;
+				padding: px2rem(10px);
 				background: url('images/icon_map.png') no-repeat;
 				background-size: px2rem(12px) px2rem(15px);
 				padding-left: px2rem(18px);
-				background-position-y: px2rem(1px);
-				color: #38B4BA;
+				background-position-y: 50%;
 			}
 		}
 	}
-	.service-tab{
+	.description{
 		margin-top: px2rem(10px);
-		padding: px2rem(10px);
 		background-color: #fff;
-		.service-item{
-			display: inline-block;
-			margin: px2rem(10px) px2rem(10px) 0 0;
-			border: 1px solid #efefef;
+		.title{
 			padding: px2rem(10px);
-			border-radius: px2rem(5px);
-			img{
-				width: px2rem(50px);
-			}
-			p{
-				text-align: center;
-			}
-			&.active{
-				border: 1px solid #F4D020;
-			}
+		}
+		.info{
+			margin-left: px2rem(10px);
+			padding: px2rem(10px) px2rem(10px) px2rem(10px) 0;
+			border-top: 1px solid $color-border-default;
 		}
 	}
 	.btn-dock{
@@ -65,12 +53,8 @@
 			}
 		}
 		.btn-zj{
-			background-color: #F5BBC6;
+			background-color: $color-primary;
 			color: #fff;
-			&:disabled{
-				background-color: #d6d6d6;
-				color: rgba(0,0,0,0.4);
-			}
 		}
 	}
 }
@@ -232,6 +216,17 @@
 				}
 			}
 		}
+		.nodata{
+			color: $color-default;
+			margin-top: px2rem(20px);
+			img{
+				width: px2rem(80px);
+			}
+			.info{
+				margin-top: px2rem(10px);
+				font-size: px2rem(16px);
+			}
+		}
 	}
 }
 .selectDoctor-page{
@@ -390,7 +385,6 @@
 }
 .bookingInfo-page{
 	.content-page{
-		top: px2rem(50px)!important;
 	}
 }
 .bookingOrder-page{
