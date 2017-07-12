@@ -17,14 +17,18 @@ app.directive('optionswidget', function(){
 			$scope.defaults = angular.extend(temp, data);
 		});
 
+		var content = document.getElementsByClassName('content-page');
+		console.log(content[0].style);
 		//控制弹窗，显示，隐藏
 		$scope.options = function(_key){
 			$scope.showOptions = _key;
+			content[0].style.overflow = 'hidden';
 		}
 
 		//关闭
 		$scope.close = function(){
 			$scope.showOptions = false;
+			content[0].style.overflow = 'auto';
 		}
 
 		//点击选项框，阻止关闭事件
@@ -37,6 +41,7 @@ app.directive('optionswidget', function(){
 			if(_data.statu != 2){
 				$scope.backOption = _data;
 				$scope.showOptions = false;
+				content[0].style.overflow = 'auto';
 			}
 		}
 

@@ -32,6 +32,8 @@ app.controller('bookingInfoCtrl', ['$scope', '$rootScope', 'doctorService', 'Sto
 		}
 	};
 
+	//第一次进入，默认选择第一个科室
+	var deptNum = true;
 	doctorService.getDoctorList().then(function(res){
 		var doctorlist = res.results;
 		if(doctorlist && doctorlist.length > 0){
@@ -42,6 +44,10 @@ app.controller('bookingInfoCtrl', ['$scope', '$rootScope', 'doctorService', 'Sto
 				option.value = doctorlist[i].name;
 				option.doctor = doctorlist[i].doctors;
 				$scope.optionsDept.data.push(option);
+				if(deptNum && i == 0){
+					$scope.optionsDept.backData = option;
+					deptNum = false;
+				}
 			}
 		}
 	}, function(res){
@@ -146,7 +152,7 @@ app.controller('bookingInfoCtrl', ['$scope', '$rootScope', 'doctorService', 'Sto
 			return;
 		}
 		if(!$scope.doc_mobileNumber || $scope.doc_mobileNumber == ''){
-			dialog.toast('请输入手机号码');
+			dialog.toast('请输入正确的手机号码');
 			return;
 		}
 		if(!$scope.optionsDept.backData || $scope.optionsDept.backData == ''){
