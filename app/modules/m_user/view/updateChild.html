@@ -1,7 +1,13 @@
 <div ng-controller="updateChildCtrl" class="updateChild-page">
     <div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
 		<div class="child-info">
-			<img ng-src="{{child.imageUrl}}">
+			<div class="img-tab flex">
+				<div class="flex-1"></div>
+				<div class="tab">
+					<img ng-src="{{child.imageUrl}}">
+				</div>
+				<div class="flex-1"></div>
+			</div>
 			<div class="cell-group">
 				<div class="cell">
 					<p class="left-box">宝宝姓名：</p>

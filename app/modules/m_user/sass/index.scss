@@ -40,7 +40,10 @@
 				}
 			}
 			.item-content{
-				padding: px2rem(10px) 0px;
+				padding: px2rem(10px) 0px px2rem(10px) px2rem(20px);
+				.age{
+					padding-top: px2rem(5px);
+				}
 			}
 			.item-btn{
 				padding: px2rem(50px) px2rem(10px) 0;
@@ -155,8 +158,18 @@
 }
 .updateChild-page{
 	.child-info{
-		img{
-			width: px2rem(100px);
+		.img-tab{
+			background-color: #fff;
+			padding: px2rem(10px);
+			.tab{
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				overflow: hidden;
+				img{
+					width: px2rem(100px);
+				}
+			}
 		}
 	}
 	.btn-dock{
