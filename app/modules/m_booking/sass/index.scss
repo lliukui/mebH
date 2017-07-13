@@ -13,6 +13,7 @@
 			.tel{
 				border-top: 1px solid $color-border-default;
 				padding: px2rem(10px) 0;
+				display: block;
 				.icon-phone{
 					background: url('images/icon_iphone.png') no-repeat;
 					background-size: px2rem(15px) px2rem(11px);
@@ -35,11 +36,13 @@
 		background-color: #fff;
 		.title{
 			padding: px2rem(10px);
+			font-weight: 800;
 		}
 		.info{
 			margin-left: px2rem(10px);
 			padding: px2rem(10px) px2rem(10px) px2rem(10px) 0;
 			border-top: 1px solid $color-border-default;
+			text-indent: 2rem;
 		}
 	}
 	.btn-dock{

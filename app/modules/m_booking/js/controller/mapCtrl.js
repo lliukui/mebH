@@ -3,7 +3,7 @@ app.controller('mapCtrl', ['$scope', '$rootScope', '$stateParams', 'StorageConfi
     $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
     
 	window.headerConfig={
-		title: '',
+		title: '诊所地图',
 		otherRightOperate: {
             enable: true,
             html: '驾车',

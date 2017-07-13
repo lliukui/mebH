@@ -4,7 +4,9 @@ app.controller('clinicCtrl',['$scope','$rootScope','dialog','ClinicService','$st
     
 	$scope.clinic=StorageConfig.BOOKING_STORAGE.getItem('clinicInfo')?StorageConfig.BOOKING_STORAGE.getItem('clinicInfo'):requestClinic();
 	
-	window.headerConfig.title=$scope.clinic.clinicName;
+	window.headerConfig = {
+		title: $scope.clinic.clinicName,
+	}
 	$rootScope.$broadcast('setHeaderConfig', window.headerConfig);
 
 	function requestClinic(){

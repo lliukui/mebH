@@ -1,37 +1,39 @@
 .home-page{
     .child-info{
-        padding: px2rem(10px);
+        background-color: #fff;
         .tab-first{
+            border-bottom: 1px solid $color-border-default;
             .first-left{
-                padding: px2rem(10px) px2rem(5px);
-                background-color: #FA9BCA;
-                width: 45%;
+                padding: px2rem(20px) px2rem(10px);
+                width: 50%;
             }
             .first-right{
-                padding: px2rem(10px) px2rem(5px);
-                background-color: #FA9BCA;
+                padding: px2rem(20px) px2rem(10px);
                 margin-left: px2rem(10px);
-                width: 55%;
+                width: 50%;
             }
         }
         .tab-second{
             font-size: px2rem(16px);
-            margin-top: px2rem(10px);
             text-align: center;
             .second-left{
+                margin: px2rem(10px);
                 padding: px2rem(10px) 0;
-                background-color: #FA9BCA;
-                width: 40%;
+                width: 50%;
             }
             .second-right{
+                margin: px2rem(10px) px2rem(10px) px2rem(10px) px2rem(2.5px);
                 padding: px2rem(10px) 0;
                 background-color: #FA9BCA;
-                margin-left: px2rem(10px);
-                width: 60%;
+                color: #fff;
+                border-radius: px2rem(5px);
+                width: 50%;
             }
         }
     }
     .h-channel{
+        margin: px2rem(10px) 0;
+        background-color: #fff;
         padding: 0 px2rem(10px);
         ul{
             display: flex;

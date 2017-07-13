@@ -6,12 +6,10 @@
 			</div>
 			<div class="info-full">
 				<div ng-click="showMap(clinic)" class="icon-address" ng-bind="clinic.address"></div>
-				<div class="tel">
-					<a href="tel://{{clinic.tel}}">
-						<span class="icon-phone">健康热线：</span>
-						<span ng-bind="clinic.tel"></span>
-					</a>
-				</div>
+				<a href="tel://{{clinic.tel}}" class="tel">
+					<span class="icon-phone">健康热线：</span>
+					<span ng-bind="clinic.tel"></span>
+				</a>
 			</div>
 		</div>
 		<div class="description">

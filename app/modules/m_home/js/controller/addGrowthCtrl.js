@@ -6,6 +6,8 @@ app.controller('addGrowthCtrl',['$scope','$rootScope','HomeService','dialog','St
 		title: '添加数据'
 	}
 
+	$scope.dateText = '请选择测量时间';
+
 	$rootScope.$broadcast('setHeaderConfig', window.headerConfig);
 
 	if($stateParams.source=='createChild'){

@@ -8,19 +8,19 @@ input[type="email"]{
     border: none;
     background: none;
     color: #666;
-    font-size: px2rem(map_get($map-font-size, m));
+    font-size: 1rem;
     width: 100%;
     -webkit-appearance: none;
     appearance: none;
     &:-ms-input-placeholder {
         color: #eee !important;
-        font-size: px2rem(map_get($map-font-size, s));
+        font-size: 1rem;
         vertical-align: middle;
     }
     // Internet Explorer 10+
     &::-webkit-input-placeholder {
         color: #ccc !important;
-        font-size: px2rem(map_get($map-font-size, s));
+        font-size: 1rem;
         vertical-align: middle;
     }
     &:focus {

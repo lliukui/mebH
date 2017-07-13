@@ -68,7 +68,7 @@ app.directive('optionswidget', function(){
 app.run(['$templateCache', function($templateCache){
 	$templateCache.put('template/options.html',
 		'<div>\
-			<p ng-click="options(key)">{{backOption ? backOption.value : text}}</p>\
+			<p class="text" ng-click="options(key)">{{backOption ? backOption.value : text}}</p>\
 			<div class="modal-mask" ng-show="showOptions == key" ng-click="close()">\
 				<div class="options-content" ng-click="stopClose($event)">\
 					<p class="title" ng-bind="title"></p>\

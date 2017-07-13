@@ -56,6 +56,9 @@ app.controller('HomeCtrl', ['$scope', '$rootScope', '$state', 'dialog', 'HomeSer
             childArray.push(child);
             if(data.isDefault==1){
                 $scope.tabSelected=index;
+                //成长信息，默认展示默认宝宝的信息
+                $scope.childId = child.childId;
+                getChildgrowth();
             }
         });
         window.headerConfig = {

@@ -73,18 +73,16 @@
 				border-radius: 50%;
 				padding: px2rem(20px);
 				.icon_boy{
-					background: url('images/icon_gender.png') no-repeat;
-					background-size: px2rem(63px) px2rem(35px);
+					background: url('images/icon_boy.png') no-repeat;
+					background-size: px2rem(35px) px2rem(35px);
 					width: px2rem(35px);
 					height: px2rem(35px);
 				}
 				.icon_girl{
-					background: url('images/icon_gender.png') no-repeat;
-					background-size: px2rem(63px) px2rem(35px);
-					width: px2rem(27px);
+					background: url('images/icon_girl.png') no-repeat;
+					background-size: px2rem(35px) px2rem(35px);
+					width: px2rem(35px);
 					height: px2rem(35px);
-					margin: 0 px2rem(4px);
-					background-position: -36px 0px;
 				}
 				&.active{
 					border: 1px solid #F4D020;
@@ -98,6 +96,11 @@
 	.other-tab{
 		.tab-item{
 			padding: 0 px2rem(10px);
+			.text{
+				background-color: #fff;
+				border-radius: px2rem(4px);
+				padding: px2rem(10px);
+			}
 		}
 	}
 	.upload-img{

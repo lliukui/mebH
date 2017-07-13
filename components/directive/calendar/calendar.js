@@ -24,9 +24,11 @@ app.directive('calendarWidget', function(){
             _this.refresh(currentDate);
         });
 
+		var content = document.getElementsByClassName('content-page');
 		$scope.showCalendar=false;
 		$scope.calendar=function(){
 			$scope.showCalendar=true;
+			content[0].style.overflow = 'hidden';
 		}
 
 		var _init=function(){
@@ -152,6 +154,7 @@ app.directive('calendarWidget', function(){
 				$scope.daySelected=dayObj.date;
 				$scope.backDate=dayObj;
 				$scope.showCalendar=false;
+				content[0].style.overflow = 'auto';
 			}
 		}
 
@@ -166,6 +169,7 @@ app.directive('calendarWidget', function(){
 		 */
 		$scope.closeCalendar = function(){
 			$scope.showCalendar=false;
+			content[0].style.overflow = 'auto';
 		}
 
 		/**
