@@ -1,6 +1,7 @@
 app.controller('addGrowthCtrl',['$scope','$rootScope','HomeService','dialog','StorageConfig','$state','$stateParams',function($scope,$rootScope,HomeService,dialog,StorageConfig,$state,$stateParams){
 	$scope.header = true;
-    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    // $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    $scope.footer = true;
     
 	window.headerConfig={
 		title: '添加数据'

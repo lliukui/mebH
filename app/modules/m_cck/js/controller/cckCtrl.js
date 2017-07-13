@@ -1,6 +1,7 @@
 app.controller('cckCtrl',['$scope','$rootScope','$state','dialog','StorageConfig','$stateParams',function($scope,$rootScope,$state,dialog,StorageConfig,$stateParams){
 	$scope.header = true;
-    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    // $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    $scope.footer = true;
     
 	window.headerConfig={
 		enableBack: false,

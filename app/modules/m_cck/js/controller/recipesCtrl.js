@@ -1,6 +1,7 @@
 app.controller('recipesCtrl', ['$scope', '$rootScope', 'recipesService', 'dialog', '$state', 'StorageConfig', function($scope, $rootScope, recipesService, dialog, $state, StorageConfig){
 	$scope.header = true;
-    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    // $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    $scope.footer = true;
     
 	window.headerConfig={
 		enableBack: true,

@@ -1,6 +1,7 @@
 app.controller('loginCtrl',['$scope','$rootScope','CommonService','dialog','$stateParams','$state','StorageConfig',function($scope,$rootScope,CommonService,dialog,$stateParams,$state,StorageConfig){
 	$scope.header = true;
-    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    // $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    $scope.footer = true;
     
 	window.headerConfig={
 		title: '登录',

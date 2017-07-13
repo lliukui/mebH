@@ -1,7 +1,7 @@
 app.directive('footerWidget', function () {
     var ctrl = ['$scope', '$rootScope', 'StorageConfig', '$state', 'helper', 'CMSDataConfig', function ($scope, $rootScope, StorageConfig, $state, helper, CMSDataConfig) {
         var defaults = {
-            enableFooter: StorageConfig.FOOTER_STORAGE.getItem('showFooter')
+            enableFooter: true,
         };
         if(StorageConfig.FOOTER_STORAGE.getItem('show')){
             defaults.enableFooter=true;
@@ -25,7 +25,7 @@ app.directive('footerWidget', function () {
         });
         $scope.selectedIndex = StorageConfig.FOOTER_STORAGE.getItem('selectedItemIndex') || 0;
         $scope.selectItem = function (item, index) {
-            if ($scope.selectedIndex != index) {
+            // if ($scope.selectedIndex != index) {
                 if (item.beforeCall && typeof item.beforeCall === 'function') {
                     if (item.beforeCall()) {
                         $scope.selectedIndex = index;
@@ -42,7 +42,7 @@ app.directive('footerWidget', function () {
                     }
                 }
 
-            }
+            // }
         };
     }];
     return {

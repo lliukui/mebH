@@ -5,7 +5,8 @@ app.controller('HomeCtrl', ['$scope', '$rootScope', '$state', 'dialog', 'HomeSer
     }
 
     $scope.header = true;
-    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    // $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    $scope.footer = true;
     
     window.headerConfig = {
         enableTitle: false,

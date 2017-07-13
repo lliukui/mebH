@@ -1,6 +1,7 @@
 app.controller('orderDetailCtrl',['$scope','$rootScope','StorageConfig',function($scope,$rootScope,StorageConfig){
 	$scope.header = true;
-    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    // $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    $scope.footer = true;
     
 	window.headerConfig={
 		title: '订单详情'

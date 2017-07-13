@@ -1,6 +1,7 @@
 app.controller('bookingOrderCtrl', ['$scope', '$rootScope', 'bookingService', 'StorageConfig', 'dialog', '$state', function($scope, $rootScope, bookingService, StorageConfig, dialog, $state){
 	$scope.header = true;
-    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    // $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    $scope.footer = true;
     
 	window.headerConfig = {
 		title: '订单'

@@ -1,6 +1,7 @@
 app.controller('mapCtrl', ['$scope', '$rootScope', '$stateParams', 'StorageConfig', function($scope, $rootScope, $stateParams, StorageConfig){
 	$scope.showWap=false;
-    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    // $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    $scope.footer = true;
     
 	window.headerConfig={
 		title: '诊所地图',

@@ -1,6 +1,7 @@
 app.controller('musicinfoCtrl', ['$scope', '$rootScope', 'dialog', '$stateParams', 'musicinfoService', '$sce', 'cckDetailService', 'StorageConfig', '$state', function($scope, $rootScope, dialog, $stateParams, musicinfoService, $sce, cckDetailService, StorageConfig, $state){
 	$scope.header = true;
-    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    // $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    $scope.footer = true;
     
 	var params={
 		username: StorageConfig.TOKEN_STORAGE.getItem('username'),

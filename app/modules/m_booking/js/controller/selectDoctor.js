@@ -1,6 +1,7 @@
 app.controller('selectDoctorCtrl',['$scope','$rootScope','ClinicBookingService','dialog','$stateParams','$filter','$state','StorageConfig',function($scope,$rootScope,ClinicBookingService,dialog,$stateParams,$filter,$state,StorageConfig){
 	$scope.header = true;
-    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    // $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    $scope.footer = true;
     
 	window.headerConfig={
 		enableBack: true,

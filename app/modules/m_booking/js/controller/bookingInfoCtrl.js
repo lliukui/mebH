@@ -1,7 +1,8 @@
 app.controller('bookingInfoCtrl', ['$scope', '$rootScope', 'doctorService', 'StorageConfig', 'bookingService', 'dialog', '$state', '$stateParams', function($scope, $rootScope, doctorService, StorageConfig, bookingService, dialog, $state, $stateParams){
 	$scope.header = true;
-    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
-    
+    // $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    $scope.footer = true;
+
 	window.headerConfig = {
 		title: '预约医生'
 	}

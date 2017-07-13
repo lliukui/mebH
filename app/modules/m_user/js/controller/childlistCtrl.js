@@ -1,6 +1,7 @@
 app.controller('childlistCtrl',['$scope','$rootScope','dialog','$state','childService','StorageConfig',function($scope,$rootScope,dialog,$state,childService,StorageConfig){
     $scope.header = true;
-    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    // $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    $scope.footer = true;
     
 	window.headerConfig={
 		enableBack: true,

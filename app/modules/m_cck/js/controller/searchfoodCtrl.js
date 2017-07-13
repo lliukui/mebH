@@ -1,6 +1,7 @@
 app.controller('searchfoodCtrl', ['$scope', '$rootScope', 'searchfoodService', 'dialog', '$state', 'StorageConfig', function($scope, $rootScope, searchfoodService, dialog, $state, StorageConfig){
 	$scope.header = true;
-    $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    // $scope.footer = StorageConfig.FOOTER_STORAGE.getItem('showFooter') ? true : false;
+    $scope.footer = true;
     
 	window.headerConfig={
 		enableHeader: false
