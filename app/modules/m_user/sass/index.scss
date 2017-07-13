@@ -92,6 +92,11 @@
 	}
 	.cell-group{
 		margin-bottom: 0;
+		.date{
+			p{
+				padding: 0 px2rem(10px);
+			}
+		}
 	}
 	.other-tab{
 		.tab-item{
