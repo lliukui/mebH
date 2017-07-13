@@ -105,6 +105,16 @@ app.factory('dialog', ['ngDialog', function (ngDialog) {
                 ngDialog.close(id,opts,type);
             }, 10);
 
-        }
+        },
+        show: function (html, opts) {
+            var options = {
+                overlay: true,
+                contentHtml: '<div class="show-body" ng-click="closeByOkButton(\'REPLACEDIALOGID\')">\
+                        <div class="contentHtml">' + html + '</div>\
+                </div>'
+            };
+            angular.extend(options, (opts || {}));
+            return ngDialog.open(options);
+        },
     }
 }]);

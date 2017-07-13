@@ -17,4 +17,8 @@ app.controller('updateChildCtrl',['$scope','$rootScope','$state','dialog','$stat
 			source: 'updateChild'
 		});
 	}
+
+	$scope.showImg = function(_url){
+		dialog.show('<img src="' + _url + '" class="w100">');
+	}
 }])
