@@ -16,7 +16,6 @@ app.controller('HomeCtrl', ['$scope', '$rootScope', '$state', 'dialog', 'HomeSer
             enableTab: true,
             options: [],
             currentTab: '',
-            selectedCall: selectedTab
         }
     };
     $rootScope.$broadcast('setHeaderConfig', window.headerConfig);
@@ -58,7 +57,7 @@ app.controller('HomeCtrl', ['$scope', '$rootScope', '$state', 'dialog', 'HomeSer
             if(data.isDefault==1){
                 $scope.tabSelected=index;
                 //成长信息，默认展示默认宝宝的信息
-                $scope.childId = child.childId;
+                $scope.childId = child.id;
                 getChildgrowth();
             }
         });
@@ -78,11 +77,16 @@ app.controller('HomeCtrl', ['$scope', '$rootScope', '$state', 'dialog', 'HomeSer
 
 
     // 切换宝宝信息
+    var selectedNum = true;
     function selectedTab(item, index){
-        $scope.tabSelected=index;
-        if(item){
-            $scope.childId=item.id;
-            getChildgrowth();
+        if(selectedNum){
+            selectedNum = false;
+        }else{
+            $scope.tabSelected=index;
+            if(item){
+                $scope.childId=item.id;
+                getChildgrowth();
+            }
         }
     }
 

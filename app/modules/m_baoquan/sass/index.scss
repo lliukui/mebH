@@ -1,0 +1,78 @@
+.baoquanCreate-page{
+	.content-page{
+		.tab{
+			padding-left: px2rem(10px);
+			background-color: #fff;
+			.title-tab{
+				border-bottom: 1px solid $color-border-default;
+			}
+			.content-tab{
+				margin-right: px2rem(10px);
+				textarea{
+					border: none;
+					padding: px2rem(10px) 0 px2rem(10px) 0;
+					width: 100%;
+					height: px2rem(80px);
+				}
+			}
+		}
+	}
+}
+.baoquanUpload-page{
+	.content-page{
+		.upload-img{
+			padding-top: px2rem(40px);
+			.add-icon{
+				background: url('images/upload.png') no-repeat;
+				background-size: 100% 100%;
+				border: none;
+			}
+		}
+	}
+}
+.baoquan-page{
+	.content-page{
+		.baoquan-list{
+			.item{
+				background-color: #fff;
+				margin-top: px2rem(10px);
+				padding: px2rem(10px);
+				&:last-child{
+					margin-bottom: px2rem(10px);
+				}
+				.title{
+					padding-bottom: px2rem(5px);
+				}
+				.content{
+					padding-bottom: px2rem(5px);
+				}
+				.imglist{
+					flex-wrap: wrap;
+					.img-item{
+						width: 33.3%;
+						padding: 0 px2rem(5px) px2rem(10px);
+						text-align: center;
+						img{
+							width: 90px;
+							height: 90px;
+						}
+					}
+				}
+				.date{
+					font-size: px2rem(10px);
+				}
+			}
+		}
+		.nodata{
+			color: $color-default;
+			margin-top: px2rem(20px);
+			img{
+				width: px2rem(80px);
+			}
+			.info{
+				margin-top: px2rem(10px);
+				font-size: px2rem(16px);
+			}
+		}
+	}
+}
