@@ -2,9 +2,6 @@
 	<div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
 		<div class="baoquan-list">
 			<div class="item" ng-repeat="baoquan in baoquanlist">
-				<div class="title">
-					{{baoquan.title}}
-				</div>
 				<div class="content">
 					{{baoquan.content}}
 				</div>
@@ -20,7 +17,7 @@
 		</div>
 		<div class="text-center nodata" ng-show="baoquanlist.length == 0">
 			<img src="app/images/icon_nodata.png">
-			<div class="info">暂无诊所</div>
+			<div class="info">暂无记录</div>
 		</div>
 	</div>
 </div>

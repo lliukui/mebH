@@ -14,7 +14,7 @@ app.controller('baoquanCtrl', ['$scope', '$rootScope', 'dialog', 'StorageConfig'
         },
         otherRightOperate: {
         	enable: true,
-        	html: '新增',
+            html: '<img src="app/images/add.png" style="margin-top: 0.56rem; width: 2.5rem;" />',
         	clickCall: function(){
         		$state.go('layout.baoquan-create', {
         			id: $scope.childId
@@ -78,7 +78,7 @@ app.controller('baoquanCtrl', ['$scope', '$rootScope', 'dialog', 'StorageConfig'
             },
 	        otherRightOperate: {
 	        	enable: true,
-	        	html: '新增',
+                html: '<img src="app/images/add.png" style="margin-top: 0.56rem; width: 2.5rem;" />',
 	        	clickCall: function(){
 	        		$state.go('layout.baoquan-create', {
 	        			id: $scope.childId

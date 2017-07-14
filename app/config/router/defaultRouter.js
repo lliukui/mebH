@@ -174,10 +174,6 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                     url: '/baoquan/create?id',
                     templateUrl: 'app/modules/m_baoquan/view/create.html'
                 })
-                .state('layout.baoquan-upload', {
-                    url: '/baoquan/upload?id',
-                    templateUrl: 'app/modules/m_baoquan/view/upload.html'
-                })
                 .state('layout.baoquan', {
                     url: '/baoquan',
                     templateUrl: 'app/modules/m_baoquan/view/index.html'

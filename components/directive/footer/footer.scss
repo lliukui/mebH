@@ -24,37 +24,37 @@
             display: block;
         }
         .icon-home{
-            background: url("http://static.mingyizhudao.com/146278206712060") no-repeat;
-            background-size: 94px 44px;
-            background-position: -2px -22px;
+            background: url('../app/images/icon_footer.png') no-repeat;
+            background-size: 88px 44px;
+            background-position: 0 -22px;
             &.active{
-                background-position: -2px 0;
+                background-position: 0 0;
             }
 
         }
-        .icon-hospital{
-            background: url("http://static.mingyizhudao.com/146278206712060") no-repeat;
-            background-size: 94px 44px;
-            background-position: -24px -22px;
+        .icon-baoquan{
+            background: url('../app/images/icon_footer.png') no-repeat;
+            background-size: 88px 44px;
+            background-position: -22px -22px;
             &.active{
-                background-position: -24px 0;
+                background-position: -22px 0;
             }
         }
-        .icon-find{
-            background: url("http://static.mingyizhudao.com/146278206712060") no-repeat;
-            background-size: 94px 44px;
-            background-position: -47px -22px;
+        .icon-cck{
+            background: url('../app/images/icon_footer.png') no-repeat;
+            background-size: 88px 44px;
+            background-position: -44px -22px;
             &.active{
-                background-position: -47px 0;
+                background-position: -44px 0;
             }
 
         }
         .icon-me{
-            background: url("http://static.mingyizhudao.com/146278206712060") no-repeat;
-            background-size: 94px 44px;
-            background-position: -70px -22px;
+            background: url('../app/images/icon_footer.png') no-repeat;
+            background-size: 88px 44px;
+            background-position: -66px -22px;
             &.active{
-                background-position: -70px 0;
+                background-position: -66px 0;
             }
         }
         .text{

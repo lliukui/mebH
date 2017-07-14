@@ -1,9 +1,6 @@
 <div ng-controller="baoquanCreateCtrl" class="baoquanCreate-page">
 	<div class="content-page" ng-class="{'topHeader': header, 'bottomFooter': footer}">
 		<div class="tab">
-			<div class="title-tab">
-				<input type="text" ng-model="title" placeholder="标题">
-			</div>
 			<div class="content-tab">
 				<textarea ng-model="content" placeholder="这一刻的想法"></textarea>
 			</div>
@@ -11,9 +8,11 @@
 
 			</div>
 		</div>
+		<div id="uploadImgBox"></div>
+		<div id="upload" class="hide"></div>
 		<div class="pt20 pb20">
 			<div class="btn-dock">
-				<button class="btn btn-primary" ng-click="create()">新增</button>
+				<button class="btn btn-primary" ng-click="create()">发布</button>
 			</div>
 		</div>
 	</div>

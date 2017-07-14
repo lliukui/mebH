@@ -7,26 +7,31 @@
 				border-bottom: 1px solid $color-border-default;
 			}
 			.content-tab{
-				margin-right: px2rem(10px);
+				padding-right: px2rem(10px);
+				padding-bottom: px2rem(10px);
+				border-bottom: 1px solid $color-border-default;
 				textarea{
 					border: none;
 					padding: px2rem(10px) 0 px2rem(10px) 0;
 					width: 100%;
-					height: px2rem(80px);
+					height: px2rem(120px);
+					font-size: px2rem(14px);
 				}
 			}
 		}
-	}
-}
-.baoquanUpload-page{
-	.content-page{
 		.upload-img{
-			padding-top: px2rem(40px);
+			padding-top: px2rem(10px);
+			padding-bottom: 0;
 			.add-icon{
+				width: 30%;
 				background: url('images/upload.png') no-repeat;
 				background-size: 100% 100%;
 				border: none;
 			}
+			.img-item{
+				width: 28%;
+			}
+
 		}
 	}
 }
@@ -40,11 +45,8 @@
 				&:last-child{
 					margin-bottom: px2rem(10px);
 				}
-				.title{
-					padding-bottom: px2rem(5px);
-				}
 				.content{
-					padding-bottom: px2rem(5px);
+					padding-bottom: px2rem(10px);
 				}
 				.imglist{
 					flex-wrap: wrap;

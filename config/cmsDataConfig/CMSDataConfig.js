@@ -8,14 +8,20 @@ app.factory('CMSDataConfig', ['StorageConfig', '$state', function (StorageConfig
             url: '/layout/home'
         },
         {
+            text: '宝圈',
+            class: 'icon-baoquan',
+            route: 'layout.baoquan',
+            url: '/layout/baoquan'
+        },
+        {
             text: '育儿',
-            class: 'icon-find',
+            class: 'icon-cck',
             route: 'layout.cck',
             url: '/layout/cck'
         },
         {
             text: '我的',
-            class: 'icon-hospital',
+            class: 'icon-me',
             route: 'layout.user',
             url: '/layout/user'
         }

@@ -109,6 +109,7 @@ app.factory('dialog', ['ngDialog', function (ngDialog) {
         show: function (html, opts) {
             var options = {
                 overlay: true,
+                closeByDocument: true,
                 contentHtml: '<div class="show-body" ng-click="closeByOkButton(\'REPLACEDIALOGID\')">\
                         <div class="contentHtml">' + html + '</div>\
                 </div>'
